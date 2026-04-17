@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Offline recovery tool for seQRets shares. Single file. No install. No network." />
+    <title>seQRets Recover</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="hero-image" aria-hidden="true">
+      <img src="/src/assets/hero.webp" alt="" />
+      <div class="hero-gradient"></div>
+    </div>
+
+    <main class="shell">
+      <header class="brand">
+        <img class="brand-mark" src="/src/assets/logo-dark.webp" alt="seQRets logo" />
+        <div class="brand-text">
+          <div class="brand-title">seQRets <span class="brand-accent">Recover</span></div>
+          <div class="brand-sub">The lifeboat · Works offline · One file forever</div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Let's get your secret back.</h1>
+        <p class="hero-sub">
+          If you have the shares and the password, this page will recover your secret.
+          Nothing you enter here leaves your device. You can turn off Wi-Fi first — it still works.
+        </p>
+        <p class="hero-tip">
+          <strong>For extra safety:</strong> open this page in a private / incognito browser window,
+          with extensions disabled. That way nothing is saved or readable by other software.
+        </p>
+      </section>
+
+      <section class="card" id="recover-card">
+        <div class="step">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-body">
+            <h2>Add your shares</h2>
+            <p class="step-hint">Drop in QR code images from your Qards, text files, or paste the share text below. Each share looks like <code>seQRets|…|…|sha256:…</code></p>
+
+            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images or share files here, or click to browse">
+              <svg viewBox="0 0 24 24" class="dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              <div class="dropzone-text">Drop QR images or share files here <span class="muted">or click to browse</span></div>
+              <input type="file" id="file-input" multiple accept="image/*,.txt,text/plain" hidden />
+            </div>
+
+            <details class="paste-expander">
+              <summary>Or paste share text</summary>
+              <textarea id="share-textarea" rows="5" placeholder="Paste one or more shares. One per line, or all in one block — we'll figure it out."></textarea>
+            </details>
+
+            <ul class="share-list" id="share-list" aria-live="polite"></ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-body">
+            <h2>Enter your password</h2>
+            <p class="step-hint">The password used when the shares were created. Capitalization and spaces matter.</p>
+            <div class="password-row">
+              <input type="password" id="password" autocomplete="off" spellcheck="false" placeholder="Password" />
+              <button type="button" class="btn-ghost" id="toggle-password" aria-label="Show password">Show</button>
+            </div>
+
+            <details class="keyfile-expander">
+              <summary>I also have a keyfile (optional)</summary>
+              <p class="step-hint">A keyfile is a second factor. If your secret was created without one, skip this.</p>
+              <div class="keyfile-row">
+                <input type="file" id="keyfile-input" accept="*/*" />
+                <button type="button" class="btn-ghost" id="keyfile-clear" hidden>Remove</button>
+              </div>
+              <div class="keyfile-name muted" id="keyfile-name"></div>
+            </details>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-body">
+            <h2>Recover</h2>
+            <p class="step-hint">When you're ready, click the button. The slow part (key derivation) takes about 10–30 seconds on most computers.</p>
+            <button type="button" class="btn btn-primary" id="recover-btn">Recover my secret</button>
+            <div class="progress" id="progress" role="status" aria-live="polite" hidden>
+              <div class="spinner" aria-hidden="true"></div>
+              <span id="progress-text">Working…</span>
+            </div>
+            <div class="error" id="error" role="alert" hidden></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card result-card" id="result-card" hidden>
+        <h2 class="result-title">Your secret is ready.</h2>
+        <p class="result-sub">
+          <strong>Before revealing:</strong> make sure no one can see your screen.
+          If you're recording, sharing your screen, or in a public place, stop first.
+        </p>
+
+        <div class="result-label" id="result-label" hidden></div>
+
+        <div class="reveal" id="reveal">
+          <pre class="reveal-content" id="reveal-content"></pre>
+          <button type="button" class="reveal-overlay" id="reveal-overlay">
+            <svg viewBox="0 0 24 24" class="reveal-eye" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>Click to reveal</span>
+          </button>
+          <button type="button" class="reveal-hide" id="reveal-hide" aria-label="Hide secret">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18M10.6 10.6a3 3 0 0 0 4.24 4.24M9.88 5.2A10.6 10.6 0 0 1 12 5c7 0 11 7 11 7a18 18 0 0 1-3.17 4M6.12 6.12A18 18 0 0 0 1 12s4 7 11 7c1.77 0 3.4-.36 4.86-.95"/></svg>
+            <span>Hide</span>
+          </button>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn btn-secondary" id="copy-btn">Copy to clipboard</button>
+          <button type="button" class="btn btn-ghost" id="done-btn">Done — clear everything</button>
+        </div>
+        <p class="result-notice" id="idle-notice">
+          For your safety this will auto-blur after 2 minutes of no activity, and clear entirely after 10 minutes.
+          Your clipboard may retain a copy of the secret — paste it where you need it, then clear your clipboard manually.
+        </p>
+      </section>
+
+      <footer class="foot">
+        <p>
+          This is <a href="https://github.com/seQRets/seQRets-Recover" rel="noopener">seQRets Recover</a> —
+          an independent, single-file, offline reference implementation. MIT licensed.
+          Runs entirely in your browser, never sends data anywhere.
+        </p>
+        <p class="foot-tiny">
+          Need the main app? <a href="https://seqrets.app" rel="noopener">seqrets.app</a>
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
