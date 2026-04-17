@@ -451,16 +451,25 @@ function startIdleTimers() {
 });
 
 // ── Connectivity indicator ────────────────────────────────────────────
-// navigator.onLine can be fooled by captive portals and cached resources, but
-// it's accurate for the common case (Wi-Fi turned off, Ethernet unplugged) and
-// the banner is advisory anyway — the CSP already blocks network requests.
+// navigator.onLine is the browser's idea of connectivity — accurate for the
+// common "Wi-Fi toggled off" case but fooled by captive portals and cached
+// content. More importantly, the online/offline window events are unreliable
+// across browsers (especially on file://), so we poll every few seconds as a
+// fallback instead of trusting the events alone. The banner is advisory — the
+// real defense is physical disconnection + the CSP.
 
 const netBanner = document.getElementById('net-banner') as HTMLDivElement;
 const netTitle = document.getElementById('net-title') as HTMLElement;
 const netMessage = document.getElementById('net-message') as HTMLSpanElement;
 
+let lastNetState: boolean | null = null;
+
 function updateNetworkStatus() {
-  if (navigator.onLine) {
+  const online = navigator.onLine;
+  if (online === lastNetState) return;
+  lastNetState = online;
+
+  if (online) {
     netBanner.classList.remove('is-offline');
     netBanner.classList.add('is-online');
     netTitle.textContent = 'You are online';
@@ -475,6 +484,8 @@ function updateNetworkStatus() {
 
 window.addEventListener('online', updateNetworkStatus);
 window.addEventListener('offline', updateNetworkStatus);
+document.addEventListener('visibilitychange', updateNetworkStatus);
+window.setInterval(updateNetworkStatus, 3000);
 updateNetworkStatus();
 
 // ── Init ──────────────────────────────────────────────────────────────

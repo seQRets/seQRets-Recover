@@ -215,19 +215,19 @@ body {
 }
 
 .net-banner.is-online .net-dot {
-  background: hsl(8, 70%, 60%);
-  box-shadow: 0 0 0 4px hsla(8, 70%, 60%, 0.2);
-  animation: pulse-red 2s ease-in-out infinite;
+  background: hsl(8, 75%, 58%);
+  animation: pulse-red 1.6s ease-out infinite;
 }
 
 .net-banner.is-offline .net-dot {
   background: hsl(150, 55%, 55%);
-  box-shadow: 0 0 0 3px hsla(150, 55%, 55%, 0.18);
+  box-shadow: 0 0 0 3px hsla(150, 55%, 55%, 0.22);
 }
 
 @keyframes pulse-red {
-  0%, 100% { box-shadow: 0 0 0 4px hsla(8, 70%, 60%, 0.2); }
-  50%      { box-shadow: 0 0 0 7px hsla(8, 70%, 60%, 0.08); }
+  0%   { box-shadow: 0 0 0 0   hsla(8, 75%, 58%, 0.75); }
+  70%  { box-shadow: 0 0 0 14px hsla(8, 75%, 58%, 0); }
+  100% { box-shadow: 0 0 0 0   hsla(8, 75%, 58%, 0); }
 }
 
 .net-text {
