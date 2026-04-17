@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run hash",
-    "hash": "node -e \"const fs=require('fs'),c=require('crypto');const b=fs.readFileSync('dist/index.html');const h=c.createHash('sha256').update(b).digest('hex');console.log('\\nSHA-256 of dist/index.html:\\n  '+h+'\\n  ('+b.length+' bytes)\\n')\"",
+    "build": "vite build && npm run finalize",
+    "finalize": "node -e \"const fs=require('fs'),c=require('crypto');fs.copyFileSync('dist/index.html','dist/recover.html');fs.unlinkSync('dist/index.html');const b=fs.readFileSync('dist/recover.html');const h=c.createHash('sha256').update(b).digest('hex');console.log('\\nSHA-256 of dist/recover.html:\\n  '+h+'\\n  ('+b.length+' bytes)\\n')\"",
     "preview": "vite preview"
   },
   "dependencies": {
