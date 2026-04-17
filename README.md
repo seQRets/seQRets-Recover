@@ -6,10 +6,23 @@ A minimal, single-file, offline recovery tool for [seQRets](https://seqrets.app)
 
 ## For heirs and recipients
 
+### Before you start — disconnect from the internet
+
+This is the single most important thing you can do to protect your secrets while recovering them. `recover.html` runs entirely on your device and does not need the internet to work — so don't give it the chance.
+
+**On your computer:** turn off Wi-Fi from the menu bar, or unplug the Ethernet cable if you use one. You'll know it worked when the indicator at the top of the app turns green and says "You are offline."
+
+**Also recommended:** open the page in a **private / incognito** browser window (`⌘+Shift+N` in Chrome/Edge, `⌘+Shift+P` in Firefox/Safari), and disable browser extensions for that window. Private windows don't save history, cache, or form data, and extensions can read everything you type.
+
+**Why this matters:** the app is designed not to send data anywhere, and its built-in Content-Security-Policy tells the browser to refuse network requests. But the safest layer of defense is the one that doesn't depend on anything working correctly. If Wi-Fi is off, no misconfiguration, no tampering, and no software bug can leak your secret.
+
+### Using it
+
 1. Download `recover.html` (or open the copy included with your inheritance packet). The file is published under [Releases](https://github.com/seQRets/seQRets-Recover/releases) — look under **Assets** on the most recent release. For a direct link to the latest version: [download recover.html](https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html).
-2. Open it in any web browser. You can turn off wi-fi first — it runs entirely on your device.
-3. Paste or drag in your shares, enter the password, and click **Recover**.
-4. Your secret appears. That's it.
+2. Disconnect from the internet (see above).
+3. Open `recover.html` in any web browser — just double-click the file.
+4. Paste or drag in your shares (or drop an encrypted inheritance plan JSON file), enter the password, and click **Recover**.
+5. Your secret appears. That's it.
 
 If you need help, see the on-screen instructions — the page is designed to be used without any prior knowledge.
 

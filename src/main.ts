@@ -450,6 +450,33 @@ function startIdleTimers() {
   }, { passive: true });
 });
 
+// ── Connectivity indicator ────────────────────────────────────────────
+// navigator.onLine can be fooled by captive portals and cached resources, but
+// it's accurate for the common case (Wi-Fi turned off, Ethernet unplugged) and
+// the banner is advisory anyway — the CSP already blocks network requests.
+
+const netBanner = document.getElementById('net-banner') as HTMLDivElement;
+const netTitle = document.getElementById('net-title') as HTMLElement;
+const netMessage = document.getElementById('net-message') as HTMLSpanElement;
+
+function updateNetworkStatus() {
+  if (navigator.onLine) {
+    netBanner.classList.remove('is-offline');
+    netBanner.classList.add('is-online');
+    netTitle.textContent = 'You are online';
+    netMessage.textContent = 'For the strongest safety margin, turn off Wi-Fi or unplug Ethernet before entering your password.';
+  } else {
+    netBanner.classList.remove('is-online');
+    netBanner.classList.add('is-offline');
+    netTitle.textContent = 'You are offline';
+    netMessage.textContent = 'Safe to proceed — nothing can leave this device.';
+  }
+}
+
+window.addEventListener('online', updateNetworkStatus);
+window.addEventListener('offline', updateNetworkStatus);
+updateNetworkStatus();
+
 // ── Init ──────────────────────────────────────────────────────────────
 
 renderInputs();
