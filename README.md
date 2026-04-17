@@ -6,9 +6,23 @@ A minimal, single-file, offline recovery tool for [seQRets](https://seqrets.app)
 
 ## For heirs and recipients
 
-1. Download `recover.html` (or open the copy included with your inheritance packet).
-2. Open it in any web browser. You can turn off wi-fi first — it runs entirely on your device.
-3. Paste or drag in your shares, enter the password, and click **Recover**.
+### Where to get `recover.html`
+
+This repository contains the **source code**. The single-file app you actually run is published on the [**Releases page**](https://github.com/seQRets/seQRets-Recover/releases).
+
+You have three options, any of which works offline once downloaded:
+
+- **Latest release (recommended):** [download recover.html directly](https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html). This URL always points to the most recent version.
+- **A specific version** (if the file you were given references one): go to [Releases](https://github.com/seQRets/seQRets-Recover/releases), pick the matching tag, and download `recover.html` from its assets.
+- **The copy in your inheritance packet:** if the person who set this up gave you a physical or emailed copy of `recover.html`, use that. It will still work forever.
+
+> **Before you trust the file, verify its integrity.** See the [Verifying a downloaded copy](#verifying-a-downloaded-copy) section below. Every release publishes a SHA-256 hash you can check in a single command.
+
+### Using it
+
+1. Download `recover.html` using one of the options above (or use the copy from your inheritance packet).
+2. Open it in any web browser — just double-click the file. You can turn off wi-fi first; it runs entirely on your device.
+3. Drop in QR images of your Qards, or paste your shares as text. Enter the password. Click **Recover**.
 4. Your secret appears. That's it.
 
 If you need help, see the on-screen instructions — the page is designed to be used without any prior knowledge.
