@@ -1,6 +1,6 @@
 {
   "name": "seqrets-recover",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": true,
   "type": "module",
   "description": "Minimal, single-file, offline recovery tool for seQRets shares. No install, no network, no app. Open recover.html in any browser.",

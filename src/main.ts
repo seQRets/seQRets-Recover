@@ -485,7 +485,7 @@ function updateNetworkStatus() {
 window.addEventListener('online', updateNetworkStatus);
 window.addEventListener('offline', updateNetworkStatus);
 document.addEventListener('visibilitychange', updateNetworkStatus);
-window.setInterval(updateNetworkStatus, 3000);
+window.setInterval(updateNetworkStatus, 1000);
 updateNetworkStatus();
 
 // ── Init ──────────────────────────────────────────────────────────────
