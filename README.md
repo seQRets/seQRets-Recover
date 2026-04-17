@@ -10,7 +10,7 @@ A minimal, single-file, offline recovery tool for [seQRets](https://seqrets.app)
 
 This is the single most important thing you can do to protect your secrets while recovering them. `recover.html` runs entirely on your device and does not need the internet to work — so don't give it the chance.
 
-**On your computer:** turn off Wi-Fi from the menu bar, or unplug the Ethernet cable if you use one. You'll know it worked when the indicator at the top of the app turns green and says "You are offline."
+**On your computer:** turn off Wi-Fi from the menu bar, or unplug the Ethernet cable if you use one. You can confirm you're disconnected by looking at your operating system's network icon — a macOS Wi-Fi icon with a slash through it, or a Windows taskbar icon showing "Not connected."
 
 **Also recommended:** open the page in a **private / incognito** browser window (`⌘+Shift+N` in Chrome/Edge, `⌘+Shift+P` in Firefox/Safari), and disable browser extensions for that window. Private windows don't save history, cache, or form data, and extensions can read everything you type.
 
