@@ -39,13 +39,13 @@
         <div class="step">
           <div class="step-num" aria-hidden="true">1</div>
           <div class="step-body">
-            <h2>Add your shares</h2>
-            <p class="step-hint">Drop in QR code images from your Qards, text files, or paste the share text below. Each share looks like <code>seQRets|…|…|sha256:…</code></p>
+            <h2>Add shares or an inheritance plan</h2>
+            <p class="step-hint">Drop in QR images from your Qards, share text files, or an encrypted inheritance-plan JSON file. We'll figure out which one you have. Shares look like <code>seQRets|…|sha256:…</code>; plans are JSON with <code>salt</code> and <code>data</code> fields.</p>
 
-            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images or share files here, or click to browse">
+            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images, share files, or a plan file here, or click to browse">
               <svg viewBox="0 0 24 24" class="dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              <div class="dropzone-text">Drop QR images or share files here <span class="muted">or click to browse</span></div>
-              <input type="file" id="file-input" multiple accept="image/*,.txt,text/plain" hidden />
+              <div class="dropzone-text">Drop files here <span class="muted">or click to browse</span></div>
+              <input type="file" id="file-input" multiple accept="image/*,.txt,.json,text/plain,application/json" hidden />
             </div>
 
             <details class="paste-expander">
@@ -95,7 +95,7 @@
       </section>
 
       <section class="card result-card" id="result-card" hidden>
-        <h2 class="result-title">Your secret is ready.</h2>
+        <h2 class="result-title" id="result-title">Your secret is ready.</h2>
         <p class="result-sub">
           <strong>Before revealing:</strong> make sure no one can see your screen.
           If you're recording, sharing your screen, or in a public place, stop first.

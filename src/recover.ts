@@ -196,3 +196,102 @@ export function extractShares(text: string): string[] {
   }
   return shares;
 }
+
+// ── Inheritance plan decryption ─────────────────────────────────────
+//
+// An encrypted inheritance plan is a JSON file with the shape { salt, data }.
+// The pipeline is identical to share recovery except there is no Shamir step —
+// the ciphertext is a single blob rather than multiple pieces to combine.
+//
+//   JSON { salt, data }
+//     → deriveKey(password [+keyfile]) via Argon2id
+//     → XChaCha20-Poly1305 decrypt (nonce = data[0..24])
+//     → gunzip
+//     → JSON.parse
+//
+// Returns the decrypted payload as-is. No schema interpretation — the lifeboat
+// deliberately shows raw JSON so that plan schema changes in the main app
+// never break recovery.
+
+export interface EncryptedPlan {
+  salt: string;
+  data: string;
+}
+
+export function tryParsePlan(text: string): EncryptedPlan | null {
+  const trimmed = text.trim();
+  if (!trimmed.startsWith('{')) return null;
+  try {
+    const obj = JSON.parse(trimmed);
+    if (
+      obj && typeof obj === 'object'
+      && typeof obj.salt === 'string'
+      && typeof obj.data === 'string'
+    ) {
+      return { salt: obj.salt, data: obj.data };
+    }
+  } catch {
+    // not JSON — fall through
+  }
+  return null;
+}
+
+export async function decryptPlan(
+  payload: EncryptedPlan,
+  password: string,
+  keyfileB64?: string,
+  onProgress: Progress = () => {},
+): Promise<unknown> {
+  if (!password) throw new Error('Please enter your password.');
+
+  onProgress('Deriving key (this is the slow step — about 10–30 seconds)');
+
+  const salt = b64ToBytes(payload.salt);
+  const passwordBytes = textEncoder.encode(password);
+  const keyfileBytes = keyfileB64 ? b64ToBytes(keyfileB64) : undefined;
+  const keyInput = keyfileBytes ? concatBytes(passwordBytes, keyfileBytes) : passwordBytes;
+
+  let derivedKey: Uint8Array;
+  try {
+    derivedKey = await argon2id(keyInput, salt, ARGON2);
+  } finally {
+    passwordBytes.fill(0);
+    if (keyfileBytes) keyInput.fill(0);
+  }
+
+  onProgress('Decrypting');
+
+  let decryptedCompressed: Uint8Array;
+  try {
+    const combined = b64ToBytes(payload.data);
+    const nonce = combined.slice(0, NONCE_LENGTH);
+    const ciphertext = combined.slice(NONCE_LENGTH);
+    try {
+      decryptedCompressed = xchacha20poly1305(derivedKey, nonce).decrypt(ciphertext);
+    } catch {
+      throw new Error('We could not decrypt with that password. Please check for typos — capitalization and spaces matter.');
+    }
+  } finally {
+    derivedKey.fill(0);
+  }
+
+  onProgress('Expanding');
+
+  let decompressed: Uint8Array;
+  try {
+    decompressed = ungzip(decryptedCompressed);
+  } catch {
+    throw new Error('The decrypted data is not readable. The password or keyfile may be wrong.');
+  } finally {
+    decryptedCompressed.fill(0);
+  }
+
+  const jsonStr = textDecoder.decode(decompressed);
+  decompressed.fill(0);
+
+  try {
+    return JSON.parse(jsonStr);
+  } catch {
+    throw new Error('The decrypted payload is not valid JSON. The file may be damaged.');
+  }
+}

@@ -1,4 +1,4 @@
-import { recover, extractShares } from './recover';
+import { recover, extractShares, decryptPlan, tryParsePlan, type EncryptedPlan } from './recover';
 import { decodeQrFromFile, isImageFile } from './qr';
 import { playChime } from './tone';
 import { Buffer } from 'buffer';
@@ -27,6 +27,7 @@ const progressText = document.getElementById('progress-text') as HTMLSpanElement
 const errorBox = document.getElementById('error') as HTMLDivElement;
 
 const resultCard = document.getElementById('result-card') as HTMLElement;
+const resultTitle = document.getElementById('result-title') as HTMLHeadingElement;
 const resultLabel = document.getElementById('result-label') as HTMLDivElement;
 const reveal = document.getElementById('reveal') as HTMLDivElement;
 const revealContent = document.getElementById('reveal-content') as HTMLPreElement;
@@ -35,39 +36,77 @@ const revealHide = document.getElementById('reveal-hide') as HTMLButtonElement;
 const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement;
 const doneBtn = document.getElementById('done-btn') as HTMLButtonElement;
 
-// ── Share state ───────────────────────────────────────────────────────
+// ── Input state ───────────────────────────────────────────────────────
+// The user provides EITHER a set of shares OR a single encrypted inheritance
+// plan. They're mutually exclusive — dropping one clears the other. We
+// auto-detect which is which from the input content.
 
 const shares = new Set<string>();
+let pendingPlan: EncryptedPlan | null = null;
 
-function renderShares() {
+function hasInput(): boolean {
+  return shares.size > 0 || pendingPlan !== null;
+}
+
+function renderInputs() {
   shareList.innerHTML = '';
-  for (const share of shares) {
+
+  if (pendingPlan) {
     const li = document.createElement('li');
     const chip = document.createElement('span');
-    chip.className = 'share-chip';
-    chip.textContent = 'Share';
+    chip.className = 'share-chip plan-chip';
+    chip.textContent = 'Plan';
     li.appendChild(chip);
 
     const preview = document.createElement('span');
     preview.className = 'share-preview';
-    preview.textContent = previewShare(share);
-    preview.title = share;
+    const approxBytes = Math.round(pendingPlan.data.length * 0.75);
+    preview.textContent = `Encrypted inheritance plan (${approxBytes.toLocaleString()} bytes)`;
     li.appendChild(preview);
 
     const remove = document.createElement('button');
     remove.className = 'share-remove';
     remove.type = 'button';
     remove.textContent = 'Remove';
-    remove.setAttribute('aria-label', 'Remove this share');
+    remove.setAttribute('aria-label', 'Remove this plan');
     remove.addEventListener('click', () => {
-      shares.delete(share);
-      renderShares();
+      pendingPlan = null;
+      renderInputs();
     });
     li.appendChild(remove);
 
     shareList.appendChild(li);
+  } else {
+    for (const share of shares) {
+      const li = document.createElement('li');
+      const chip = document.createElement('span');
+      chip.className = 'share-chip';
+      chip.textContent = 'Share';
+      li.appendChild(chip);
+
+      const preview = document.createElement('span');
+      preview.className = 'share-preview';
+      preview.textContent = previewShare(share);
+      preview.title = share;
+      li.appendChild(preview);
+
+      const remove = document.createElement('button');
+      remove.className = 'share-remove';
+      remove.type = 'button';
+      remove.textContent = 'Remove';
+      remove.setAttribute('aria-label', 'Remove this share');
+      remove.addEventListener('click', () => {
+        shares.delete(share);
+        renderInputs();
+      });
+      li.appendChild(remove);
+
+      shareList.appendChild(li);
+    }
   }
-  recoverBtn.disabled = shares.size === 0;
+
+  recoverBtn.disabled = !hasInput();
+  recoverBtn.textContent = pendingPlan ? 'Decrypt my plan' : 'Recover my secret';
 }
 
 function previewShare(share: string): string {
@@ -77,16 +116,33 @@ function previewShare(share: string): string {
   return `seQRets|…|${data.slice(0, 10)}…${data.slice(-6)}`;
 }
 
-function addShares(input: string) {
-  const found = extractShares(input);
-  if (!found.length) {
-    showError('No seQRets shares found in that input. A share should start with "seQRets|".');
+function addInput(input: string) {
+  const trimmed = input.trim();
+  if (!trimmed) return;
+
+  // Try parsing as an encrypted inheritance plan first — its JSON shape is
+  // unambiguous and doesn't overlap with a share string.
+  const plan = tryParsePlan(trimmed);
+  if (plan) {
+    shares.clear();
+    pendingPlan = plan;
+    clearError();
+    renderInputs();
+    playChime();
     return;
   }
+
+  // Otherwise, extract shares.
+  const found = extractShares(trimmed);
+  if (!found.length) {
+    showError('We did not find any seQRets shares or an inheritance plan in that input. A share starts with "seQRets|"; a plan is a JSON file with "salt" and "data" fields.');
+    return;
+  }
+  pendingPlan = null;
   const sizeBefore = shares.size;
-  clearError();
   for (const s of found) shares.add(s);
-  renderShares();
+  clearError();
+  renderInputs();
   if (shares.size > sizeBefore) playChime();
 }
 
@@ -131,10 +187,10 @@ async function readFiles(files: File[]) {
     try {
       if (isImageFile(file)) {
         const decoded = await decodeQrFromFile(file);
-        addShares(decoded);
+        addInput(decoded);
       } else {
         const text = await file.text();
-        addShares(text);
+        addInput(text);
       }
     } catch (err) {
       showError(err instanceof Error ? err.message : `Could not read the file "${file.name}".`);
@@ -148,14 +204,14 @@ shareTextarea.addEventListener('paste', e => {
   const text = e.clipboardData?.getData('text');
   if (text) {
     e.preventDefault();
-    addShares(text);
+    addInput(text);
     shareTextarea.value = '';
   }
 });
 
 shareTextarea.addEventListener('blur', () => {
   if (shareTextarea.value.trim()) {
-    addShares(shareTextarea.value);
+    addInput(shareTextarea.value);
     shareTextarea.value = '';
   }
 });
@@ -219,8 +275,8 @@ function setProgress(text: string | null) {
 
 recoverBtn.addEventListener('click', async () => {
   clearError();
-  if (shares.size === 0) {
-    showError('Please add at least one share.');
+  if (!hasInput()) {
+    showError('Please add your shares or inheritance plan first.');
     return;
   }
   if (!passwordInput.value) {
@@ -232,32 +288,49 @@ recoverBtn.addEventListener('click', async () => {
   setProgress('Starting…');
 
   try {
-    const result = await recover(
-      Array.from(shares),
-      passwordInput.value,
-      keyfileB64,
-      stage => setProgress(`${stage}…`),
-    );
-
-    setProgress(null);
-    passwordInput.value = '';
-    if (togglePassword.textContent === 'Hide') {
-      passwordInput.type = 'password';
-      togglePassword.textContent = 'Show';
+    if (pendingPlan) {
+      const plan = await decryptPlan(
+        pendingPlan,
+        passwordInput.value,
+        keyfileB64,
+        stage => setProgress(`${stage}…`),
+      );
+      setProgress(null);
+      passwordInput.value = '';
+      if (togglePassword.textContent === 'Hide') {
+        passwordInput.type = 'password';
+        togglePassword.textContent = 'Show';
+      }
+      showPlanResult(plan);
+      startIdleTimers();
+    } else {
+      const result = await recover(
+        Array.from(shares),
+        passwordInput.value,
+        keyfileB64,
+        stage => setProgress(`${stage}…`),
+      );
+      setProgress(null);
+      passwordInput.value = '';
+      if (togglePassword.textContent === 'Hide') {
+        passwordInput.type = 'password';
+        togglePassword.textContent = 'Show';
+      }
+      showResult(result);
+      startIdleTimers();
     }
-    showResult(result);
-    startIdleTimers();
   } catch (err) {
     setProgress(null);
     showError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
   } finally {
-    recoverBtn.disabled = shares.size === 0;
+    recoverBtn.disabled = !hasInput();
   }
 });
 
 // ── Result ────────────────────────────────────────────────────────────
 
 function showResult(result: { secret: string; label?: string }) {
+  resultTitle.textContent = 'Your secret is ready.';
   revealContent.textContent = result.secret;
   if (result.label) {
     resultLabel.textContent = `Label: ${result.label}`;
@@ -265,6 +338,16 @@ function showResult(result: { secret: string; label?: string }) {
   } else {
     resultLabel.hidden = true;
   }
+  reveal.classList.remove('is-revealed');
+  resultCard.hidden = false;
+  resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showPlanResult(plan: unknown) {
+  resultTitle.textContent = 'Your inheritance plan is ready.';
+  revealContent.textContent = JSON.stringify(plan, null, 2);
+  resultLabel.textContent = 'DECRYPTED INHERITANCE PLAN';
+  resultLabel.hidden = false;
   reveal.classList.remove('is-revealed');
   resultCard.hidden = false;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -311,7 +394,8 @@ copyBtn.addEventListener('click', async () => {
 
 function clearEverything() {
   shares.clear();
-  renderShares();
+  pendingPlan = null;
+  renderInputs();
   passwordInput.value = '';
   keyfileB64 = undefined;
   keyfileInput.value = '';
@@ -368,4 +452,4 @@ function startIdleTimers() {
 
 // ── Init ──────────────────────────────────────────────────────────────
 
-renderShares();
+renderInputs();

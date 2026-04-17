@@ -386,6 +386,12 @@ body {
   border: 1px solid var(--gold-dim);
 }
 
+.share-list li .share-chip.plan-chip {
+  background: hsla(210, 55%, 50%, 0.12);
+  color: hsl(210, 60%, 68%);
+  border-color: hsla(210, 55%, 50%, 0.35);
+}
+
 .share-list li.bad .share-chip {
   background: var(--error-bg);
   color: var(--error);

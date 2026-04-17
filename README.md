@@ -76,13 +76,18 @@ The main seQRets app is AGPL-3.0-or-later. The intentional license difference re
 
 ## Scope
 
-This tool does **one thing**: recover a seQRets secret from shares.
+This tool does **two things**:
+
+1. **Recover a secret from shares.** Drop in QR images or paste share text, enter the password, get your secret back.
+2. **Decrypt an encrypted inheritance plan.** Drop in the encrypted plan JSON, enter the password, get the decrypted plan (shown as raw JSON — the lifeboat deliberately doesn't interpret the schema, so that plan-schema changes in the main app never break recovery).
+
+Both paths share the same cryptographic primitives and the same password/keyfile UI. The tool auto-detects which one you're giving it.
 
 It deliberately does not:
 
-- Create new shares (use the main app)
+- Create new shares or new inheritance plans (use the main app)
 - Scan QR codes with the camera (dependency weight, maintenance burden)
-- Decrypt inheritance instruction bundles (separate format, separate tool if needed)
+- Render the inheritance plan with a nice UI (would require tracking the plan schema, which evolves — raw JSON is future-proof)
 - Sync, upload, or phone home (ever)
 
 If you need any of those, use [app.seqrets.app](https://app.seqrets.app) or the desktop app.
