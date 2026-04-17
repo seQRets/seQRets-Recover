@@ -732,6 +732,27 @@ textarea:focus {
   pointer-events: auto;
 }
 
+.download-slot {
+  margin: 18px 0 20px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: hsla(30, 30%, 50%, 0.08);
+  border: 1px solid hsla(30, 30%, 55%, 0.25);
+}
+
+.download-slot .btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.download-hint {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .result-actions {
   display: flex;
   gap: 12px;

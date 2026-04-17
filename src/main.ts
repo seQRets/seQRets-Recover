@@ -1,4 +1,15 @@
-import { recover, extractShares, decryptPlan, tryParsePlan, type EncryptedPlan } from './recover';
+import {
+  recover,
+  extractShares,
+  decryptPlan,
+  tryParsePlan,
+  tryUnwrapFile,
+  isTextualMime,
+  decodeBase64Text,
+  decodeBase64Bytes,
+  type EncryptedPlan,
+  type FileEnvelope,
+} from './recover';
 import { decodeQrFromFile, isImageFile } from './qr';
 import { playChime } from './tone';
 import { Buffer } from 'buffer';
@@ -35,6 +46,8 @@ const revealOverlay = document.getElementById('reveal-overlay') as HTMLButtonEle
 const revealHide = document.getElementById('reveal-hide') as HTMLButtonElement;
 const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement;
 const doneBtn = document.getElementById('done-btn') as HTMLButtonElement;
+const downloadSlot = document.getElementById('download-slot') as HTMLDivElement;
+const downloadLink = document.getElementById('download-link') as HTMLAnchorElement;
 
 // ── Input state ───────────────────────────────────────────────────────
 // The user provides EITHER a set of shares OR a single encrypted inheritance
@@ -301,7 +314,12 @@ recoverBtn.addEventListener('click', async () => {
         passwordInput.type = 'password';
         togglePassword.textContent = 'Show';
       }
-      showPlanResult(plan);
+      const envelope = tryUnwrapFile(plan);
+      if (envelope) {
+        showFileResult(envelope);
+      } else {
+        showPlanResult(plan);
+      }
       startIdleTimers();
     } else {
       const result = await recover(
@@ -340,6 +358,7 @@ function showResult(result: { secret: string; label?: string }) {
   }
   reveal.classList.remove('is-revealed');
   resultCard.hidden = false;
+  downloadSlot.hidden = true;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -348,6 +367,37 @@ function showPlanResult(plan: unknown) {
   revealContent.textContent = JSON.stringify(plan, null, 2);
   resultLabel.textContent = 'DECRYPTED INHERITANCE PLAN';
   resultLabel.hidden = false;
+  reveal.classList.remove('is-revealed');
+  resultCard.hidden = false;
+  downloadSlot.hidden = true;
+  resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+let activeBlobUrl: string | null = null;
+
+function showFileResult(file: FileEnvelope) {
+  resultTitle.textContent = 'Your decrypted file is ready.';
+  resultLabel.textContent = `FILE: ${file.fileName}`;
+  resultLabel.hidden = false;
+
+  if (isTextualMime(file.fileType)) {
+    revealContent.textContent = decodeBase64Text(file.fileContent);
+  } else {
+    revealContent.textContent = `[ ${file.fileType || 'binary file'} — ${file.fileName} ]\n\nThis file is not plain text. Click the download button below to save it to your computer, then open it with the appropriate application.`;
+  }
+
+  if (activeBlobUrl) {
+    URL.revokeObjectURL(activeBlobUrl);
+    activeBlobUrl = null;
+  }
+  const bytes = decodeBase64Bytes(file.fileContent);
+  const blob = new Blob([bytes], { type: file.fileType || 'application/octet-stream' });
+  activeBlobUrl = URL.createObjectURL(blob);
+  downloadLink.href = activeBlobUrl;
+  downloadLink.download = file.fileName;
+  downloadLink.textContent = `Download "${file.fileName}"`;
+  downloadSlot.hidden = false;
+
   reveal.classList.remove('is-revealed');
   resultCard.hidden = false;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -404,6 +454,12 @@ function clearEverything() {
   revealContent.textContent = '';
   reveal.classList.remove('is-revealed');
   resultCard.hidden = true;
+  downloadSlot.hidden = true;
+  if (activeBlobUrl) {
+    URL.revokeObjectURL(activeBlobUrl);
+    activeBlobUrl = null;
+  }
+  downloadLink.removeAttribute('href');
   clearError();
   stopIdleTimers();
   if (clipboardClearTimer) {

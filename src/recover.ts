@@ -295,3 +295,43 @@ export async function decryptPlan(
     throw new Error('The decrypted payload is not valid JSON. The file may be damaged.');
   }
 }
+
+// The main app wraps every encrypted file — txt, md, pdf, docx, anything —
+// in this JSON envelope before encrypting, so heirs always recover a blob
+// with `fileContent` as base64 regardless of the original file type.
+
+export interface FileEnvelope {
+  fileName: string;
+  fileContent: string;
+  fileType: string;
+}
+
+export function tryUnwrapFile(payload: unknown): FileEnvelope | null {
+  if (!payload || typeof payload !== 'object') return null;
+  const obj = payload as Record<string, unknown>;
+  if (
+    typeof obj.fileName === 'string'
+    && typeof obj.fileContent === 'string'
+    && typeof obj.fileType === 'string'
+  ) {
+    return { fileName: obj.fileName, fileContent: obj.fileContent, fileType: obj.fileType };
+  }
+  return null;
+}
+
+export function isTextualMime(mime: string): boolean {
+  const m = mime.toLowerCase();
+  if (m.startsWith('text/')) return true;
+  if (m === 'application/json') return true;
+  if (m === 'application/xml') return true;
+  if (m.endsWith('+json') || m.endsWith('+xml')) return true;
+  return false;
+}
+
+export function decodeBase64Text(b64: string): string {
+  return textDecoder.decode(b64ToBytes(b64));
+}
+
+export function decodeBase64Bytes(b64: string): Uint8Array {
+  return b64ToBytes(b64);
+}
