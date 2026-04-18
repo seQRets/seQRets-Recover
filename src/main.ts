@@ -38,7 +38,9 @@ const togglePassword = document.getElementById('toggle-password') as HTMLButtonE
 
 const keyfileInput = document.getElementById('keyfile-input') as HTMLInputElement;
 const keyfileClear = document.getElementById('keyfile-clear') as HTMLButtonElement;
-const keyfileName = document.getElementById('keyfile-name') as HTMLDivElement;
+const keyfileName = document.getElementById('keyfile-name') as HTMLSpanElement;
+const keyfilePlaceholder = document.getElementById('keyfile-placeholder') as HTMLSpanElement;
+const keyfileDropzone = document.getElementById('keyfile-dropzone') as HTMLDivElement;
 
 const recoverBtn = document.getElementById('recover-btn') as HTMLButtonElement;
 const progress = document.getElementById('progress') as HTMLDivElement;
@@ -317,25 +319,77 @@ togglePassword.addEventListener('click', () => {
 
 let keyfileB64: string | undefined;
 
-keyfileInput.addEventListener('change', async () => {
-  const file = keyfileInput.files?.[0];
-  if (!file) {
-    keyfileB64 = undefined;
-    keyfileName.textContent = '';
-    keyfileClear.hidden = true;
-    return;
-  }
+async function setKeyfile(file: File) {
   const buf = new Uint8Array(await file.arrayBuffer());
   keyfileB64 = Buffer.from(buf).toString('base64');
-  keyfileName.textContent = `Using keyfile: ${file.name} (${buf.length} bytes)`;
+  keyfileName.textContent = `${file.name} (${buf.length.toLocaleString()} bytes)`;
+  keyfileName.hidden = false;
+  keyfilePlaceholder.hidden = true;
+  keyfileDropzone.classList.add('has-file');
   keyfileClear.hidden = false;
-});
+}
 
-keyfileClear.addEventListener('click', () => {
+function clearKeyfile() {
   keyfileB64 = undefined;
   keyfileInput.value = '';
   keyfileName.textContent = '';
+  keyfileName.hidden = true;
+  keyfilePlaceholder.hidden = false;
+  keyfileDropzone.classList.remove('has-file');
   keyfileClear.hidden = true;
+}
+
+keyfileDropzone.addEventListener('click', () => keyfileInput.click());
+keyfileDropzone.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    keyfileInput.click();
+  }
+});
+
+['dragenter', 'dragover'].forEach(evt => {
+  keyfileDropzone.addEventListener(evt, e => {
+    e.preventDefault();
+    e.stopPropagation();
+    keyfileDropzone.classList.add('is-dragging');
+  });
+});
+
+['dragleave', 'drop'].forEach(evt => {
+  keyfileDropzone.addEventListener(evt, e => {
+    e.preventDefault();
+    e.stopPropagation();
+    keyfileDropzone.classList.remove('is-dragging');
+  });
+});
+
+keyfileDropzone.addEventListener('drop', async e => {
+  const file = e.dataTransfer?.files?.[0];
+  if (!file) return;
+  try {
+    await setKeyfile(file);
+  } catch (err) {
+    showError(err instanceof Error ? err.message : `Could not read keyfile "${file.name}".`);
+  }
+});
+
+keyfileInput.addEventListener('change', async () => {
+  const file = keyfileInput.files?.[0];
+  if (!file) {
+    clearKeyfile();
+    return;
+  }
+  try {
+    await setKeyfile(file);
+  } catch (err) {
+    showError(err instanceof Error ? err.message : `Could not read keyfile "${file.name}".`);
+  }
+});
+
+keyfileClear.addEventListener('click', e => {
+  // Prevent the click from bubbling up to the dropzone and reopening the picker.
+  e.stopPropagation();
+  clearKeyfile();
 });
 
 // ── Error / progress ──────────────────────────────────────────────────
@@ -522,10 +576,7 @@ function clearEverything() {
   pendingPlan = null;
   renderInputs();
   passwordInput.value = '';
-  keyfileB64 = undefined;
-  keyfileInput.value = '';
-  keyfileName.textContent = '';
-  keyfileClear.hidden = true;
+  clearKeyfile();
   revealContent.textContent = '';
   reveal.classList.remove('is-revealed');
   resultCard.hidden = true;

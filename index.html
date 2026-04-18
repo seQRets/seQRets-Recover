@@ -91,11 +91,16 @@
             <details class="keyfile-expander">
               <summary>I also have a keyfile (optional)</summary>
               <p class="step-hint">A keyfile is a second factor. If your secret was created without one, skip this.</p>
-              <div class="keyfile-row">
-                <input type="file" id="keyfile-input" accept="*/*" />
-                <button type="button" class="btn-ghost" id="keyfile-clear" hidden>Remove</button>
+
+              <div class="keyfile-dropzone" id="keyfile-dropzone" tabindex="0" role="button" aria-label="Drop keyfile here, or click to browse">
+                <svg viewBox="0 0 24 24" class="keyfile-dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7M16 6l-4-4-4 4M12 2v14"/></svg>
+                <div class="keyfile-dropzone-text">
+                  <span id="keyfile-placeholder">Drop keyfile here <span class="muted">or click to browse</span></span>
+                  <span id="keyfile-name" hidden></span>
+                </div>
+                <input type="file" id="keyfile-input" accept="*/*" hidden />
               </div>
-              <div class="keyfile-name muted" id="keyfile-name"></div>
+              <button type="button" class="btn-ghost keyfile-clear-btn" id="keyfile-clear" hidden>Remove keyfile</button>
             </details>
           </div>
         </div>
