@@ -815,6 +815,22 @@ textarea:focus {
   font-size: 12px;
 }
 
+.foot-version {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.foot-version a {
+  color: var(--muted);
+}
+
+#app-version {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
 /* ── Small screens ────────────────────────────────────────────────── */
 
 @media (max-width: 560px) {

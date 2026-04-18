@@ -1,5 +1,12 @@
 import { defineConfig, type Plugin } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import { readFileSync } from 'node:fs';
+
+// Read the version from package.json at build time so the footer label on
+// every built HTML is guaranteed to match the tagged release. Updating
+// package.json alone is enough — no manual HTML edit required.
+const pkg = JSON.parse(readFileSync('./package.json', 'utf8')) as { version: string };
+const APP_VERSION = pkg.version;
 
 // Lock the built artifact down with a strict Content-Security-Policy.
 // The shipped HTML is fully self-contained: inline script, inline style, data-URI images.
@@ -49,8 +56,18 @@ const injectCsp: Plugin = {
   },
 };
 
+// Replace the __APP_VERSION__ placeholder in index.html with the value from
+// package.json. Runs on both `vite dev` and `vite build` so the footer shows
+// the right thing during local development too.
+const injectVersion: Plugin = {
+  name: 'inject-version',
+  transformIndexHtml(html) {
+    return html.replace(/__APP_VERSION__/g, APP_VERSION);
+  },
+};
+
 export default defineConfig({
-  plugins: [viteSingleFile(), injectCsp],
+  plugins: [viteSingleFile(), injectCsp, injectVersion],
   build: {
     target: 'es2022',
     cssCodeSplit: false,
