@@ -832,6 +832,20 @@ textarea:focus {
   font-size: 12px;
 }
 
+.foot-download {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.foot-download a {
+  color: var(--gold);
+}
+
+.foot-download a:hover {
+  color: var(--gold-hover);
+}
+
 .foot-version {
   margin-top: 10px;
   font-size: 12px;
