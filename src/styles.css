@@ -335,20 +335,19 @@ body {
 
 .paste-expander summary::before,
 .keyfile-expander summary::before {
-  content: '';
+  content: '>';
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-right: 1.6px solid currentColor;
-  border-bottom: 1.6px solid currentColor;
-  transform: rotate(-45deg) translate(-1px, 1px);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
   transition: transform 0.15s;
   flex-shrink: 0;
 }
 
 .paste-expander[open] summary::before,
 .keyfile-expander[open] summary::before {
-  transform: rotate(45deg) translate(-1px, -1px);
+  transform: rotate(90deg);
 }
 
 .paste-expander summary:hover,
