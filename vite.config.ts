@@ -23,6 +23,18 @@ const CSP = [
   "frame-ancestors 'none'",
 ].join('; ');
 
+// Additional privacy/security meta tags injected alongside the CSP. Only tags
+// that are reliably honored by browsers via <meta http-equiv> are included
+// here — things like Permissions-Policy and HSTS require real HTTP response
+// headers, which GitHub Pages does not allow us to set. (HSTS is provided
+// automatically by GitHub Pages.)
+const SECURITY_META = [
+  // Never send a Referer header when the user clicks a link out of the app.
+  // Relevant because the footer includes a link to seqrets.app; a Referer
+  // would reveal they were using the recovery tool.
+  '<meta name="referrer" content="no-referrer" />',
+].join('\n    ');
+
 const injectCsp: Plugin = {
   name: 'inject-csp',
   apply: 'build',
@@ -31,7 +43,7 @@ const injectCsp: Plugin = {
     handler(html) {
       return html.replace(
         '</title>',
-        `</title>\n    <meta http-equiv="Content-Security-Policy" content="${CSP}" />`,
+        `</title>\n    <meta http-equiv="Content-Security-Policy" content="${CSP}" />\n    ${SECURITY_META}`,
       );
     },
   },

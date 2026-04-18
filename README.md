@@ -97,6 +97,43 @@ default-src 'none'; connect-src 'none'; img-src data:; ...
 
 This means the browser itself refuses to let the page open a network connection, even if the file were tampered with to try. You can confirm this by viewing the `<meta http-equiv="Content-Security-Policy">` tag in View Source, or by watching the Network tab in DevTools while you use the page — it must stay empty.
 
+The built HTML also sets `<meta name="referrer" content="no-referrer">` so the footer link to `seqrets.app` does not leak a Referer header revealing you were using the recovery tool.
+
+### Is the hosted version (https://seqrets.github.io/seQRets-Recover/) safe?
+
+Yes — and the threat model is worth understanding explicitly.
+
+When you open the hosted URL, you are trusting three things:
+
+1. **GitHub Pages serves the bytes we published.** Every push to `main` builds reproducibly and deploys via a committed [GitHub Actions workflow](.github/workflows/pages.yml). The hash of the served `recover.html` matches the hash attached to the corresponding GitHub Release — you can verify this yourself:
+   ```bash
+   curl -s https://seqrets.github.io/seQRets-Recover/recover.html | shasum -a 256
+   ```
+   The result must match the SHA-256 in the latest [release notes](https://github.com/seQRets/seQRets-Recover/releases).
+
+2. **TLS / HTTPS is not compromised between you and GitHub.** Standard web PKI — same as your bank.
+
+3. **The CSP enforces what the code claims.** Even if the bytes were tampered with, `connect-src 'none'` prevents the page from opening a network connection. An attacker would have to compromise both the served file AND your browser's CSP enforcement to exfiltrate a secret.
+
+**If you prefer not to trust GitHub as a server at all**, download `recover.html` from the [latest release](https://github.com/seQRets/seQRets-Recover/releases/latest), verify its SHA-256 against the release notes on a different device, disconnect from the internet, and open the local file. The downloaded file and the hosted file are byte-identical.
+
+### Reporting a vulnerability
+
+Report security issues privately via [GitHub's private vulnerability reporting](https://github.com/seQRets/seQRets-Recover/security/advisories/new). This is also linked from `/.well-known/security.txt` on the hosted site.
+
+Please include: the version/commit you observed the issue on, steps to reproduce, and what an attacker could achieve. We prioritize issues by impact to secret confidentiality.
+
+### Security review scope
+
+Because this is a static, client-side-only app with no backend, no accounts, and no user-generated HTML, the conventional web-app review checklist is largely inapplicable. The real review surface is:
+
+- The ~500 lines of TypeScript in `src/` (auditable in an afternoon)
+- The pinned dependencies in `package.json` (cryptographic primitives: `@noble/ciphers`, `@noble/hashes`, `@scure/bip39`, `shamir-secret-sharing`; image decoding: `@zxing/library`; no frameworks)
+- The CSP in `vite.config.ts`
+- The reproducibility of the build (locked with `package-lock.json`)
+
+There is no server-side code to review. There is no database. There are no credentials. There is no session management. No data is persisted or transmitted.
+
 ## Design goals, in order of priority
 
 1. **It must work in 30 years.** No build-time network fetches. No CDN runtime dependencies. No frameworks with short lifespans. System fonts only.

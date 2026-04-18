@@ -1,0 +1,13 @@
+# seQRets Recover — security contact
+#
+# This is a standalone, client-side-only recovery tool. The hosted version at
+# https://seqrets.github.io/seQRets-Recover/ serves the same bytes as the
+# GitHub Release asset; both are built reproducibly from the tagged commit.
+#
+# Report security issues privately via GitHub's vulnerability reporting:
+
+Contact: https://github.com/seQRets/seQRets-Recover/security/advisories/new
+Expires: 2027-04-18T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://seqrets.github.io/seQRets-Recover/.well-known/security.txt
+Policy: https://github.com/seQRets/seQRets-Recover#reporting-a-vulnerability
