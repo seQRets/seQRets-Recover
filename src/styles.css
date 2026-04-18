@@ -299,11 +299,14 @@ body {
   font-weight: 400;
 }
 
-/* Touch-device text swap for the dropzones.
+/* Touch-device adjustments for the dropzones.
    Drag-and-drop does not work on phones/tablets, so on touch-only devices
-   (coarse pointer + no hover) we hide the "Drop files here" copy and show
-   "Tap to choose..." instead. A touch-enabled laptop with a mouse keeps
-   the desktop copy because it still has a fine pointer available. */
+   (coarse pointer + no hover) we:
+     1. Swap the "Drop files here" copy for "Tap to choose..."
+     2. Restyle the zones as actual buttons — solid border, horizontal
+        layout, smaller padding — so they stop reading as drop zones.
+   A touch-enabled laptop with a mouse keeps the desktop treatment because
+   it still has a fine pointer available for dragging. */
 .dropzone-text-touch {
   display: none;
 }
@@ -314,6 +317,29 @@ body {
   }
   .dropzone-text-touch {
     display: inline;
+  }
+
+  .dropzone {
+    border-style: solid;
+    border-color: var(--border-strong);
+    flex-direction: row;
+    justify-content: center;
+    padding: 14px 18px;
+    gap: 12px;
+    background: var(--surface-elevated);
+  }
+  .dropzone-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--text);
+  }
+  .dropzone-text {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .keyfile-dropzone {
+    border-style: solid;
   }
 }
 
