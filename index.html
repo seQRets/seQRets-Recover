@@ -44,14 +44,33 @@
             <h2>Add shares or an inheritance plan</h2>
             <p class="step-hint">Drop in QR images from your Qards, share text files, or an encrypted inheritance-plan JSON file. We'll figure out which one you have. Shares look like <code>seQRets|…|sha256:…</code>; plans are JSON with <code>salt</code> and <code>data</code> fields.</p>
 
-            <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images, share files, or a plan file here, or click to browse">
-              <svg viewBox="0 0 24 24" class="dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-              <div class="dropzone-text">Drop files here <span class="muted">or click to browse</span></div>
-              <input type="file" id="file-input" multiple accept="image/*,.txt,.json,text/plain,application/json" hidden />
+            <div class="input-methods">
+              <button type="button" class="btn btn-primary scan-btn" id="scan-btn" hidden>
+                <svg viewBox="0 0 24 24" class="scan-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+                Scan with camera
+              </button>
+
+              <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images, share files, or a plan file here, or click to browse">
+                <svg viewBox="0 0 24 24" class="dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <div class="dropzone-text">Drop files here <span class="muted">or click to browse</span></div>
+                <input type="file" id="file-input" multiple accept="image/*,.txt,.json,text/plain,application/json" hidden />
+              </div>
             </div>
 
-            <details class="paste-expander">
+            <p class="scan-unavailable muted" id="scan-unavailable" hidden>
+              Camera scanning is unavailable when this page is opened directly from a file.
+              For the live-scan experience, open the hosted version at
+              <a href="https://seqrets.github.io/seQRets-Recover/" rel="noopener">seqrets.github.io/seQRets-Recover</a>.
+              You can still upload or paste your share below.
+            </p>
+
+            <details class="paste-expander" id="paste-expander">
               <summary>Or paste share text</summary>
+              <p class="step-hint">
+                On your phone, open the camera app and point it at the QR on your Qard.
+                When the text appears above the QR, tap it, choose <strong>Copy</strong>,
+                then paste it here.
+              </p>
               <textarea id="share-textarea" rows="5" placeholder="Paste one or more shares. One per line, or all in one block — we'll figure it out."></textarea>
             </details>
 
@@ -143,6 +162,20 @@
         </p>
       </footer>
     </main>
+
+    <div class="scan-modal" id="scan-modal" hidden role="dialog" aria-modal="true" aria-labelledby="scan-modal-title">
+      <div class="scan-modal-backdrop" id="scan-modal-backdrop"></div>
+      <div class="scan-modal-panel">
+        <h2 id="scan-modal-title" class="scan-modal-title">Point your camera at the QR</h2>
+        <p class="scan-modal-sub">Hold the Qard flat and steady. The scan happens automatically.</p>
+        <div class="scan-video-wrap">
+          <video id="scan-video" playsinline muted></video>
+          <div class="scan-reticle" aria-hidden="true"></div>
+        </div>
+        <div class="scan-status" id="scan-status" aria-live="polite">Starting camera…</div>
+        <button type="button" class="btn btn-ghost" id="scan-close">Cancel</button>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -44,7 +44,7 @@ All dependencies are MIT/BSD licensed, widely used, and have existing independen
 
 ```bash
 npm install
-npm run build     # produces dist/index.html and prints its SHA-256
+npm run build     # produces dist/recover.html and prints its SHA-256
 ```
 
 The build output is the entire app: HTML, CSS, JS, and crypto libraries inlined into one file. No CDN references. No runtime network requests. Save it, archive it, mirror it, print it — it will work offline on any machine with a modern browser.

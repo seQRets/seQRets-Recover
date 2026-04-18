@@ -10,7 +10,7 @@ import {
   type EncryptedPlan,
   type FileEnvelope,
 } from './recover';
-import { decodeQrFromFile, isImageFile } from './qr';
+import { decodeQrFromFile, isImageFile, startCameraScan, cameraScanSupported } from './qr';
 import { playChime } from './tone';
 import { Buffer } from 'buffer';
 
@@ -24,6 +24,14 @@ const dropzone = document.getElementById('dropzone') as HTMLDivElement;
 const fileInput = document.getElementById('file-input') as HTMLInputElement;
 const shareTextarea = document.getElementById('share-textarea') as HTMLTextAreaElement;
 const shareList = document.getElementById('share-list') as HTMLUListElement;
+const scanBtn = document.getElementById('scan-btn') as HTMLButtonElement;
+const scanUnavailable = document.getElementById('scan-unavailable') as HTMLParagraphElement;
+const pasteExpander = document.getElementById('paste-expander') as HTMLDetailsElement;
+const scanModal = document.getElementById('scan-modal') as HTMLDivElement;
+const scanModalBackdrop = document.getElementById('scan-modal-backdrop') as HTMLDivElement;
+const scanVideo = document.getElementById('scan-video') as HTMLVideoElement;
+const scanStatus = document.getElementById('scan-status') as HTMLDivElement;
+const scanClose = document.getElementById('scan-close') as HTMLButtonElement;
 
 const passwordInput = document.getElementById('password') as HTMLInputElement;
 const togglePassword = document.getElementById('toggle-password') as HTMLButtonElement;
@@ -206,10 +214,77 @@ async function readFiles(files: File[]) {
         addInput(text);
       }
     } catch (err) {
-      showError(err instanceof Error ? err.message : `Could not read the file "${file.name}".`);
+      const msg = err instanceof Error ? err.message : `Could not read the file "${file.name}".`;
+      showError(msg);
+      // If we failed on an image, make the paste fallback obviously available
+      // so the user doesn't have to hunt for it.
+      if (isImageFile(file)) {
+        pasteExpander.open = true;
+        pasteExpander.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
   }
 }
+
+// ── Camera scan ───────────────────────────────────────────────────────
+
+if (cameraScanSupported()) {
+  scanBtn.hidden = false;
+} else {
+  scanUnavailable.hidden = false;
+}
+
+let activeScan: { stop: () => void } | null = null;
+
+function closeScanModal() {
+  if (activeScan) {
+    try { activeScan.stop(); } catch { /* ignore */ }
+    activeScan = null;
+  }
+  // Defensive: stop any leftover media tracks on the video element.
+  const stream = scanVideo.srcObject as MediaStream | null;
+  if (stream) {
+    for (const track of stream.getTracks()) track.stop();
+    scanVideo.srcObject = null;
+  }
+  scanModal.hidden = true;
+  scanStatus.classList.remove('is-error');
+  scanStatus.textContent = '';
+}
+
+async function openScanModal() {
+  clearError();
+  scanModal.hidden = false;
+  scanStatus.classList.remove('is-error');
+  scanStatus.textContent = 'Starting camera…';
+
+  try {
+    activeScan = await startCameraScan(
+      scanVideo,
+      text => {
+        // Got a decode. Close the modal and feed the text into the normal pipeline.
+        closeScanModal();
+        addInput(text);
+      },
+      err => {
+        scanStatus.classList.add('is-error');
+        scanStatus.textContent = err.message;
+      },
+    );
+    scanStatus.textContent = 'Looking for a QR code…';
+  } catch (err) {
+    scanStatus.classList.add('is-error');
+    scanStatus.textContent =
+      err instanceof Error ? err.message : 'Could not start the camera.';
+  }
+}
+
+scanBtn.addEventListener('click', openScanModal);
+scanClose.addEventListener('click', closeScanModal);
+scanModalBackdrop.addEventListener('click', closeScanModal);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !scanModal.hidden) closeScanModal();
+});
 
 // ── Textarea paste ────────────────────────────────────────────────────
 
