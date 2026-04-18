@@ -16,13 +16,20 @@ const distDir = path.resolve('dist');
 const src = path.join(distDir, 'index.html');
 const dst = path.join(distDir, 'recover.html');
 
-if (!fs.existsSync(src)) {
-  console.error(`finalize: expected ${src} to exist`);
-  process.exit(1);
-}
-
 // Step 1 — rename index.html → recover.html (the canonical artifact).
-fs.copyFileSync(src, dst);
+// We deliberately do NOT pre-check existence here: any race between check
+// and use is an invitation to TOCTOU bugs (CodeQL js/file-system-race).
+// If the file is missing, copyFileSync throws ENOENT, which is just as
+// clear and atomic with the operation that actually depends on it.
+try {
+  fs.copyFileSync(src, dst);
+} catch (err) {
+  if (err && err.code === 'ENOENT') {
+    console.error(`finalize: expected ${src} to exist (did the Vite build run?)`);
+    process.exit(1);
+  }
+  throw err;
+}
 
 // Step 2 — replace dist/index.html with a tiny redirect page so the Pages root
 // URL takes visitors straight to the app. This file is small and separate from

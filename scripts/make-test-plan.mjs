@@ -7,6 +7,8 @@ import { xchacha20poly1305 } from '@noble/ciphers/chacha';
 import { gzipSync } from 'fflate';
 import { writeFileSync } from 'node:fs';
 import { randomBytes } from 'node:crypto';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const PASSWORD = 'test-password-123';
 const MD = `# Test Plan\n\nThis is a **markdown** file encrypted as an inheritance plan.\n`;
@@ -36,5 +38,12 @@ const out = {
   data: Buffer.from(combined).toString('base64'),
 };
 
-writeFileSync('/tmp/test-plan.json', JSON.stringify(out, null, 2));
-console.log('Wrote /tmp/test-plan.json — password:', PASSWORD);
+// Write to a project-local path rather than /tmp. /tmp is a world-writable
+// shared directory where predictable filenames are vulnerable to symlink
+// attacks from other local users (CodeQL js/insecure-temporary-file). A
+// path inside this repo's scripts/ directory is owned by the developer and
+// cannot be pre-created by an attacker.
+const here = path.dirname(fileURLToPath(import.meta.url));
+const outPath = path.join(here, 'test-plan.json');
+writeFileSync(outPath, JSON.stringify(out, null, 2));
+console.log(`Wrote ${outPath} — password: ${PASSWORD}`);
