@@ -6,13 +6,35 @@ A minimal, single-file, offline recovery tool for [seQRets](https://seqrets.app)
 
 ---
 
-## 👉 Open the app here: **https://seqrets.github.io/seQRets-Recover/**
+## Two ways to use it — pick whichever feels right
 
-That link is everything you need. Click it, follow the on-screen steps, and your secret comes back. You do **not** need to install anything or download any files first.
+Both paths give you the exact same recovery tool. **The files are byte-identical** — the hosted page serves the same `recover.html` that the download link gives you. Pick the one that fits your situation.
 
-On that hosted page you can also **scan your printed Qards directly with your computer or phone camera** — no photos, no typing, no copying.
+### 🌐 Option 1 — Use it online (easiest)
 
-If you prefer to have a copy on your own computer (recommended for long-term safekeeping), see [For heirs and recipients](#for-heirs-and-recipients) below.
+## 👉 **https://seqrets.github.io/seQRets-Recover/**
+
+Click the link, follow the on-screen steps, your secret comes back. Nothing to install. Nothing to download. You can also **scan your printed Qards directly with your computer or phone camera** — no photos, no typing, no copying.
+
+### 💾 Option 2 — Download and use offline (safest long-term)
+
+## 👉 **[Download recover.html (latest release)](https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html)**
+
+Save the single `recover.html` file to your computer (or a USB stick, or print it, or email it to yourself). It works forever, without internet, on any computer with a web browser — even 30 years from now. This is the copy to keep with your estate documents.
+
+Full instructions for the offline path are in [For heirs and recipients](#for-heirs-and-recipients) below.
+
+### Which should I choose?
+
+| If you… | Use |
+|---|---|
+| Need to recover your secret right now and have internet | 🌐 **Online** |
+| Want to scan printed Qards with your camera | 🌐 **Online** (camera requires HTTPS) |
+| Are preparing an inheritance packet for your heirs | 💾 **Download** (alongside the printed Qards) |
+| Don't want to depend on GitHub being online in the future | 💾 **Download** |
+| Are just testing / exploring | 🌐 **Online** |
+
+You can do both — open the hosted page today to recover something, and also download a copy to keep with your Qards for the future. They're the same file.
 
 ---
 
