@@ -306,17 +306,26 @@ body {
   margin-top: 14px;
 }
 
+/* The summary elements are styled as actual secondary buttons so users
+   recognize them as pressable — previously they looked like muted text links
+   with a disclosure triangle, which scanned as list bullets. */
 .paste-expander summary,
 .keyfile-expander summary {
   cursor: pointer;
+  font-family: var(--sans);
   font-size: 14px;
-  color: var(--muted);
-  padding: 6px 0;
+  font-weight: 500;
+  color: var(--text-strong);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
   user-select: none;
   list-style: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .paste-expander summary::-webkit-details-marker,
@@ -326,25 +335,34 @@ body {
 
 .paste-expander summary::before,
 .keyfile-expander summary::before {
-  content: '▸';
-  font-size: 10px;
-  transition: transform 0.15s;
+  content: '';
   display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: rotate(-45deg) translate(-1px, 1px);
+  transition: transform 0.15s;
+  flex-shrink: 0;
 }
 
 .paste-expander[open] summary::before,
 .keyfile-expander[open] summary::before {
-  transform: rotate(90deg);
+  transform: rotate(45deg) translate(-1px, -1px);
 }
 
 .paste-expander summary:hover,
-.keyfile-expander summary:hover {
-  color: var(--text-strong);
+.keyfile-expander summary:hover,
+.paste-expander summary:focus-visible,
+.keyfile-expander summary:focus-visible {
+  background: var(--surface-elevated);
+  border-color: var(--gold-dim);
+  outline: none;
 }
 
 .paste-expander[open] summary,
 .keyfile-expander[open] summary {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* ── Share list ───────────────────────────────────────────────────── */
