@@ -11,6 +11,12 @@ const CSP = [
   "style-src 'unsafe-inline'",
   "img-src data:",
   "font-src data:",
+  // media-src allows the live-camera-scan feature to bind a MediaStream to
+  // <video>. MediaStream itself is governed by the permission prompt, not
+  // CSP — but some browsers still check media-src for the element source,
+  // so we permit blob: (used by getUserMedia-related APIs) while keeping
+  // everything else blocked.
+  "media-src blob:",
   "connect-src 'none'",
   "form-action 'none'",
   "base-uri 'none'",

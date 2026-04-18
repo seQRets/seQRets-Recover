@@ -4,9 +4,31 @@ A minimal, single-file, offline recovery tool for [seQRets](https://seqrets.app)
 
 **If the seQRets app is ever unavailable to you — website gone, company dissolved, no internet — this tool will still recover your secret.** One HTML file. No install. No network. No dependencies beyond a web browser.
 
+---
+
+## 👉 Open the app here: **https://seqrets.github.io/seQRets-Recover/**
+
+That link is everything you need. Click it, follow the on-screen steps, and your secret comes back. You do **not** need to install anything or download any files first.
+
+On that hosted page you can also **scan your printed Qards directly with your computer or phone camera** — no photos, no typing, no copying.
+
+If you prefer to have a copy on your own computer (recommended for long-term safekeeping), see [For heirs and recipients](#for-heirs-and-recipients) below.
+
+---
+
 ## For heirs and recipients
 
-### Before you start — disconnect from the internet
+### The simplest path
+
+Open **https://seqrets.github.io/seQRets-Recover/** in any modern browser. Click **Scan with camera** and point it at your Qards one by one. Enter your password. Click **Recover**. Done.
+
+That's it. The page works entirely inside your browser — nothing you type, upload, or scan ever leaves your device.
+
+### The offline path (for long-term safety)
+
+For maximum safety — especially if you're storing a copy with your estate documents — keep a downloaded copy of `recover.html` alongside your Qards. It works forever, with no internet, on any computer.
+
+#### Before you start — disconnect from the internet
 
 This is the single most important thing you can do to protect your secrets while recovering them. `recover.html` runs entirely on your device and does not need the internet to work — so don't give it the chance.
 
@@ -16,13 +38,15 @@ This is the single most important thing you can do to protect your secrets while
 
 **Why this matters:** the app is designed not to send data anywhere, and its built-in Content-Security-Policy tells the browser to refuse network requests. But the safest layer of defense is the one that doesn't depend on anything working correctly. If Wi-Fi is off, no misconfiguration, no tampering, and no software bug can leak your secret.
 
-### Using it
+#### Using it offline
 
 1. Download `recover.html` (or open the copy included with your inheritance packet). The file is published under [Releases](https://github.com/seQRets/seQRets-Recover/releases) — look under **Assets** on the most recent release. For a direct link to the latest version: [download recover.html](https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html).
 2. Disconnect from the internet (see above).
 3. Open `recover.html` in any web browser — just double-click the file.
 4. Paste or drag in your shares (or drop an encrypted inheritance plan JSON file), enter the password, and click **Recover**.
 5. Your secret appears. That's it.
+
+Note: the "Scan with camera" button is only available on the hosted version above — browsers block camera access when HTML is opened from a local file. The offline copy still accepts photos of your Qards via drag-and-drop or file upload.
 
 If you need help, see the on-screen instructions — the page is designed to be used without any prior knowledge.
 
