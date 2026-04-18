@@ -50,9 +50,12 @@
                 Scan with camera
               </button>
 
-              <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Drop QR images, share files, or a plan file here, or click to browse">
+              <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Tap or click to choose QR images, share files, or a plan file — or drag them here on desktop">
                 <svg viewBox="0 0 24 24" class="dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-                <div class="dropzone-text">Drop files here <span class="muted">or click to browse</span></div>
+                <div class="dropzone-text">
+                  <span class="dropzone-text-desktop">Drop files here <span class="muted">or click to browse</span></span>
+                  <span class="dropzone-text-touch">Tap to choose files</span>
+                </div>
                 <input type="file" id="file-input" multiple accept="image/*,.txt,.json,text/plain,application/json" hidden />
               </div>
             </div>
@@ -92,10 +95,13 @@
               <summary>I also have a keyfile (optional)</summary>
               <p class="step-hint">A keyfile is a second factor. If your secret was created without one, skip this.</p>
 
-              <div class="keyfile-dropzone" id="keyfile-dropzone" tabindex="0" role="button" aria-label="Drop keyfile here, or click to browse">
+              <div class="keyfile-dropzone" id="keyfile-dropzone" tabindex="0" role="button" aria-label="Tap or click to choose a keyfile — or drag one here on desktop">
                 <svg viewBox="0 0 24 24" class="keyfile-dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7M16 6l-4-4-4 4M12 2v14"/></svg>
                 <div class="keyfile-dropzone-text">
-                  <span id="keyfile-placeholder">Drop keyfile here <span class="muted">or click to browse</span></span>
+                  <span id="keyfile-placeholder">
+                    <span class="dropzone-text-desktop">Drop keyfile here <span class="muted">or click to browse</span></span>
+                    <span class="dropzone-text-touch">Tap to choose a keyfile</span>
+                  </span>
                   <span id="keyfile-name" hidden></span>
                 </div>
                 <input type="file" id="keyfile-input" accept="*/*" hidden />

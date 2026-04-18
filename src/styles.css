@@ -299,6 +299,24 @@ body {
   font-weight: 400;
 }
 
+/* Touch-device text swap for the dropzones.
+   Drag-and-drop does not work on phones/tablets, so on touch-only devices
+   (coarse pointer + no hover) we hide the "Drop files here" copy and show
+   "Tap to choose..." instead. A touch-enabled laptop with a mouse keeps
+   the desktop copy because it still has a fine pointer available. */
+.dropzone-text-touch {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .dropzone-text-desktop {
+    display: none;
+  }
+  .dropzone-text-touch {
+    display: inline;
+  }
+}
+
 /* ── Paste expander ───────────────────────────────────────────────── */
 
 .paste-expander,
