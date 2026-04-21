@@ -1063,3 +1063,98 @@ textarea:focus {
 .scan-status.is-error {
   color: var(--error);
 }
+/* === Append to src/styles.css ========================================
+   New styles for the inline "more info" disclosures that expand full
+   guidance under each tightened sentence. Self-contained — only touches
+   new class names (.more, .more-body) plus a .step-hint rule that now
+   also applies to <div class="step-hint"> (needed because <details>
+   can't nest inside <p>). ================================================== */
+
+.step-hint {
+  /* ensure div.step-hint matches p.step-hint spacing */
+  display: block;
+}
+
+/* Inline disclosure — sits next to a short sentence and expands a
+   quieter paragraph of full guidance. */
+.more {
+  display: inline;
+  margin-left: 0.35em;
+}
+
+.more > summary {
+  display: inline;
+  cursor: pointer;
+  list-style: none;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.more > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 10px;
+  transition: transform 0.15s;
+  transform: translateY(-1px);
+}
+
+.more[open] > summary::before {
+  transform: rotate(90deg) translateX(-1px);
+}
+
+.more > summary:hover {
+  background: var(--gold-bg);
+}
+
+.more[open] > summary .more-label-closed {
+  display: none;
+}
+
+.more > summary .more-label-open {
+  display: none;
+}
+
+.more[open] > summary .more-label-open {
+  display: inline;
+}
+
+.more-body {
+  display: block;
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold-dim);
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.more-body strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.more-body code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.more-body a {
+  color: var(--gold);
+}

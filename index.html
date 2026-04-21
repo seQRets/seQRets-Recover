@@ -25,16 +25,23 @@
 
       <section class="hero">
         <h1>Let's get your secret back.</h1>
-        <p class="hero-sub">
-          If you have the shares and the password, this page will recover your secret.
-          Nothing you enter here leaves your device.
-        </p>
-        <p class="hero-tip">
-          <strong>For extra safety:</strong> turn off Wi-Fi and unplug any Ethernet cable before
-          entering your password. Then open this page in a private / incognito browser window
-          with extensions disabled. That way nothing can leave your device and nothing is saved
-          or readable by other software.
-        </p>
+        <div class="hero-sub">
+          Shares + password &rarr; your secret. Recover sends nothing, stores nothing.<details class="more"><summary><span class="more-label-closed">How it works</span><span class="more-label-open">Less</span></summary><span class="more-body">
+            This page runs entirely in your browser. It doesn't collect, store, or transmit
+            what you paste, type, or upload &mdash; you can verify this in your browser's
+            Network tab. (Recover can't protect you from malware on your device; see the
+            safety note below.)
+          </span></details>
+        </div>
+        <div class="hero-tip">
+          <strong>Use a trusted device.</strong> Go offline, use a private window, disable extensions.<details class="more"><summary><span class="more-label-closed">Why</span><span class="more-label-open">Less</span></summary><span class="more-body">
+            Recover runs locally, but it can't see whether your device is clean. Malware,
+            shady extensions, or keyloggers can read what you type regardless of what this
+            page does. For real safety, use a device you trust, turn off Wi-Fi and unplug
+            any Ethernet cable before entering your password, and open the page in a private
+            / incognito window with extensions disabled.
+          </span></details>
+        </div>
       </section>
 
       <section class="card" id="recover-card">
@@ -42,7 +49,12 @@
           <div class="step-num" aria-hidden="true">1</div>
           <div class="step-body">
             <h2>Add shares or an inheritance plan</h2>
-            <p class="step-hint">Drop in QR images from your Qards, share text files, or an encrypted inheritance-plan JSON file. We'll figure out which one you have. Shares look like <code>seQRets|…|sha256:…</code>; plans are JSON with <code>salt</code> and <code>data</code> fields.</p>
+            <div class="step-hint">QR images, share files, or an inheritance-plan JSON. We auto-detect.<details class="more"><summary><span class="more-label-closed">Formats</span><span class="more-label-open">Less</span></summary><span class="more-body">
+              Drop in QR images from your Qards, share text files, or an encrypted inheritance-plan
+              JSON file &mdash; we'll figure out which one you have. Shares look like
+              <code>seQRets|&hellip;|sha256:&hellip;</code>; plans are JSON with <code>salt</code>
+              and <code>data</code> fields.
+            </span></details></div>
 
             <div class="input-methods">
               <button type="button" class="btn btn-primary scan-btn" id="scan-btn" hidden>
@@ -69,11 +81,11 @@
 
             <details class="paste-expander" id="paste-expander">
               <summary>Or paste share text</summary>
-              <p class="step-hint">
+              <div class="step-hint">Point your phone camera at the Qard, tap the detected text, copy, paste here.<details class="more"><summary><span class="more-label-closed">Walk me through it</span><span class="more-label-open">Less</span></summary><span class="more-body">
                 On your phone, open the camera app and point it at the QR on your Qard.
                 When the text appears above the QR, tap it, choose <strong>Copy</strong>,
                 then paste it here.
-              </p>
+              </span></details></div>
               <textarea id="share-textarea" rows="5" placeholder="Paste one or more shares. One per line, or all in one block — we'll figure it out."></textarea>
             </details>
 
@@ -85,7 +97,7 @@
           <div class="step-num" aria-hidden="true">2</div>
           <div class="step-body">
             <h2>Enter your password</h2>
-            <p class="step-hint">The password used when the shares were created. Capitalization and spaces matter.</p>
+            <p class="step-hint">The one you used when the shares were created. Case- and space-sensitive.</p>
             <div class="password-row">
               <input type="password" id="password" autocomplete="off" spellcheck="false" placeholder="Password" />
               <button type="button" class="btn-ghost" id="toggle-password" aria-label="Show password">Show</button>
@@ -93,7 +105,10 @@
 
             <details class="keyfile-expander">
               <summary>I also have a keyfile (optional)</summary>
-              <p class="step-hint">A keyfile is a second factor. If your secret was created without one, skip this.</p>
+              <div class="step-hint">Second factor. Skip if you didn't use one.<details class="more"><summary><span class="more-label-closed">What's a keyfile</span><span class="more-label-open">Less</span></summary><span class="more-body">
+                A keyfile is a second factor stored separately from your password. If your secret
+                was created without one, skip this.
+              </span></details></div>
 
               <div class="keyfile-dropzone" id="keyfile-dropzone" tabindex="0" role="button" aria-label="Tap or click to choose a keyfile — or drag one here on desktop">
                 <svg viewBox="0 0 24 24" class="keyfile-dropzone-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7M16 6l-4-4-4 4M12 2v14"/></svg>
@@ -115,7 +130,10 @@
           <div class="step-num" aria-hidden="true">3</div>
           <div class="step-body">
             <h2>Recover</h2>
-            <p class="step-hint">When you're ready, click the button. The slow part (key derivation) takes about 10–30 seconds on most computers.</p>
+            <div class="step-hint">Click below. Takes 10&ndash;30 seconds.<details class="more"><summary><span class="more-label-closed">Why the wait</span><span class="more-label-open">Less</span></summary><span class="more-body">
+              The slow part is key derivation &mdash; it's deliberately expensive so a stolen share
+              can't be brute-forced. 10&ndash;30 seconds on most computers is normal.
+            </span></details></div>
             <button type="button" class="btn btn-primary" id="recover-btn">Recover my secret</button>
             <div class="progress" id="progress" role="status" aria-live="polite" hidden>
               <div class="spinner" aria-hidden="true"></div>
@@ -164,9 +182,9 @@
 
       <footer class="foot">
         <p>
-          This is <a href="https://github.com/seQRets/seQRets-Recover" rel="noopener">seQRets Recover</a> —
+          This is <a href="https://github.com/seQRets/seQRets-Recover" rel="noopener">seQRets Recover</a> &mdash;
           an independent, single-file, offline reference implementation. MIT licensed.
-          Runs entirely in your browser, never sends data anywhere.
+          Runs entirely in your browser. Doesn't collect, store, or transmit your data.
         </p>
         <p class="foot-download">
           💾 <a href="https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html" rel="noopener"><strong>Download recover.html</strong></a> to keep a copy for offline use, or
