@@ -1,9 +1,27 @@
 // seQRets Recover — minimal reference implementation of the seQRets recovery path.
 //
-// Share format (plaintext, self-describing):
-//   seQRets|<base64 salt>|<base64 nonce+ciphertext>|sha256:<hex>
+// Share format (three accepted shapes, parsed from a single string split by '|'):
 //
-// The 4th segment is optional for backward compatibility with pre-v1.6 shares.
+//   1. Legacy, no hash:        seQRets|salt|data
+//   2. Hash, no metadata:      seQRets|salt|data|sha256:<64hex>
+//   3. Hash + metadata (v1.11+): seQRets|salt|data|sha256:<64hex>|t=K|n=N|i=I
+//
+// Parser rules:
+//   - "seQRets" is always at index 0; salt and data (base64) at 1 and 2.
+//   - Index 3, when present, is ALWAYS sha256:<hex>. Position is fixed;
+//     presence is optional.
+//   - Indexes 4+ are optional "key=value" metadata. Defined keys for v1.11:
+//       t = threshold (minimum shares required)
+//       n = total shares created in the set
+//       i = 1-based share index within the set
+//     Unknown keys MUST be ignored, not rejected (forward compat).
+//
+// Hash coverage:
+//   - The hash protects salt + data + ALL metadata in wire order.
+//     Hash input for shape (3) is: seQRets|salt|data|t=K|n=N|i=I
+//     (note: the hash segment itself is excluded from the hash input).
+//     Hash input for shape (2) is: seQRets|salt|data
+//     A tamperer cannot change t/n/i without invalidating the hash.
 //
 // Pipeline on recovery:
 //   shares → parse → combine (Shamir GF(256)) → split nonce(24)|ciphertext
@@ -37,6 +55,12 @@ export interface ParsedShare {
   salt: string;
   data: string;
   hashValid: boolean | null;
+  /** Minimum shares required to recover (only set on v1.11+ shares). */
+  threshold: number | null;
+  /** Total shares created in the set (only set on v1.11+ shares). */
+  total: number | null;
+  /** 1-based index of this share within its set (only set on v1.11+ shares). */
+  index: number | null;
 }
 
 export interface RecoveryResult {
@@ -60,16 +84,54 @@ export function parseShare(shareString: string): ParsedShare {
     throw new Error('This does not look like a seQRets share. A valid share starts with "seQRets|".');
   }
 
-  if (parts.length === 4 && parts[3].startsWith('sha256:')) {
-    const core = parts.slice(0, 3).join('|');
-    const embedded = parts[3].slice('sha256:'.length);
-    const computed = bytesToHex(sha256(textEncoder.encode(core)));
-    return { salt: parts[1], data: parts[2], hashValid: embedded === computed };
+  // Shape 1: legacy 3-segment, no hash, no metadata.
+  if (parts.length === 3) {
+    return {
+      salt: parts[1],
+      data: parts[2],
+      hashValid: null,
+      threshold: null,
+      total: null,
+      index: null,
+    };
   }
 
-  if (parts.length === 3) {
-    // Pre-fingerprint share (backward compat)
-    return { salt: parts[1], data: parts[2], hashValid: null };
+  // Shapes 2 and 3: hash at position 3, optional metadata 4+.
+  if (parts.length >= 4 && parts[3].startsWith('sha256:')) {
+    const embedded = parts[3].slice('sha256:'.length);
+    const metaParts = parts.slice(4);
+
+    // Hash input excludes the hash segment itself but includes all metadata
+    // in wire order, so meta is hash-protected.
+    const hashInput = metaParts.length === 0
+      ? `seQRets|${parts[1]}|${parts[2]}`
+      : `seQRets|${parts[1]}|${parts[2]}|${metaParts.join('|')}`;
+    const computed = bytesToHex(sha256(textEncoder.encode(hashInput)));
+
+    let threshold: number | null = null;
+    let total: number | null = null;
+    let index: number | null = null;
+    for (const seg of metaParts) {
+      const eq = seg.indexOf('=');
+      if (eq <= 0) continue;
+      const key = seg.slice(0, eq);
+      const value = parseInt(seg.slice(eq + 1), 10);
+      if (!Number.isFinite(value)) continue;
+      // Defined keys for v1.11. Unknown keys are silently ignored for
+      // forward compatibility — future versions may add more.
+      if (key === 't') threshold = value;
+      else if (key === 'n') total = value;
+      else if (key === 'i') index = value;
+    }
+
+    return {
+      salt: parts[1],
+      data: parts[2],
+      hashValid: embedded === computed,
+      threshold,
+      total,
+      index,
+    };
   }
 
   throw new Error('Share format is invalid or corrupted.');

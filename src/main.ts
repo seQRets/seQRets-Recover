@@ -1,6 +1,7 @@
 import {
   recover,
   extractShares,
+  parseShare,
   decryptPlan,
   tryParsePlan,
   tryUnwrapFile,
@@ -9,6 +10,7 @@ import {
   decodeBase64Bytes,
   type EncryptedPlan,
   type FileEnvelope,
+  type ParsedShare,
 } from './recover';
 import { decodeQrFromFile, isImageFile, startCameraScan, cameraScanSupported } from './qr';
 import { playChime } from './tone';
@@ -24,6 +26,7 @@ const dropzone = document.getElementById('dropzone') as HTMLDivElement;
 const fileInput = document.getElementById('file-input') as HTMLInputElement;
 const shareTextarea = document.getElementById('share-textarea') as HTMLTextAreaElement;
 const shareList = document.getElementById('share-list') as HTMLUListElement;
+const setSummary = document.getElementById('set-summary') as HTMLDivElement;
 const scanBtn = document.getElementById('scan-btn') as HTMLButtonElement;
 const scanUnavailable = document.getElementById('scan-unavailable') as HTMLParagraphElement;
 const pasteExpander = document.getElementById('paste-expander') as HTMLDetailsElement;
@@ -130,6 +133,102 @@ function renderInputs() {
 
   recoverBtn.disabled = !hasInput();
   recoverBtn.textContent = pendingPlan ? 'Decrypt my plan' : 'Recover my secret';
+
+  renderSetSummary();
+}
+
+// Group dropped shares by setId (first 8 chars of base64 salt — same
+// derivation the main app uses) and show a per-set countdown when v1.11+
+// shares carry threshold metadata. Falls back to a plain count for legacy
+// shares with no metadata. Warns if shares span multiple sets, since they
+// can't combine.
+function renderSetSummary() {
+  setSummary.innerHTML = '';
+
+  if (pendingPlan || shares.size === 0) {
+    setSummary.hidden = true;
+    return;
+  }
+
+  const groups = new Map<string, ParsedShare[]>();
+  for (const share of shares) {
+    let parsed: ParsedShare;
+    try {
+      parsed = parseShare(share);
+    } catch {
+      // Malformed share — recover() will catch it on submit. Skip for summary.
+      continue;
+    }
+    const setId = parsed.salt.slice(0, 8);
+    let list = groups.get(setId);
+    if (!list) {
+      list = [];
+      groups.set(setId, list);
+    }
+    list.push(parsed);
+  }
+
+  if (groups.size === 0) {
+    setSummary.hidden = true;
+    return;
+  }
+
+  setSummary.hidden = false;
+
+  if (groups.size > 1) {
+    const warn = document.createElement('div');
+    warn.className = 'set-warning';
+    warn.textContent =
+      'Multiple sets detected. Only Qards from the same set can decrypt together — remove the ones from any sets you don\'t want.';
+    setSummary.appendChild(warn);
+  }
+
+  for (const [setId, parsedList] of groups) {
+    const dropped = parsedList.length;
+
+    // If any share in the set carries threshold metadata, use it. They
+    // should all agree (the main app generates them together); take the
+    // first non-null we find.
+    const withMeta = parsedList.find(p => p.threshold !== null);
+    const threshold = withMeta?.threshold ?? null;
+    const total = withMeta?.total ?? null;
+
+    const row = document.createElement('div');
+    row.className = 'set-row';
+
+    const idEl = document.createElement('span');
+    idEl.className = 'set-id';
+    idEl.textContent = setId;
+
+    if (threshold !== null) {
+      const remaining = Math.max(0, threshold - dropped);
+      const ready = remaining === 0;
+      row.classList.add(ready ? 'is-complete' : 'is-incomplete');
+
+      const totalText = total !== null ? ` (${total} total)` : '';
+      const statusText = ready
+        ? 'ready to recover'
+        : `${remaining} more Qard${remaining === 1 ? '' : 's'} required`;
+
+      // "Set ABC12345 — 2 of 3 added (5 total) · 1 more Qard required"
+      row.append(
+        'Set ', idEl,
+        ` — ${dropped} of ${threshold} added${totalText} · `,
+      );
+      const status = document.createElement('span');
+      status.className = 'set-status';
+      status.textContent = statusText;
+      row.appendChild(status);
+    } else {
+      // Legacy share with no metadata — show a plain count, no countdown.
+      row.append(
+        'Set ', idEl,
+        ` — ${dropped} Qard${dropped === 1 ? '' : 's'} added`,
+      );
+    }
+
+    setSummary.appendChild(row);
+  }
 }
 
 function previewShare(share: string): string {
@@ -327,6 +426,8 @@ async function setKeyfile(file: File) {
   keyfilePlaceholder.hidden = true;
   keyfileDropzone.classList.add('has-file');
   keyfileClear.hidden = false;
+  // Same audible "got it" feedback the share/plan paths give.
+  playChime();
 }
 
 function clearKeyfile() {
@@ -485,7 +586,7 @@ function showResult(result: { secret: string; label?: string }) {
   } else {
     resultLabel.hidden = true;
   }
-  reveal.classList.remove('is-revealed');
+  setRevealed(false);
   resultCard.hidden = false;
   downloadSlot.hidden = true;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -496,7 +597,7 @@ function showPlanResult(plan: unknown) {
   revealContent.textContent = JSON.stringify(plan, null, 2);
   resultLabel.textContent = 'DECRYPTED INHERITANCE PLAN';
   resultLabel.hidden = false;
-  reveal.classList.remove('is-revealed');
+  setRevealed(false);
   resultCard.hidden = false;
   downloadSlot.hidden = true;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -527,18 +628,20 @@ function showFileResult(file: FileEnvelope) {
   downloadLink.textContent = `Download "${file.fileName}"`;
   downloadSlot.hidden = false;
 
-  reveal.classList.remove('is-revealed');
+  setRevealed(false);
   resultCard.hidden = false;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-revealOverlay.addEventListener('click', () => {
-  reveal.classList.add('is-revealed');
-});
+// Single source of truth for the reveal state. Keeps the floating Hide
+// button (now in the action row) in sync with the blur/unblur class.
+function setRevealed(on: boolean) {
+  reveal.classList.toggle('is-revealed', on);
+  revealHide.hidden = !on;
+}
 
-revealHide.addEventListener('click', () => {
-  reveal.classList.remove('is-revealed');
-});
+revealOverlay.addEventListener('click', () => setRevealed(true));
+revealHide.addEventListener('click', () => setRevealed(false));
 
 const CLIPBOARD_CLEAR_MS = 30_000;
 let clipboardClearTimer: number | undefined;
@@ -578,7 +681,7 @@ function clearEverything() {
   passwordInput.value = '';
   clearKeyfile();
   revealContent.textContent = '';
-  reveal.classList.remove('is-revealed');
+  setRevealed(false);
   resultCard.hidden = true;
   downloadSlot.hidden = true;
   if (activeBlobUrl) {
@@ -619,7 +722,7 @@ function stopIdleTimers() {
 function startIdleTimers() {
   stopIdleTimers();
   idleBlurTimer = window.setTimeout(() => {
-    reveal.classList.remove('is-revealed');
+    setRevealed(false);
   }, IDLE_BLUR_MS);
   idleClearTimer = window.setTimeout(() => {
     clearEverything();

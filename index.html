@@ -89,6 +89,7 @@
               <textarea id="share-textarea" rows="5" placeholder="Paste one or more shares. One per line, or all in one block — we'll figure it out."></textarea>
             </details>
 
+            <div class="set-summary" id="set-summary" aria-live="polite" hidden></div>
             <ul class="share-list" id="share-list" aria-live="polite"></ul>
           </div>
         </div>
@@ -159,10 +160,6 @@
             <svg viewBox="0 0 24 24" class="reveal-eye" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
             <span>Click to reveal</span>
           </button>
-          <button type="button" class="reveal-hide" id="reveal-hide" aria-label="Hide secret">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18M10.6 10.6a3 3 0 0 0 4.24 4.24M9.88 5.2A10.6 10.6 0 0 1 12 5c7 0 11 7 11 7a18 18 0 0 1-3.17 4M6.12 6.12A18 18 0 0 0 1 12s4 7 11 7c1.77 0 3.4-.36 4.86-.95"/></svg>
-            <span>Hide</span>
-          </button>
         </div>
 
         <div class="download-slot" id="download-slot" hidden>
@@ -172,6 +169,10 @@
 
         <div class="result-actions">
           <button type="button" class="btn btn-secondary" id="copy-btn">Copy to clipboard</button>
+          <button type="button" class="btn btn-secondary" id="reveal-hide" hidden>
+            <svg viewBox="0 0 24 24" class="hide-icon" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18M10.6 10.6a3 3 0 0 0 4.24 4.24M9.88 5.2A10.6 10.6 0 0 1 12 5c7 0 11 7 11 7a18 18 0 0 1-3.17 4M6.12 6.12A18 18 0 0 0 1 12s4 7 11 7c1.77 0 3.4-.36 4.86-.95"/></svg>
+            <span>Hide</span>
+          </button>
           <button type="button" class="btn btn-ghost" id="done-btn">Done — clear everything</button>
         </div>
         <p class="result-notice" id="idle-notice">

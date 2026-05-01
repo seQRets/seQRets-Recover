@@ -338,8 +338,20 @@ body {
     font-weight: 500;
   }
 
+  /* Match the main dropzone's touch-device shrink so the keyfile zone
+     stays a visual sibling on phones and tablets. */
   .keyfile-dropzone {
     border-style: solid;
+    flex-direction: row;
+    justify-content: center;
+    padding: 14px 18px;
+    gap: 12px;
+    background: var(--surface-elevated);
+  }
+  .keyfile-dropzone-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--text);
   }
 }
 
@@ -406,6 +418,69 @@ body {
 .paste-expander[open] summary,
 .keyfile-expander[open] summary {
   margin-bottom: 12px;
+}
+
+/* ── Set summary ──────────────────────────────────────────────────── */
+/* Live status above the share list. Reads metadata (t/n/i) from v1.11+
+   shares to show a recovery countdown per set; falls back to a plain
+   count for legacy shares. Warns if shares from multiple sets are
+   loaded since they cannot decrypt together. */
+
+.set-summary {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.set-warning {
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.set-row {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  line-height: 1.45;
+  border: 1px solid var(--border);
+  background: var(--surface-subtle);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.set-row .set-id {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.set-row.is-incomplete {
+  border-color: var(--gold-dim);
+  background: var(--gold-bg);
+  color: var(--text);
+}
+
+.set-row.is-complete {
+  border-color: var(--success-border);
+  background: var(--success-bg);
+  color: var(--text);
+}
+
+.set-row .set-status {
+  font-weight: 500;
+}
+
+.set-row.is-incomplete .set-status {
+  color: var(--gold);
+}
+
+.set-row.is-complete .set-status {
+  color: var(--success);
 }
 
 /* ── Share list ───────────────────────────────────────────────────── */
@@ -528,18 +603,21 @@ textarea:focus {
   flex: 1;
 }
 
+/* Mirrors .dropzone dimensions exactly so the share and keyfile dropzones
+   read as visual siblings. The .has-file state and the touch-device
+   row-shrink (in the @media block above) are layered on top. */
 .keyfile-dropzone {
   border: 2px dashed var(--border-strong);
-  border-radius: var(--radius-sm);
-  padding: 16px;
+  border-radius: var(--radius);
+  padding: 32px 20px;
   text-align: center;
   cursor: pointer;
   background: var(--surface-subtle);
   transition: border-color 0.15s, background 0.15s;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .keyfile-dropzone:hover,
@@ -561,8 +639,8 @@ textarea:focus {
 }
 
 .keyfile-dropzone-icon {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   color: var(--muted);
   flex-shrink: 0;
 }
@@ -572,10 +650,10 @@ textarea:focus {
 }
 
 .keyfile-dropzone-text {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   color: var(--text-strong);
   word-break: break-all;
-  text-align: left;
 }
 
 #keyfile-name {
@@ -780,40 +858,15 @@ textarea:focus {
   height: 20px;
 }
 
-.reveal-hide {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  font-family: var(--sans);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--muted);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s, color 0.15s, border-color 0.15s;
-}
-
-.reveal-hide svg {
-  width: 14px;
-  height: 14px;
-}
-
-.reveal-hide:hover {
-  color: var(--text-strong);
-  border-color: var(--gold-dim);
-}
-
-.reveal.is-revealed .reveal-hide {
-  opacity: 1;
-  pointer-events: auto;
+/* Hide button now lives in the result-actions row alongside Copy and Done.
+   It used to float over the top-right corner of the reveal box, but that
+   covered text in long secrets. Hidden by default; main.ts shows it when
+   the secret is revealed. */
+.hide-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: -3px;
 }
 
 .download-slot {
