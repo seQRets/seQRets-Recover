@@ -894,6 +894,10 @@ textarea:focus {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  /* space-between pins Copy to the left and Done to the right.
+     When Hide is also visible (secret revealed), it lands in the middle
+     of the row automatically — no JS needed. */
+  justify-content: space-between;
 }
 
 .result-notice {
@@ -1145,6 +1149,20 @@ textarea:focus {
   padding: 1px 6px;
   border-radius: 4px;
   user-select: none;
+  /* Keep multi-word labels like "How it works" intact; if they don't fit
+     on the current line, drop the entire label to the next line as a unit
+     instead of splitting mid-phrase. */
+  white-space: nowrap;
+}
+
+/* In the hero block (centered text), the inline carat tends to wrap to
+   its own centered line on narrow viewports anyway. Force it to ALWAYS
+   sit on its own line so the layout is predictable across widths and
+   reads as a deliberate "more info" affordance below the sentence. */
+.hero-sub > .more,
+.hero-tip > .more {
+  display: block;
+  margin: 4px 0 0;
 }
 
 .more > summary::-webkit-details-marker {
