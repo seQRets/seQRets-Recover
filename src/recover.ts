@@ -1,26 +1,33 @@
 // seQRets Recover — minimal reference implementation of the seQRets recovery path.
 //
-// Share format (three accepted shapes, parsed from a single string split by '|'):
+// Share format (four accepted shapes, parsed from a single string split by '|'):
 //
-//   1. Legacy, no hash:        seQRets|salt|data
-//   2. Hash, no metadata:      seQRets|salt|data|sha256:<64hex>
-//   3. Hash + metadata (v1.11+): seQRets|salt|data|sha256:<64hex>|t=K|n=N|i=I
+//   1. Pre-v1.9 (no hash):              seQRets|salt|data
+//   2. Hash, no metadata:               seQRets|salt|data|sha256:<64hex>
+//   3. v1.11.0 (hash mid-string):       seQRets|salt|data|sha256:<64hex>|t=K|n=N|i=I
+//   4. v1.11.1+ (hash last, current):   seQRets|salt|data|t=K|n=N|i=I|sha256:<64hex>
 //
 // Parser rules:
-//   - "seQRets" is always at index 0; salt and data (base64) at 1 and 2.
-//   - Index 3, when present, is ALWAYS sha256:<hex>. Position is fixed;
-//     presence is optional.
-//   - Indexes 4+ are optional "key=value" metadata. Defined keys for v1.11:
+//   - "seQRets" is always at index 0; salt and data (base64) at indexes 1 and 2.
+//   - The sha256 segment, when present, is located BY CONTENT (the segment
+//     starting "sha256:") rather than by fixed position. This keeps shape (3)
+//     working while letting shape (4) move the hash to the end so manual
+//     verification with `shasum` is "hash everything before |sha256:" instead
+//     of cutting a chunk out of the middle.
+//   - All non-hash segments past index 2 are "key=value" metadata. Defined
+//     keys for v1.11:
 //       t = threshold (minimum shares required)
 //       n = total shares created in the set
 //       i = 1-based share index within the set
 //     Unknown keys MUST be ignored, not rejected (forward compat).
 //
 // Hash coverage:
-//   - The hash protects salt + data + ALL metadata in wire order.
-//     Hash input for shape (3) is: seQRets|salt|data|t=K|n=N|i=I
-//     (note: the hash segment itself is excluded from the hash input).
-//     Hash input for shape (2) is: seQRets|salt|data
+//   - The hash protects salt + data + ALL metadata in wire order. Metadata
+//     parts are concatenated in their on-wire order (i.e. slice-before-hash
+//     followed by slice-after-hash) so shapes (3) and (4) hash to the
+//     IDENTICAL value when their metadata is the same.
+//     Hash input for shapes (3) and (4): seQRets|salt|data|t=K|n=N|i=I
+//     Hash input for shape (2):           seQRets|salt|data
 //     A tamperer cannot change t/n/i without invalidating the hash.
 //
 // Pipeline on recovery:
@@ -96,45 +103,54 @@ export function parseShare(shareString: string): ParsedShare {
     };
   }
 
-  // Shapes 2 and 3: hash at position 3, optional metadata 4+.
-  if (parts.length >= 4 && parts[3].startsWith('sha256:')) {
-    const embedded = parts[3].slice('sha256:'.length);
-    const metaParts = parts.slice(4);
-
-    // Hash input excludes the hash segment itself but includes all metadata
-    // in wire order, so meta is hash-protected.
-    const hashInput = metaParts.length === 0
-      ? `seQRets|${parts[1]}|${parts[2]}`
-      : `seQRets|${parts[1]}|${parts[2]}|${metaParts.join('|')}`;
-    const computed = bytesToHex(sha256(textEncoder.encode(hashInput)));
-
-    let threshold: number | null = null;
-    let total: number | null = null;
-    let index: number | null = null;
-    for (const seg of metaParts) {
-      const eq = seg.indexOf('=');
-      if (eq <= 0) continue;
-      const key = seg.slice(0, eq);
-      const value = parseInt(seg.slice(eq + 1), 10);
-      if (!Number.isFinite(value)) continue;
-      // Defined keys for v1.11. Unknown keys are silently ignored for
-      // forward compatibility — future versions may add more.
-      if (key === 't') threshold = value;
-      else if (key === 'n') total = value;
-      else if (key === 'i') index = value;
-    }
-
-    return {
-      salt: parts[1],
-      data: parts[2],
-      hashValid: embedded === computed,
-      threshold,
-      total,
-      index,
-    };
+  if (parts.length < 4) {
+    throw new Error('Share format is invalid or corrupted.');
   }
 
-  throw new Error('Share format is invalid or corrupted.');
+  // Shapes 2, 3, 4: hash present somewhere at index 3 or later. Locate the
+  // sha256 segment by content rather than by fixed position so v1.11.0
+  // (hash mid-string) and v1.11.1 (hash at the end) both parse with the
+  // same code path.
+  const hashIdx = parts.findIndex((p, i) => i >= 3 && p.startsWith('sha256:'));
+  if (hashIdx === -1) {
+    throw new Error('Share format is invalid or corrupted.');
+  }
+  const embedded = parts[hashIdx].slice('sha256:'.length);
+
+  // All non-hash segments past index 2, in their original serialized order.
+  // This concatenation works whether the hash sits before, between, or after
+  // the metadata — same hash input either way.
+  const metaParts = [...parts.slice(3, hashIdx), ...parts.slice(hashIdx + 1)];
+
+  const hashInput = metaParts.length === 0
+    ? `seQRets|${parts[1]}|${parts[2]}`
+    : `seQRets|${parts[1]}|${parts[2]}|${metaParts.join('|')}`;
+  const computed = bytesToHex(sha256(textEncoder.encode(hashInput)));
+
+  let threshold: number | null = null;
+  let total: number | null = null;
+  let index: number | null = null;
+  for (const seg of metaParts) {
+    const eq = seg.indexOf('=');
+    if (eq <= 0) continue;
+    const key = seg.slice(0, eq);
+    const value = parseInt(seg.slice(eq + 1), 10);
+    if (!Number.isFinite(value)) continue;
+    // Defined keys for v1.11. Unknown keys are silently ignored for
+    // forward compatibility — future versions may add more.
+    if (key === 't') threshold = value;
+    else if (key === 'n') total = value;
+    else if (key === 'i') index = value;
+  }
+
+  return {
+    salt: parts[1],
+    data: parts[2],
+    hashValid: embedded === computed,
+    threshold,
+    total,
+    index,
+  };
 }
 
 export async function recover(
