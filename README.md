@@ -74,7 +74,7 @@ If you need help, see the on-screen instructions — the page is designed to be 
 
 ## For auditors and the paranoid
 
-This tool is an independent reference implementation of the seQRets share format, written in ~200 lines of TypeScript. It uses the same audited cryptographic primitives as the main seQRets app:
+This tool is an independent reference implementation of the seQRets share format. Its cryptographic core is a single, dependency-light TypeScript file (`src/recover.ts`, ~400 lines); the rest of `src/` is the UI and QR decoding. It uses the same audited cryptographic primitives as the main seQRets app:
 
 - **Key derivation:** Argon2id (`@noble/hashes`) — m=65536 (64 MB), t=4, p=1, dkLen=32
 - **Cipher:** XChaCha20-Poly1305 (`@noble/ciphers`) — 24-byte nonce prepended to ciphertext
@@ -149,8 +149,8 @@ Please include: the version/commit you observed the issue on, steps to reproduce
 
 Because this is a static, client-side-only app with no backend, no accounts, and no user-generated HTML, the conventional web-app review checklist is largely inapplicable. The real review surface is:
 
-- The ~500 lines of TypeScript in `src/` (auditable in an afternoon)
-- The pinned dependencies in `package.json` (cryptographic primitives: `@noble/ciphers`, `@noble/hashes`, `@scure/bip39`, `shamir-secret-sharing`; image decoding: `@zxing/library`; no frameworks)
+- The TypeScript in `src/` (~1,500 lines total; the crypto core in `recover.ts` is ~400 lines and auditable in an afternoon)
+- The pinned dependencies in `package.json` (cryptographic primitives: `@noble/ciphers`, `@noble/hashes`, `@scure/bip39`, `shamir-secret-sharing`; compression: `pako` / `fflate`; QR + camera decoding: `@zxing/library`, `@zxing/browser`; no frameworks)
 - The CSP in `vite.config.ts`
 - The reproducibility of the build (locked with `package-lock.json`)
 
@@ -182,7 +182,6 @@ Both paths share the same cryptographic primitives and the same password/keyfile
 It deliberately does not:
 
 - Create new shares or new inheritance plans (use the main app)
-- Scan QR codes with the camera (dependency weight, maintenance burden)
 - Render the inheritance plan with a nice UI (would require tracking the plan schema, which evolves — raw JSON is future-proof)
 - Sync, upload, or phone home (ever)
 
