@@ -130,17 +130,34 @@ export function parseShare(shareString: string): ParsedShare {
   let threshold: number | null = null;
   let total: number | null = null;
   let index: number | null = null;
+  let version: number | null = null;
   for (const seg of metaParts) {
     const eq = seg.indexOf('=');
     if (eq <= 0) continue;
     const key = seg.slice(0, eq);
     const value = parseInt(seg.slice(eq + 1), 10);
     if (!Number.isFinite(value)) continue;
-    // Defined keys for v1.11. Unknown keys are silently ignored for
-    // forward compatibility — future versions may add more.
+    // Defined keys for v1.11 (t/n/i) and v1.14 (v). Unknown keys are
+    // silently ignored for forward compatibility — future versions may
+    // add more.
     if (key === 't') threshold = value;
     else if (key === 'n') total = value;
     else if (key === 'i') index = value;
+    else if (key === 'v') version = value;
+  }
+
+  // Share-format version gate. v absent = pre-v1.14 share (original rules).
+  // v=1 = current: the payload carries zero padding after the gzip stream
+  // for length privacy, which pako's ungzip skips natively — so this file
+  // needs no other change. A HIGHER version means the share was made by a
+  // future seQRets whose format this copy may not understand: fail loudly
+  // with advice, never misparse — an heir must be able to tell "damaged
+  // backup" (checksum error) apart from "outdated software" (this error).
+  if (version !== null && version > 1) {
+    throw new Error(
+      'This share was created by a newer version of seQRets than this recovery tool understands. '
+      + 'Please download the latest recover.html from github.com/seQRets/seQRets-Recover and try again — your backup is fine.'
+    );
   }
 
   return {

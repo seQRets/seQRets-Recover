@@ -82,7 +82,7 @@ This tool is an independent reference implementation of the seQRets share format
 - **Compression:** gzip (`pako`)
 - **BIP-39 reassembly:** `@scure/bip39` English wordlist
 
-**Share format:** `seQRets|<base64 salt>|<base64 nonce+ciphertext>|sha256:<hex>` — plaintext, self-describing, documented.
+**Share format:** `seQRets|<base64 salt>|<base64 nonce+ciphertext>[|v=1][|t=K|n=N|i=I]|sha256:<hex>` — plaintext, self-describing, documented. The `v=` segment (v1.14+ of the main app) is a format-version marker: absent means an older share, `v=1` means the encrypted payload carries zero padding after its gzip stream (length privacy — decompression skips it automatically), and a higher value makes this tool ask you to download a newer copy rather than misparse. All metadata segments are covered by the trailing SHA-256.
 
 All dependencies are MIT/BSD licensed, widely used, and have existing independent reimplementations in Python, Go, Rust, Java, Swift, and C#. If you want to write your own recovery tool from first principles, the format is simple enough to do so in an afternoon.
 
