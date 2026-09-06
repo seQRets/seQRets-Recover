@@ -86,6 +86,35 @@ This tool is an independent reference implementation of the seQRets share format
 
 All dependencies are MIT/BSD licensed, widely used, and have existing independent reimplementations in Python, Go, Rust, Java, Swift, and C#. If you want to write your own recovery tool from first principles, the format is simple enough to do so in an afternoon.
 
+## Tests — proving a current Qard still opens here
+
+This repo is deliberately frozen. It stays pinned to `@noble/ciphers` 0.4.0 and `@noble/hashes` 1.4.0 while the main seQRets app moves ahead — because a lifeboat that chases dependency bumps is a lifeboat that can break in a year nobody was watching.
+
+That pinning creates the one risk worth testing for: **the app that creates your Qards and the tool that opens them no longer run the same code.**
+
+```bash
+npm test
+```
+
+`tests/fixtures/qards.json` holds real Qards minted by the main seQRets app using *its* current crypto. `tests/run.ts` replays them through *this* repo's pinned crypto and checks the secret comes back byte-for-byte. The suite prints both dependency sets side by side so the gap it is crossing is visible:
+
+```
+dependency              created with    recovering with
+@noble/ciphers          2.2.0           0.4.0  ← different on purpose
+@noble/hashes           1.8.0           1.4.0  ← different on purpose
+@scure/bip39            1.6.0           1.3.0  ← different on purpose
+```
+
+Covered: 2-of-3 and 1-of-1 sets, reconstruction from a *non-leading* subset of shares, BIP-39 12- and 24-word phrases, several phrases in one secret, keyfile-as-second-factor, non-ASCII secrets and labels, payloads spanning many padding buckets, encrypted inheritance plans, and the two historical share shapes (pre-v1.9 hashless, and v1.11.0's hash-in-the-middle) that steel plates stamped years ago still carry.
+
+The failure modes are pinned too, because an heir under stress has to be able to tell them apart: a tampered Qard must fail its checksum *before* any decryption is attempted, a wrong password must fail at the AEAD tag and say so, mismatched Qards from two different secrets must say *that*, and a share from a future seQRets must say **"update your recovery tool"** — never "your backup is damaged."
+
+CI runs the suite on every pull request, and the GitHub Pages deploy is gated on it. A `recover.html` that cannot open a current Qard is worse than no `recover.html` at all, so it never ships.
+
+> Regenerating the fixtures is a deliberate act performed in the **main app** repo, not here — see `scripts/generate-recover-fixtures.mjs` in `seQRets-app`. Do it when the share format changes or the app's crypto dependencies move, then review the diff.
+
+Requires Node 22.18+ (the suite is TypeScript run directly via native type stripping, so it needs no test framework and adds no dependencies).
+
 ## Build from source
 
 ```bash

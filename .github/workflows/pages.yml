@@ -15,7 +15,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Gate the deploy on the cross-version recovery suite. A recover.html that
+  # cannot open a current Qard is worse than no recover.html at all, so this
+  # must pass before anything reaches Pages.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 24: tests/run.ts is TypeScript run directly via native type
+      # stripping, which keeps this repo free of test-framework dependencies.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Recovery suite (Qards from the main app must open here)
+        run: npm test
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

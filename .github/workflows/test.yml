@@ -1,0 +1,38 @@
+# Cross-version recovery suite for pull requests.
+#
+# Pushes to main are covered by the `test` job in pages.yml, which gates the
+# deploy — so this workflow deliberately runs on pull_request only, to avoid
+# running the same suite twice on every push.
+#
+# The case this exists for: a Dependabot bump to @noble/ciphers, @noble/hashes,
+# pako or shamir-secret-sharing that silently breaks recovery of Qards the main
+# app has already printed onto steel. That must fail here, in the PR, and never
+# reach a release.
+
+name: Tests
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Node 24: tests/run.ts is TypeScript run directly via native type
+      # stripping, which keeps this repo free of test-framework dependencies.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Recovery suite (Qards from the main app must open here)
+        run: npm test

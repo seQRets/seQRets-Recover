@@ -1,0 +1,321 @@
+{
+  "$comment": "GENERATED FILE — do not hand-edit. See seQRets-app/scripts/generate-recover-fixtures.mjs. Every password and secret here is a throwaway test value committed on purpose.",
+  "generatedAt": "2026-09-06",
+  "generatedBy": {
+    "app": "seQRets-app",
+    "version": "1.15.1",
+    "codename": "Ignition",
+    "shareFormatVersion": 1,
+    "deps": {
+      "@noble/ciphers": "2.2.0",
+      "@noble/hashes": "1.8.0",
+      "@scure/bip39": "1.6.0",
+      "pako": "2.1.0",
+      "shamir-secret-sharing": "0.0.4"
+    }
+  },
+  "cases": [
+    {
+      "id": "text-2of3-meta",
+      "description": "Current format: text secret, 2-of-3, v=1 + t/n/i metadata, hash last. Restored from shares #1 and #3 to prove any-k reconstruction.",
+      "kind": "shares",
+      "password": "fixture-password-2of3",
+      "keyfile": null,
+      "shares": [
+        "seQRets|cI/IoJCpSzZS4PejWL0EGQ==|LgXl6LJ4tOFnB0R4QUQ+woQioLq1VkY5Qlcijc0kvOxmSTjb3RsCmBvNP7Fp8xai1yp+SU833gclbhNTzAbhrN4NktrzfPpPGnOOISifKgSzdW1EraMV/k9olXIBiDfQ6DTjNAAyYYQgZailzr0NqtGPBse+9v7xRDqXp6gk3vBQpkpV6QSRlJsFo5nU6ofxxSUrCKbXFBMuzGRsFVTwNgdaKYBA5aiWS+LpjuLpo47EhpIqKiCMfwWbH8MzmuX7OttwnlyCHdI2xM6FkTTPGEpn6gTISbMzX+e6MIzzcMedIVBjW14V6gk=|v=1|t=2|n=3|i=1|sha256:9b4b39692286843b97508900a2169b4399a3bc77f6712ff57af8ff6e8f5a8cd4",
+        "seQRets|cI/IoJCpSzZS4PejWL0EGQ==|gHAoZGu4hxHJJnEg3569ZF9ncBiVMzPbzpQgQQtagGP8Xc0NZtxxPLPouB5EGZOhIDthodeqNwGRoIjJw+6sodcBDK2o9+hSBSq+pBY/dvqofZuAMyxUk7b6OjlZbbzi/71N1Gp6L6mPKOk+m5+HRar+/SJOh6DUqdt4dUFGGm1P0hGYgQZwW2BdC8q0u8pT4lcFyswOaI1g2054pg7glBtrWrjh/KuTMLravNN1AkDIvAOHL5wvcLsF6GMW/AWZdTGECy9FFoJC56yIGtU93St7WERj1Nl3ozJDXd0TH4Ljm7kFdOnadKE=|v=1|t=2|n=3|i=2|sha256:3e21023b2b00fdd1fd0cae115747eef5936bfaebc96c3fc04b59ad4f4ce8d8c6",
+        "seQRets|cI/IoJCpSzZS4PejWL0EGQ==|gUdL3+KmYIXI8UxvVHrEr2na4baQiwR/deef8M/KpbUSt+5GX8qcSGhapM08dzDMvGYscIZMNNtqrrQnAT/b3M+uhyWKRNigSLc0B4wuXH6At9X7uPqM4Tre6ZQWwQ/XeLFMzxC6NdFcXzECqSXmnI2szo7a1TVmzxKhW0L2YYsCNzP7RLm5h1MS0CK77L3972gQa7aHRwZ6XD6SVf5vOjszt/gia8YkF/U9iYtBwU5nQ0rrmK1TsjWOdHKkKR4pvV91J8JTsQenjxz1qRwWdPZbeU7VMqMYmBTPL4oI0j9zcLrQs38G/3o=|v=1|t=2|n=3|i=3|sha256:5b6be80d21374d51ef0f049dde59989953538bcebe73d4632210a271066b8062"
+      ],
+      "useShares": [
+        0,
+        2
+      ],
+      "expect": {
+        "secret": "correct horse battery staple — the canonical throwaway secret",
+        "label": "Fixture · 2-of-3"
+      }
+    },
+    {
+      "id": "text-1of1",
+      "description": "Single Qard: Shamir is skipped entirely, the share carries nonce+ciphertext directly.",
+      "kind": "shares",
+      "password": "fixture-password-1of1",
+      "keyfile": null,
+      "shares": [
+        "seQRets|D5/TvF1omd+IJbyJii3FNQ==|IVuQ58OR8IHN70waPAuEDFNQewNakWwEki0crWpywjqyr3bXE9WiW3YRZFbBciwcSlPEBsuck0woDvGmizv9vPh4UXpF1txHk7J8NA7bb0yIL8GzHlD+EUGbcsoISpft6HQ7Ml+6uFPxTA6tLczDxfgFj0BOSz5STQ61k47VtT/YGds5QXaBho4Os5iW0T5yIvzwiKSYeOWBhU14rfJqRE99QzZ6/jo0pTcjGqEO7EGAfZX/TvEaqD875GmzwtcIKUNCEOIZf9y8TErbdRvgBqRwTDJHP51ZY91cZNr/238jjP70ifnjHw==|v=1|t=1|n=1|i=1|sha256:9137f904661a3a0a7e74d3e0d538fc0cd774f478acc7b7c2a87a65150eee14cf"
+      ],
+      "useShares": [
+        0
+      ],
+      "expect": {
+        "secret": "a lone qard with no shamir split",
+        "label": "Fixture · 1-of-1"
+      }
+    },
+    {
+      "id": "text-2of2-no-meta",
+      "description": "embedRecoveryInfo=false: v=1 is the only metadata segment, no t/n/i countdown.",
+      "kind": "shares",
+      "password": "fixture-password-nometa",
+      "keyfile": null,
+      "shares": [
+        "seQRets|DPadO7y3G1xpYVbhmZMamg==|XSyKPl0Msv3G2nGolKeZHSr4ZEFzkBbz0RehVQxMAk8Ks2XNX7Lzl5QXTqw0ArMAbNXU1E6TcTv0h27g3BXAYgL4rKEXh79lG50CNuyQSUQ32hcRvWD4T2DgXG+rAuFZkdwRyV15ZGo+C7mpu+RmXLOQ4i+ojbPWqUC4pMoBIrzhuJOd65neLhJKQ4pjw4Otl3r3GzjvMMLRPiMZIp3LJ0Hux26vax5P3P6zvovNNC8/jisPQsH3H0GLwI34ftn7aMt5/J0uMM0rhwoIE7T2gZc0h58LU/pqWHjJvxVQS3TEH/Xjak5WZKc=|v=1|sha256:d7cc2deded531893911058e17be44d4438d99f8e891c58afddbf43b85919a6ca",
+        "seQRets|DPadO7y3G1xpYVbhmZMamg==|5eaE4ewDiyViNskzxSn9+fJzd/Jim1GiOJVqiMFEjd5281Jo62uZltfSE7eoakH8++wq2yDak3i1VWg+C6nyGTJqH24ZBo82r2ENmPE1UYW1qlWpZTTTe578sBNOdKnBDyJ9V/MmQRsnVTk/KSe+Hj65xPcO/q5GnOERsYD7q/LmC/OoJleQ111Z13+t+BQy3YLBkenzCxetAiP9GDqg1Mkn/n8nkR5pa4o5W4B2FmZSgdn8P06LS+n/C7PJlqMHj5bZL2H69IgnTEWZxm8R0vlsHcwWuqo5ABPZJuD1WF92U7KYA/puiWs=|v=1|sha256:a0d46852f09ee29fd434fa199e8e5b878b97df8368565935d55d7ee5107d912f"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expect": {
+        "secret": "no recovery metadata on this one",
+        "label": "Fixture · blind"
+      }
+    },
+    {
+      "id": "mnemonic-12w",
+      "description": "BIP-39 12-word (all-zero entropy vector). Exercises the isMnemonic entropy-compaction path and Recover's phrase reassembly.",
+      "kind": "shares",
+      "password": "fixture-password-12w",
+      "keyfile": null,
+      "shares": [
+        "seQRets|NzHMqzHmAh5ddtOfmMNVuw==|yOrEzwRZPnAI1/JRE9ECm7h0YQ7dgPNOyTjbWyzgIFgL/9Gls7SkGkAHG2Ihw4tGUwpXDB1KbtadxWmmWWC03yjfwXvw98mh3T/F87ayaQdNPn4nTi/wGKym+JIGoS+R1bSIos46WC4PvJMw8qKhkaFwDuQ0v4M2/zAElKociuZg53m/zKZS11WjP1ap6Q+IsV7FOpOwPR/LgiEVnCOMESFWT2jagd2MaU4i400vh/7mSdztnaemuwlxnBYexA+YaRgX3dztOm6Oi2JYKODpzx7keiS5BJfZDycZfEuoxQebFi8c411z3hE=|v=1|t=2|n=2|i=1|sha256:bfb9f8d06ab1245ea10218b5020e0ab4a2fd5dd6aaeb8aa504a1efd90f48c6c3",
+        "seQRets|NzHMqzHmAh5ddtOfmMNVuw==|HBIiPUp47LSUddrxEMJagqw3+QAgEXg8bI+vgFfL2kDltBa+/W9KU75iTDcuLP5VyA+knCZKhPf/rf9rFz54ykZikhYv/w7T0808b5d8+GnL7SgXTlNXl5+s9wgu0CYACRHVo0t+VdcOi+glto7pbTO4WNKH+i/qSkAvzwyVHNezch6dpXmoYlFMtWtVqdeeFALi3DAcoCC3wA0dbxjaj5rkXP3Rto0ST6fGLGjADsmYaxfZxIizT9ep11RbTJcrqu+pbykamoXdV8tMGhtRZKehb9P9/qlhbypQMnBpul4G526TkEXrusI=|v=1|t=2|n=2|i=2|sha256:f16fae6ba26d9093213ef349e20906be1c111f6e24749c37d244f8eeb9892f89"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expect": {
+        "secret": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+        "label": "Fixture · 12 words"
+      }
+    },
+    {
+      "id": "mnemonic-24w",
+      "description": "BIP-39 24-word (all-zero entropy vector).",
+      "kind": "shares",
+      "password": "fixture-password-24w",
+      "keyfile": null,
+      "shares": [
+        "seQRets|m5fqgAjTYgnmX3UVggDUag==|bqWcFNzpyrXc8gDL1dUJu3BRMDy4Aesvh8gwSQgsBKVoIAScgmGWiEgkK13L2tK6qmTSgDLogoz+NRQPkg8RibhqmgfB6E+BJxUqCumYzWvF9XbaPm8MzoXmqpouCzGxShIaQpmRzoAWpGn/Gf+Q40gl+URGbBMLS+aE6VMfjKwuxqmaihcm8+ZunEYQoOo3GBF+hodyjbb+U1MNmkSTdGTbzmjE+4+m078xT5OlXOXsCcaJi6SqaBuK8XWdvFeIv2AzmHUAmLTvUM3/5iQjz/Nxa29jo1Kz+kM6+PKeWjtPGaevrw1Xwxw=|v=1|t=2|n=3|i=1|sha256:dfd5bdbdcd820693f42e6156858a6d8ec202543f2321acd0ea355ef5d4480b50",
+        "seQRets|m5fqgAjTYgnmX3UVggDUag==|Y2v/FD4ECF6iPJa23ZaehY1FG7lfBSWAbZpI5ZzmUDm2iGa9q+BTMzYRsGOTbnfzEUxPv1H6OzU9w+I7UH8HR4qT1Td1AR9otuMsITKQzDSCLfrD0rg7wnGSLfB3iTRJQvveUFFcGU5Ipf3NKufIHqbE4Imkv6btNNEXqwMXpW92T8owwsuwLM9cf34AN+o50JblEoltFyokMD2NObdgWrnapAkRUAsU1+o4sD2KvVacYq5GaObTYuWZ8yDa0jbHtmcUIDXui6oCQb+mxA0Jpg106w0OyJ/PBfym93qcg6P+5SuTKbuESBg=|v=1|t=2|n=3|i=2|sha256:c307664a69012e88c04150a5ebd355462f64b0d8f552fec01fba963d54b997f1",
+        "seQRets|m5fqgAjTYgnmX3UVggDUag==|56/SFGVxHc4s+HfHQ/Uql98tNIAeSuHDqIsjWddtpOxVex6mLpb2GLhi1XG2awCkOpzP+Hx3urR98NEdRYrFg0mOZ15wO6RS59DJDssOmaGuKwgv8pDiE+govhYHAC4B3MEu3XBnMYqI8LYOvF7tTCxgDLL/2Pb57wjsnbiJIC9Tp+dpwIJRmkqfcYkng+pC8QWAWfJkJ/+IHZSuq55Jb6WPQo6TXGf0mEvzSCvqGeNp0eLXZtDtVkhBWYH2e7F1fdfq9KlkU/Z3M+DWIIhzv6BuyHVYe6Tr/Zhz2cc20Dnh4tkr7xTjClc=|v=1|t=2|n=3|i=3|sha256:367710eb1d71619e5e8b0538e56495b80c8789d939c328da46cce3980e1f38f5"
+      ],
+      "useShares": [
+        1,
+        2
+      ],
+      "expect": {
+        "secret": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon art",
+        "label": "Fixture · 24 words"
+      }
+    },
+    {
+      "id": "mnemonic-multi-12-24",
+      "description": "Two phrases in one secret → mnemonicLengths [12,24]. Recover must split the concatenated entropy back at the right byte offsets and rejoin with a blank line.",
+      "kind": "shares",
+      "password": "fixture-password-multi",
+      "keyfile": null,
+      "shares": [
+        "seQRets|aFh1Bj90c7iVO1edFL8wZg==|pyusZC49R84S6Elmtvxp7tifY1x7m0pKqmdBn+sVXaFX7M+FAbFu1oG1oezZ6z4YppNDE07ybu+nTv7RXc30TVOD9eMiAuDHwuHyZjPLN/2iWrOkMlBVhIbyXktdWdobBEIynHN11pwK9a2bdSLTbAhQUs5eS1piFKOvgvEgZMRZlXel3uoT7S9+FP0bsiviYDKbKbiVYoyJVlCFWtZT0XTlHgLbfJ95aWXF6td6TBHvEo7ttb8rljLAkVDD2iTQa7XSMEzap7rrPXFmzZsXt3g6b9hnpMFQOL01GJbB9D164l7wv/awPpk=|v=1|t=2|n=2|i=1|sha256:c2645d1a4cadb1be36690bb9739da9d8707cd0e9aae018a18c509f4cf325d67d",
+        "seQRets|aFh1Bj90c7iVO1edFL8wZg==|5N5z1REjrFTo/cuyVu3nJivE7mvq/PH5iLVM6FrHZHO/Y05yfggmnaL2kHpGWNybaIZ3vCi9biXmeve+Eu1+IRmhfZ9OlTm8xQeeFFgaXNM1WRutj9sUUWi57VOBZxwvKDaBxel6MXoFiAouZE4t1+pImxpEq54iHc4jqLTMBGB2xc9J3kGhorrHeiVtVlrItIXe0/QnpIQ6QcwhSx1flIJaIUWd/Ma4woVPwhX1f+PEOJqx+A+kQbKQzuiQTUcScb1Ry8J+dEBnfpivxc9lDcTQ8CuUio3vYAKo2E51pejLMQYSpeNDKxg=|v=1|t=2|n=2|i=2|sha256:9b2a44dfc76be8e50b79546fd9dbe39d1bd659770fd19dc1e73159dcb3704fb4"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expect": {
+        "secret": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about\n\nabandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon art",
+        "label": "Fixture · two phrases"
+      }
+    },
+    {
+      "id": "keyfile-2of3",
+      "description": "Keyfile as second factor: the key is Argon2id(password ‖ keyfile). Recover must concatenate in the same order.",
+      "kind": "shares",
+      "password": "fixture-password-keyfile",
+      "keyfile": "AwoRGB8mLTQ7QklQV15lbHN6gYiPlp2kq7K5wMfO1dzj6vH4/wYNFBsiKTA3PkVMU1phaG92fYSLkpmgp661vA==",
+      "shares": [
+        "seQRets|Y+Vk1LxbZuLCFosd51yKYA==|7bC05aKYPZB/UcpX7GlxpXHRGc6e/fduOO966OzVs8KY67IAyNPNMBZOViJLV8BrB+SquHjab1QOqLQORmErR2JlZW6SyIGnXQAA5IsfwsMfz2V+MxG0qkOk3pLjY0M89tigoWVkMmxdGvLe9zmyQRSW2GXHVJFl+NK7CJ4DONel6dNMF6X3J+PEJaPlbH9J4izA/1e/f/EnHDsAptdf/cuCESUJSqDXi+efpTe3eKy8ICAkT9yvgIMMbcn3nTHtV6ZhkoQNeGPMWJsGpipfqZa7A123Wnxx2A4Q1C5cW1bClFgE9kB7HBc=|v=1|t=2|n=3|i=1|sha256:642bb7e2649275423ec603ba11f0ce7dcf0038e452917cc239f3ff2fc453cac9",
+        "seQRets|Y+Vk1LxbZuLCFosd51yKYA==|+r/OXJuFmHdzX26Dr5NW0ojmqMS8Hl4Ik68enYWPMzUtGzp2t2rZLRrBxiFcqV+FEPCasafkzTqLw0o9ppCuS45bBy9yPmYcB89l0LaIZlTafkEOJs5nnzfdxXFnsb5HZzTSs6zZXuITUDRlcuV3JPNX9T4yL+j+RfYIBkp7Gmc9sBPW5z5z0Q/J7VJXEC+kduX6G7c9G6w4i4LXZe4QTuOi21nDUPL3BXNlydCHyQbIUGl2S9Y7z+M4xOu0sQU8ofPECkL8x5/40zm1YXVjOBcMduBqDbj01ArEyB9OZgvcMg0Og4M14Qk=|v=1|t=2|n=3|i=2|sha256:4eafce4652eb90d0d7abc0f489c94535f71573a386396e0e504a6f84a417fb61",
+        "seQRets|Y+Vk1LxbZuLCFosd51yKYA==|bwGEcz/EHffrCgBzQVKV628XnhAVH0PoQ2czaduhuIeaDqikl0VqbIL0fwfJ6Vj3hUPMQ2jn78NqUApNgW5P0zFYZgxVZ+b+KTKjB5OWCErzSKSQfgEwoyixyHBtDdjmNYuBTB13ajyOTDuHkwxe4nP/4vtNjoR46xPzU7r8s7qduFC78rh5iLC6t6xHFtXwTlR4vZB7NiW0la0BAEpmtZ7GTF9UtsWT20uk/VDR/z3XzlNBygIDuU/v2UJaTdKm+GNBqk0CpBIvZxtOhTGtand2gk5oUHoVTIs0YqKxQ4K7kZ3ad+aoh24=|v=1|t=2|n=3|i=3|sha256:9321f1e872b7e9a5fc2de982eadd923ca1e80fa28290c20ccd55bc11974250d0"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expect": {
+        "secret": "this secret needs the keyfile too",
+        "label": "Fixture · keyfile"
+      }
+    },
+    {
+      "id": "unicode-label-and-secret",
+      "description": "Non-ASCII in both secret and label — guards the TextEncoder/TextDecoder round trip across the two library versions.",
+      "kind": "shares",
+      "password": "fixture-pässwörd-ünïcode-🔐",
+      "keyfile": null,
+      "shares": [
+        "seQRets|J9Ujof2rIvTJrDvxraDyvw==|BxuAcpRFou/Bo1Bgkou2dAoP0I0lVlhExFpV/3/0BrDQl08t+6WvCrBDxoznYv7ziNw0S+WmAg4R93TNLtWIJV0QGc6zbA3NbPIyn8k5P2Tsb8n9NQe3d5FZ+vxAh7WsbLkJduM9Az1mZip6bV7VhBv1b4SC8JmObiV3e0sVWAeWLoUsttcbTtv3WlMPwVrr+iPo3U1uHt2uIJYm57euUiiw08jwIP1QIAHH/VHGaMmc4bTjbxh3Zcmp6TuVDYhGcVKFRb9riPsQIbT7en9Vfw9PDIQxuXrzjOCjiM4PCmrfgsRd//1wqkE=|v=1|t=2|n=2|i=1|sha256:b7532cd4ca4d664a5e1532c375c5a300b59243795139af93063a1344a2190a3f",
+        "seQRets|J9Ujof2rIvTJrDvxraDyvw==|0zaeuT3ilCbfABqd9MbJqGK/eAzplVVEnSvLltbCW020lEAMG8ateJO6ckmuw8vv6qGSl+F6eqSW2uXNeE2utdYgL8iJqfUezU9aSWr7JHUW4wNohshbJmG1JgLAOhPAmtcTkpymOnLXMNuTpeGjhyYOK2aTuESk6CCr73rV20opTBlymiABDLU2VecHQ4lJcgqlZUoU63igNP6Dz7DKiLfLdlVNkiWN4T9yPf05UklCZXaop1HzmZD3EsXeKdC6eAgdKL2tw08OqBSPFWNzvI8LAjEEZw1624WApuPITMgeR4QPcaTH7mw=|v=1|t=2|n=2|i=2|sha256:9146db03e2e77d9cd6ead665f68e818a4d826990dcbff110fc3a15b3f218c8e7"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expect": {
+        "secret": "مفتاح · ключ · 鍵 · κλειδί · 🔑 emoji and “smart quotes” — em–dashes",
+        "label": "Fixture · ünïcode 🗝️"
+      }
+    },
+    {
+      "id": "large-secret-multibucket",
+      "description": "Payload spanning many 192-byte padding buckets, so the v=1 zero padding is non-trivial. Recover has no unpad step — pako must stop at the gzip stream end.",
+      "kind": "shares",
+      "password": "fixture-password-large",
+      "keyfile": null,
+      "shares": [
+        "seQRets|twskwAQqVzZnpR5fAUVcOw==|lukVpZFDBlfW1CfkeU/L7Gdr2nq8nrwNX9ZwCqXcE41Des9V0GaAbpvn3ES9L2pR7YMGLZd76Oq3fljvtHSntAbMNmzxJiTJ32vOj6H4UUBXgvI0XADo2o5mAEbW8ob7frwvfgrO/drAcDSy2qCJtsQYGnYyumFYt5t7A6On08Z0pPCahsSfQmaL9/HEXMgmR1rd8WbdUPOsUPlC6IEAK0mdIJnMJ48GSgJSpe/8y5skBHeLDJqoqScXkzymi9cNfy67c0tPM7aVNklqBM3YoHpomXhgEQAmn5O7by1yvc4MeQ16LDa1ep8Wsi3wNjVREwn4r/l76u54tb9feFMHII+86kuEXk7uhVEUsSCcbf0A480Td/HRxg/JicLCLR5E+Y30hUL3AroUoxMnVDmu3w2ShIFixApdeVaBgBnvtWvrw9Iu7Gd5ibyo7uDHHoq2YEIo7NOe0P9o007C0fBOMPmA8XTcLXU6scuIfpsUxMkrXmk9nAZ/XkUE+A3lECYx43hluApbdEDOIE93AciJvkuuGLJ0z9YIe4H3jzyh+VPpMZsIhaHKrIRqZW3b1PC5D3X7yQvkMrqqNQYap+BFuZwzaCQcOx/a4NyYpuBVWi714LVOiPxaJZcRf+NjTCODRptugFTNqTgiCC4lOyPj9igx2+POxoAa/D0yEQ/Bp/ZHQEU1k0BxzsO+LjywSeO7euKNLT69VbbLnWky34yaZbOJudoqkR5ujZvIu7ahKdLdCS2YjD2TFHzdCJDfbbx8flTSgTuY5IUZ7skEZO/cuqyb0PVxJrRvkh5nV/qHi8E91DA0GxMHPBmVwUUmqJwLZzHSMlhZPAHtIdlpqqFIar8hRvr8qQ5oQu/BlxdPwP6q6jvFx1td51hG5BOwRpMn8OztQzcuJWaluWj2lvr2AowbxG4HyGoG+YBYVoXJF4wgnQCVcfhX28yVE3oBONUgS7el1u3+GJ71bI9wo58k8r1HcH030IYVnH0s3yi8mwNT3ip/Xstorf2LLAn3DPCDBBpYK3pw6UD7MRCRgjRD9lYMJe1xYLbuErByhoIFC9gnRnG510LLGOg=|v=1|t=3|n=3|i=1|sha256:e4d1c8c3e80612b69e984c6f228b564a4929434e59f335b78018ddc9de21f3db",
+        "seQRets|twskwAQqVzZnpR5fAUVcOw==|pizxaECtcq8OwhcUCOx+RrHkEPFE3iCIQzzz/umWpSqwJgmykPfztGkY3S5Zr3P6wx0BB4IvHZee1dXaHlqCuIKpHXJCtbTxTzuRuq5R4EBB1emX8Nq4des/Y4TdPlGleaxpKrSzhVOBUVfbWKRhj9mWGPvKiuFBTO8RwBp55BH68sWyaU1kpz0a7Rlq5BgEdKvnmAIMervX+cRihzhmw3nAm5+zeeazE5qzBgOZJ2eBG2iFq1qH11WKnyHRRkHB6H5CwGpBvAiu1MmcuAMhKh+lixf1o52wBzieW4BPoNDvkuRcaGbM23idlmrcvhXx9MYROFIa6kn1xqtg8L/sl/8/GjkQwGucMtb2ztMLJEzoreXmwJmVqnjDTSaJTMQFGUa3W7b3twI7EjEFNu/5EoN9d5W3GYAr8/Usoa8Vzfd5ONhmQACFFngRS96UHSb8MIH5m/C6THlGY5Uj7966O4109A+Uy4pL0JQ5LwHOP2vS6va2Rd3M1cjRVCpa69GBEB+eilnazt50I0nb4FPtD7+c1Y+FDXydJC4W4ug65wQg4m861mvhdNcOsTYcQ5Ic3OGgJoYmrhOTQkgDkWWQeYfx5Ya+RnsZ3Y+Hq0866HZGzP5DtxbFGCZ8PAYiaGSiIZFG0LqudtxQUDfW/Nax79/FShwCTCP5WXyjRBV9/P8pmmRGfAlV1Ji/DK/IwrQTaiynD52FHtWJzI0ogxiHc1OY7Bw/XBexdPyCbzqF0kWJ5nKjDC98iLXUBbHLx461yQ1SAW71hk4k+942FP9pfVIMQWBByEoowmZDXcFud2xoW84H8Cd8MuRTdFS9xhgeVAYP/ulG6/rOJgnOZX4bQMlcrH34D+VfKNHmlart7N0ezjnqWkPRNq5AUyaEVho0z/R3HLp+3uUKs3+t7H5w9xiIYk5affEgUVb5Q20W7+aWOf7kvwqyil8YB9GD7tPoawYV09mzFPnieAvLopuWi/Y441fCWl1h2qJzpFryU0BPGO/FoYn3BRi4x2qZUvUysgugB4Ajxo7odoTmvOUokuo01lNgfcebZoPCCMWuivgyRpleHWrm0KU=|v=1|t=3|n=3|i=2|sha256:a43fb4f49d889def7850a2348552642d5135afc1c723cc30949bab8c66828917",
+        "seQRets|twskwAQqVzZnpR5fAUVcOw==|2Cgw4zzj430MXVQZjJ+AMnBe/yUa/RYBeTxEWWZwMf0W9s7aMsI5U2Hm39lLsfPnxqjnLoVELMxRLu4ie8wcNGxWzS7kJBI18rZpLHMgM2ApmZkSHNrmEbDtHm1X1qZWAXdshhUmoIvgcoTfQuj2X7SS585RqNjIG3Ap8Ak9PTfaj8c8Z9rwMbDRPfliBdmoPIzylVpzTbtdqEy5JrR2RlEDGMQH4nPui9jpDmom9qTpiBfXKWjOaSepq8n2/zC1NtJFA3UuWd3ZCiDmSm3d+XvwFkg9zT22Van1NWFFhTsyFp2m3DgcUb6y1HKZAWOcuYm21kVagKaL9ttIJmqoPDzzhp0j++zm6uesCjsatPA/9g33AjjCB9Js0VRstDc1wHuwfTRxSJPdwGJ1tpyFi+AmAnExBSnW/N/UrG8iRL13zsRwJrjKOmXWE1fLqvzqy63vAaYzR13fPD/OJbAfXASt/plgiw0WvThvUQvk5gev+LsMsqzO2+ZjPtp1lXuHiTiQNADgUihOu6RWHYd9rREd5GI2zTBHjOfvaH2UDBpDehZ4cN3enPjR2wMU/r+uQOcAonGa7E4eB0zSbC4VrUhfddl1rhvHHDnaCLS+bJgcGkYTGieAboEqlCws6NrnCgq3YhneQ5JpArapS/49b0rymJhfz+BHDJY8FscUgNN5ZS5f3lGggiBksiCQwBkhTXiNPzbulrrcem/oRju+OlmsvpBRWMV2tUTodjgfVzKDAJN3yv47l7vR9HrcwWBpK2cHtKU0IKW6fhrr2VYIPfGH8GuzUq6js1PPzWIdMF275kTmsGbw0CpYt0KVryncShjesxiOt9AuP3LGBiRya90UNdPOYlf8E5K9iVyEZHjICyvfLMJM40Mgi9GfIg2yhiej+2w+jYyYhdB4Uu855n3AIPKtrO62pVInPdjfpqK+jZ6jyCxYFBu6sf0YBapIIhnnS0jWYePVKNbtJ2gKNFXLqfX7pq9c/fl1CGFQ0ScL+WU3hxDFHHAdc+pTEL4E7EHh2i0ocyxqxmkEnlBmPY01KKAMcC8+pK3+iNg0dmoHFVSoMjw96y0=|v=1|t=3|n=3|i=3|sha256:0bf9d1e6bf8b6cc3e74b9ab80f36cd977f5d32ac4ee849955666dd47a0ffb3db"
+      ],
+      "useShares": [
+        0,
+        1,
+        2
+      ],
+      "expect": {
+        "secret": "line 0: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 1: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 2: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 3: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 4: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 6: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 7: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 8: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 9: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 10: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 11: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 12: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 13: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 14: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 15: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 16: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 17: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 18: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 19: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 20: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 21: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 22: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 23: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 24: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 25: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 26: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 27: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 28: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 29: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 30: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 31: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 32: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 33: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 34: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 35: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 36: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 37: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 38: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 39: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 40: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 41: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 42: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 43: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 44: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 45: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 46: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 47: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 48: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 49: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 50: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 51: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 52: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 53: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 54: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 55: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 56: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 57: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 58: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 59: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 60: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 61: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 62: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 63: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 64: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 65: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 66: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 67: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 68: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 69: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 70: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 71: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 72: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 73: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 74: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 75: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 76: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 77: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 78: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 79: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 80: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 81: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 82: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 83: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 84: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 85: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 86: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 87: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 88: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 89: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 90: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 91: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 92: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 93: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 94: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 95: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 96: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 97: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 98: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 99: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 100: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 101: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 102: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 103: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 104: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 105: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 106: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 107: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 108: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 109: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 110: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 111: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 112: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 113: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 114: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 115: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 116: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 117: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 118: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 119: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 120: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 121: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 122: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 123: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 124: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 125: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 126: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 127: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 128: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 129: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 130: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 131: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 132: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 133: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 134: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 135: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 136: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 137: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 138: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 139: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 140: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 141: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 142: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 143: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 144: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 145: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 146: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 147: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 148: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 149: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 150: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 151: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 152: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 153: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 154: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 155: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 156: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 157: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 158: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 159: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 160: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 161: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 162: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 163: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 164: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 165: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 166: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 167: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 168: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 169: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 170: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 171: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 172: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 173: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 174: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 175: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 176: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 177: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 178: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 179: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 180: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 181: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 182: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 183: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 184: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 185: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 186: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 187: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 188: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 189: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 190: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 191: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 192: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 193: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 194: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 195: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 196: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 197: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 198: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 199: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 200: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 201: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 202: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 203: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 204: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 205: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 206: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 207: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 208: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 209: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 210: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 211: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 212: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 213: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 214: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 215: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 216: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 217: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 218: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nline 219: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "label": "Fixture · large"
+      }
+    },
+    {
+      "id": "legacy-pre-v19-3seg",
+      "description": "Pre-v1.9 shape: seQRets|salt|data — no hash, no metadata, no padding. Steel plates stamped years ago still look like this; they must never stop working.",
+      "kind": "shares",
+      "password": "fixture-password-legacy3",
+      "keyfile": null,
+      "shares": [
+        "seQRets|XK/x9zHPREVnLsLt8YhFWQ==|rk8LnNp8PoxEZYHrkVOOnA+5OIKTDdJ5zdD0E+75yraYEGASEnnuIyG/Q96Jr4+S/IZ5taCGZIXwj/fsO1HaTrcCYxDp+B1hJbuBpixx2PlFHgHQNbailnC3C6Omr8M3su1WZWEuRoN4rpJb4hUHDRvScec3zZF2pie3NgxrOjxjbd6JPWAxWPpFFO1kVvjp+H/Ey15zzSs="
+      ],
+      "useShares": [
+        0
+      ],
+      "expect": {
+        "secret": "a qard printed before the hash segment existed",
+        "label": "Fixture · legacy"
+      }
+    },
+    {
+      "id": "legacy-v1110-hash-mid",
+      "description": "v1.11.0 shape: hash sits BETWEEN data and metadata. Recover locates the sha256 segment by content, not position, so this must still verify.",
+      "kind": "shares",
+      "password": "fixture-password-legacymid",
+      "keyfile": null,
+      "shares": [
+        "seQRets|mPSvwt5QWz7tLbN1QClFFg==|4al0PAU+muI5wT+djZr+mDg8QOFkTmY7Zw8HIaseDh2tClEGMTwuTChY8stTqjO7UFiGenMXakb5MXk/L6yxJglIhqkmI1LllxLUSBLSIAf6uO2FeH5jxc5ZbP4DCnTkN6rqZZKH231eDeLGhU9d+gpFqxXPIHuxC1Vs/Mo/bUQhTVDEDzw8g6daf8fRAU3oVICawozb04IC/AfuwVzxQOc=|sha256:34eb4911ac7ce06fd53045615874e26ced48b0fe5feefe9edd141ae12b83d26d|t=1|n=1|i=1"
+      ],
+      "useShares": [
+        0
+      ],
+      "expect": {
+        "secret": "a qard from the brief window when the hash sat mid-string",
+        "label": "Fixture · hash-mid"
+      }
+    },
+    {
+      "id": "plan-file-envelope",
+      "description": "Encrypted inheritance plan: { salt, data } with no Shamir step. Recover must decrypt it and unwrap the fileName/fileContent/fileType envelope.",
+      "kind": "plan",
+      "password": "fixture-password-plan",
+      "keyfile": null,
+      "plan": {
+        "salt": "Gp/89S4lmdAi87ToS3FFuA==",
+        "data": "8RvpVq4Bp5nJpidpMn5w2UCEDs34nVz5sQ+s/IvaAXkibPQXPNzm2mE87T0OOOtFRcQgv9hL1UhShzTG8yRnSeTYIvAFJwSvHbwdl/cYnVP/E9vYIvTyXafpOP6qPGwziy2EdlChSQzi8anCELKtqZU9bm8N72tv3gFN3ca5za60lKKrXB/PzyhVdajznZSbabzdyFYTp+tIjYnL12RX3g31VuKzQtHROdWxs39Tbiq4FRo4qOthbHFmmX7ef/lWjJuObX2qZD4wclPL+ohSE4SJ0yFtPWZc3B6Z7Hhf649Wjg/VyKE="
+      },
+      "expect": {
+        "fileName": "inheritance-plan.txt",
+        "fileType": "text/plain",
+        "fileText": "Where the Qards are\n===================\n\nQard 1 — sister\nQard 2 — safe deposit box\nQard 3 — attorney\n"
+      }
+    },
+    {
+      "id": "negative-tampered-data",
+      "description": "One base64 character flipped in the data segment. The SHA-256 must catch it BEFORE any decryption is attempted.",
+      "kind": "shares",
+      "password": "fixture-password-tamper",
+      "keyfile": null,
+      "shares": [
+        "seQRets|XDwa3dDcbxsWNSmG24W28g==|dpNdlRsBApp85WBpNO1ZUuVwjWUFo7jvxBW+HyhuUvVawZnUXDOpaw4SuSFVPVXaPaNCP9yXwEweNvc/qYofH0hliB4A9oKxh9dDan383NF1xIliGVe2O6PWms2xT9MSSrFZm1KLJojwwAJI7n7Vqast4wQYAZkjQ6seVllAbsoloVNEjCI55dWfCf23wdec+BxszB+5D/Rzj00r6mQXIfZIW+FrmHtLkmcTJ4Kz4BiObpd1gAc2sIfLhiz30aQ571EySUJOT+XpwmXgpweRGGzDjMGOZXtBosWSgLcZqL0Qh4p0VpV4t6o=|v=1|t=2|n=2|i=1|sha256:1fea187362b45b67958b13d7c622596fbf40c56ea03cfbc6a86357942cf73d89",
+        "seQRets|XDwa3dDcbxsWNSmG24W28g==|yGKKmIS5/IQhQyQB9WjuqZrDGu+8Zv4w7lPFapggz2C2H61TXvPs+yuE9JTAb+bTUjjAzBiAgdNb8VNK3Kfnvr8zkCf9J1GOowcAWLhjC0L71VXMtcaYMGMSDoe7KvAprODSm2PN9Tj2yYMz4nUcRpIK2+dcFA53CtontyePT+5Sw1LpgF5YHWMFKbwB5EIIba4SZ2hjaQLNx5hG/G+kUsqSCCnQWJFiC0+HmRgotNERBK2pyJUBdzPx9HslMnAliGBYKurzTXCEptqPic2d/LSfxzF7kiqAElskw9XjGfmLjU+PxCJZWog=|v=1|t=2|n=2|i=2|sha256:deb44ac005a5ffd6d88ae45798c84e1355464d0212e04a3d1dadaaaebfb8f880"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expectError": "integrity check"
+    },
+    {
+      "id": "negative-future-version",
+      "description": "A structurally perfect share stamped v=2. Recover must refuse it with an \"update your recovery tool\" message — never a checksum or corruption error.",
+      "kind": "shares",
+      "password": "fixture-password-future",
+      "keyfile": null,
+      "shares": [
+        "seQRets|8a1ingA1X6rqn2wrddGp7g==|SRkYIFuo1SWCtwWcmehFzp2rIDSVaPQCGylcSAqFVyyIVueaQDwzbSbVqjt9dUeYFnSjskTOPvAsKKUkK/3x8amJK9aQNKCMyLxCHxW6euzdqB+zQ9Y5EswMFsTF8aoK27ImF0syO2LzvkyhEi+Tj6NoVKBfOz0Mrdlcr/V0BtBFe9of0yCzFT6882poR28yZbwP5p2Y4SjM4oUwSssq2uV1uS86votxZXWJ3K8GSqbmttEs9gb8vXSGYvvUBb3ENuTyJh5QU4KH1rnfJIlcG+lwQraUeSSzj8qObXSH5B7m53oy5NOiuw==|v=2|sha256:6b1ac6552ef0bcd4c8359b48e868cceca47edd680b2f4acdebb2da130cad0bbc"
+      ],
+      "useShares": [
+        0
+      ],
+      "expectError": "newer version"
+    },
+    {
+      "id": "negative-wrong-password",
+      "description": "Correct, undamaged shares with the wrong password. Must fail closed at the AEAD tag with a password-shaped message, not a corruption message.",
+      "kind": "shares",
+      "password": "fixture-password-WRONG",
+      "keyfile": null,
+      "shares": [
+        "seQRets|D7B1E2WUKTVsDGjuvvtUHA==|O1GgUfto3fIXRCgCoTh3olWpScIsGnPqOIQxf+ZkFkx8P9CK0IS2DuKBdtvuOfq7mmkE0E3czne9w6Mnlj64pEaAK0yPNq8Q5akrav3EZz1v6pUC3DibeQYEGbYQIwah5og9n0ycFNYCfwq3jqfIq/KLvfgYRP4maWE/WJ25+yJIXkYKWVkcYY9HXyXFgytRvFdbvuvj17re4zxv1M9DBqUEAyOfPKdRPaMrGjBuRIraMaqw5zVbn9G/bTtA4jdCzbGNoh5apZ6QTXm6fJGUHkHWHPFOxLqoLb5WzMx1KPRDmioOxzoTESs=|v=1|t=2|n=2|i=1|sha256:6fd731b1f0d1353fcc14f76d94c4a9a53212b58060770bccb84cf39f75082587",
+        "seQRets|D7B1E2WUKTVsDGjuvvtUHA==|gwImHGmvxagHD1Y/JBDSBqsKosXzKJhDykK7fGYkJzX8GygpRgi+DeJfT0POy7hEO/M/7e5wcUajZohHjFwmgALv1UueQLf4lxMQXZAKmeaO6dnpD4snputorFM9GcsPq/Ogr9xEXkh4AJCRKb6USyEl31jEXQDQVVDyHTWv4gCqGIAXKfeZO8mdQpb9gnxLwFUpkRgSCGsDNFaf4qXHhkNwKjmVWIiOSHdBiiMM1hrSrHg5GmsNPYPsqI+7xN90ZPmBq0XVQhcLTmIkwZ71KFx2HZ6+eAmPDmYgbrjUt2XrtRn+dEcBSbw=|v=1|t=2|n=2|i=2|sha256:ef581fe817bf716ad37a53f8f077a83b0cbe2bf884c5160d2d4077d52b4c45e8"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expectError": "could not decrypt"
+    },
+    {
+      "id": "negative-mixed-sets",
+      "description": "One Qard from each of two different secrets. Salts differ, so Recover must say so plainly instead of grinding through Argon2id and failing at the tag.",
+      "kind": "shares",
+      "password": "fixture-password-mixed",
+      "keyfile": null,
+      "shares": [
+        "seQRets|74NxS/IWkZFMPgEQm0PIbA==|EQ8qbK3FT1Pu8eg8cFuXcYCKnHnbOmikXFr/IwIM1BzsZmVdusF5gFwI6vOBWEevo3LFVuMfCx8L7NT2fuPyD9NAL9+b/AbsBOQSatZPwDmM0bLACwmmP5g1tXgdhhxYHKUIBeoVCujt024rkIK+637vT5zUV3p13jxNUac6oR8m5ySP7y67O7/lb4EBLv19Ca6b9ucd3xDg61++YT7wmxMTdzVPCnq2pjkMCyArT4hxsaTP36nlTcTm8e3dalpVg+l2mk89It/1R3VjnAMQ9tCeuMaUgyJnvs/Ofk4X5ewwHCJ7S4Eez1k=|v=1|t=2|n=2|i=1|sha256:a4bcbbed86ecb034505ba938534cef27fa2d8c97770d564327710a89561a7a65",
+        "seQRets|nq6zKuy6cK2MtxJxcNNBhg==|1Vqpg79T6lfRwIp87MQV7gCfgXJqaSnradTvFq5K6iaBsHfExke2zpA9aNDE7kLblaqYZnEOmqIVcEpNahly2vCO6guZY0Agq2YA4SLDQF5uPmRtly9xoEcIQRRjxARfHhryG2fNWLKjCb+lPg/qqRu623ZjUVJ3LWOU560HmSu72iPQPJliG8BfxCimgae40TPSlH8zMMu3UXZ/e3ihf3pDK/2uy9Ftt1trP+FXyCBD5djDq242aILii/B9+FpHR29rV59D4B9Mao69jqgP2MxvteMfey6RvXkR/di08DX+m+LCzj6wDzo=|v=1|t=2|n=2|i=1|sha256:fa0b18e7ecff1814d503f931e372d3538c97aedbdd3645425ecc163486559132"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expectError": "different secrets"
+    },
+    {
+      "id": "negative-missing-keyfile",
+      "description": "Keyfile-protected shares recovered WITHOUT the keyfile. Must fail at the AEAD tag — proof the keyfile really is part of the key, not decoration.",
+      "kind": "shares",
+      "password": "fixture-password-needskeyfile",
+      "keyfile": null,
+      "shares": [
+        "seQRets|DwyKIP9g64719GPVPuqTIA==|3kFpkeZGMWCkSukIGH7Hx5B6IGa2ps3Rh0CdogLexxkxtRBOdZ+C7ViKiLDVbEB9fHVtBu+5vh6J25ty5Xq6IQ/7iZKn2mdqE+tL8llbdvzlwVZTvcAOdjY93RorAiU/bRnnkxYG29ttQC3hQFD/JeXvARcee1l9XY6BUI62geu55xF3qd9VYEqGJePHBbugeFC2CZFyDfTUyO2ZktvpYV8VX7dVeIBXPC67x04Tc7YOz8ERregxcNh9UN+oG3Ff6cmQinYU4sL7L3OVfskc/1RSZdLWXsl4Kfu6voUcCYRx8AxyWIELVh4=|v=1|t=2|n=2|i=1|sha256:034d4f611ccb67343d75cc34921afb02406b28dd5dbb8227f3c5dfb0b0506dc5",
+        "seQRets|DwyKIP9g64719GPVPuqTIA==|A2mv+VhzvqTnJNq6F5btVUK8meuMiJm4ZTsp2c3PLsh9+TZ/5D329pSHQgEIb+wIPfReYTkpPe4srs8dOyCtj1H5OIKffYqk/D+EpAA2bas/bGOlKCeqI3z0aWxnk7w5ciXZXPLMBym1MOdz/S//Dw4aAO/JRnJTpq6NQ5XuRza7Lx3FqC9+xDzfomg55Q9HW7XyJ6Zm35huW1pcXDWITQA2elI9ma1pDt2LBcob/Y+IpxSRxvrmkjz/lLneoVHBDVdKjtk6OGxl89XqfkPvwBhBtyZNFS91Nr/4KirK0vXuitG/nH5riwo=|v=1|t=2|n=2|i=2|sha256:8c84c0711f0c3a7cce8b66e316ab1afcfe3da66d9deaf756f7a227f92eeb6f6d"
+      ],
+      "useShares": [
+        0,
+        1
+      ],
+      "expectError": "could not decrypt"
+    }
+  ]
+}
