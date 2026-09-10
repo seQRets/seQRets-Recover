@@ -27,6 +27,11 @@ const CSP = [
   "connect-src 'none'",
   "form-action 'none'",
   "base-uri 'none'",
+  // NOTE: frame-ancestors is specified to be IGNORED when a policy arrives via
+  // <meta http-equiv> — it only takes effect as a real HTTP response header,
+  // which GitHub Pages does not let us set. It is kept here so the policy is
+  // correct if these bytes are ever served with headers, but it provides NO
+  // protection as shipped. The actual clickjacking guard is in src/main.ts.
   "frame-ancestors 'none'",
 ].join('; ');
 

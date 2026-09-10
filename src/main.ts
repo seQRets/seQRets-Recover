@@ -20,6 +20,47 @@ import { Buffer } from 'buffer';
 // Vite bundles this inline, so it lives inside the single HTML file.
 (globalThis as any).Buffer = Buffer;
 
+// ── Clickjacking guard ────────────────────────────────────────────────
+//
+// The CSP declares `frame-ancestors 'none'`, but that directive is ignored
+// when the policy arrives via <meta http-equiv> (see vite.config.ts), and
+// GitHub Pages cannot set real headers — so this check is the actual
+// protection.
+//
+// If we are framed, refuse to run: blank the UI so no share or password can
+// be typed into an embedded copy, and offer a link out. We deliberately do
+// NOT navigate the top window — auto-escaping would make this file a
+// redirect gadget for any page that embeds it. The user clicks, or not.
+//
+// Comparing window.self to window.top is safe cross-origin; only reading
+// properties off top would throw.
+if (window.self !== window.top) {
+  const notice = document.createElement('main');
+  notice.className = 'frame-block';
+
+  const heading = document.createElement('h1');
+  heading.textContent = 'seQRets Recover will not run inside a frame.';
+
+  const detail = document.createElement('p');
+  detail.textContent =
+    'This page has been embedded in another site, so it has been disabled. ' +
+    'Never type shares or a password into a recovery tool displayed inside ' +
+    'another page. Open the real tool directly:';
+
+  const link = document.createElement('a');
+  link.href = 'https://seqrets.github.io/seQRets-Recover/';
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'seqrets.github.io/seQRets-Recover';
+
+  notice.append(heading, detail, link);
+  document.body.replaceChildren(notice);
+
+  // Halt the module: nothing below this point wires up, so the recovery UI
+  // never exists in a framed context.
+  throw new Error('seQRets Recover refuses to run inside a frame.');
+}
+
 // ── DOM refs ──────────────────────────────────────────────────────────
 
 const dropzone = document.getElementById('dropzone') as HTMLDivElement;

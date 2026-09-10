@@ -1229,3 +1229,27 @@ textarea:focus {
 .more-body a {
   color: var(--gold);
 }
+
+/* Clickjacking guard (src/main.ts) — replaces the whole UI when framed. */
+.frame-block {
+  max-width: 32rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.frame-block h1 {
+  font-size: 1.25rem;
+  color: var(--error);
+  margin-bottom: 1rem;
+}
+
+.frame-block p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.frame-block a {
+  color: var(--gold);
+}

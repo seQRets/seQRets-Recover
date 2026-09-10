@@ -216,8 +216,14 @@ export async function recover(
   try {
     derivedKey = await argon2id(keyInput, salt, ARGON2);
   } finally {
+    // With no keyfile, keyInput IS passwordBytes, so the first fill covers it.
+    // With a keyfile, wipe both the concatenated input and the raw keyfile
+    // bytes — the latter were previously left sitting in memory.
     passwordBytes.fill(0);
-    if (keyfileBytes) keyInput.fill(0);
+    if (keyfileBytes) {
+      keyInput.fill(0);
+      keyfileBytes.fill(0);
+    }
   }
 
   onProgress('Decrypting');
@@ -350,8 +356,14 @@ export async function decryptPlan(
   try {
     derivedKey = await argon2id(keyInput, salt, ARGON2);
   } finally {
+    // With no keyfile, keyInput IS passwordBytes, so the first fill covers it.
+    // With a keyfile, wipe both the concatenated input and the raw keyfile
+    // bytes — the latter were previously left sitting in memory.
     passwordBytes.fill(0);
-    if (keyfileBytes) keyInput.fill(0);
+    if (keyfileBytes) {
+      keyInput.fill(0);
+      keyfileBytes.fill(0);
+    }
   }
 
   onProgress('Decrypting');
