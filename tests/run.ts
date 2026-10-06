@@ -14,6 +14,9 @@
 // This file replays them through THIS repo's pinned crypto and checks that
 // the secret comes back byte-for-byte.
 //
+// Lockers (one file opened by a key held in an ordinary Qard set) are
+// replayed the same way an heir would open one with this tool unchanged.
+//
 // It also pins the failure modes. An heir under stress must be able to tell
 // "wrong password" from "damaged backup" from "your recovery tool is too
 // old" — so the negative cases assert on the message, not just that it threw.
@@ -46,13 +49,17 @@ interface Fixture {
 interface Case {
   id: string;
   description: string;
-  kind: 'shares' | 'plan';
+  kind: 'shares' | 'plan' | 'locker';
   password: string;
   keyfile: string | null;
   shares?: string[];
   useShares?: number[];
   plan?: { salt: string; data: string };
-  expect?: { secret?: string; label?: string; fileName?: string; fileType?: string; fileText?: string };
+  lockerFile?: string;
+  expect?: {
+    secret?: string; label?: string; fileName?: string; fileType?: string; fileText?: string;
+    key?: string; content?: unknown;
+  };
   expectError?: string;
 }
 
@@ -122,7 +129,45 @@ for (const c of fixture.cases) {
       if (text !== c.expect!.fileText) {
         throw new Error(`file content mismatch:\n        got  ${show(text)}\n        want ${show(c.expect!.fileText!)}`);
       }
-      if (c.expectError) throw new Error(`expected failure (${c.expectError}) but it succeeded`);
+      if (c.expectError) {
+        fail(c.id, `expected it to fail with "${c.expectError}", but it succeeded`);
+        continue;
+      }
+      ok(c.id, Date.now() - started);
+      continue;
+    }
+
+    if (c.kind === 'locker') {
+      // A Locker is a file opened by an internal key that lives inside an
+      // ordinary Qard set. With this lifeboat as it is, an heir: restores the
+      // Qards (the key is shown as the secret), then drops in the Locker file
+      // and pastes the key as its password. The file is the plan { salt, data }
+      // shape plus clear-text fields this tool ignores.
+      const picked = (c.useShares ?? c.shares!.map((_, i) => i)).map(i => c.shares![i]);
+      const restored = await recover(picked, c.password, c.keyfile ?? undefined);
+      if (restored.secret !== c.expect!.key) {
+        throw new Error(`restored key mismatch: got ${show(restored.secret)}, want ${show(c.expect!.key!)}`);
+      }
+      if (!/^seQRets-Locker-Key:[0-9a-f]{64}$/.test(restored.secret)) {
+        throw new Error(`restored secret is not a Locker key: ${show(restored.secret)}`);
+      }
+      const parsed = tryParsePlan(c.lockerFile!);
+      if (!parsed) throw new Error('tryParsePlan refused the Locker file');
+      const payload = await decryptPlan(parsed, restored.secret);
+      const env = tryUnwrapFile(payload);
+      if (!env) throw new Error('tryUnwrapFile did not recognise the Locker envelope');
+      if (env.fileName !== c.expect!.fileName || env.fileType !== c.expect!.fileType) {
+        throw new Error(`envelope mismatch: got ${env.fileName} / ${env.fileType}`);
+      }
+      const inner = JSON.parse(decodeBase64Text(env.fileContent));
+      if (inner.format !== 'seqrets-locker') throw new Error(`inner format is ${show(String(inner.format))}`);
+      if (JSON.stringify(inner.content) !== JSON.stringify(c.expect!.content)) {
+        throw new Error(`Locker content mismatch: got ${show(JSON.stringify(inner.content))}`);
+      }
+      if (c.expectError) {
+        fail(c.id, `expected it to fail with "${c.expectError}", but the Locker opened`);
+        continue;
+      }
       ok(c.id, Date.now() - started);
       continue;
     }
