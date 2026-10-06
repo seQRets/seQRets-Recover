@@ -22,9 +22,9 @@
       "password": "fixture-password-2of3",
       "keyfile": null,
       "shares": [
-        "seQRets|K/xAcCLJBzM2h04SXHmTNg==|Q5YvyMuLJJmf1vpXhNSNDk92VJv9zqe50BNufxuldusieAZJRX6OznwR9mI68d+DWhvWlTRBL7RD0x+Fc4T4XrPnWSFd7V/LyclZCgg+KKmEkzC9yF7botGKdIxkEXk/MhPE2UQcIyXj3yz7XgX8oRl2Y3pcbOwrgBIuMwFy55DxAkZGlbvxwjcNo7Lu1qRraeeTxoER/oLoN/kYlz9eLUmVpsFD8hKfNtzdepnms4QGvqqqRRH86XmzsG5Qu/+5gO2aGr2/YTVGoikVtlBMJ8g78RO3N6lrWT4wZXTNze+uD5OaahSWLVA=|v=1|t=2|n=3|i=1|sha256:6b939e5963386b991d346f369eaffac82c288638d98ccb633531405a7fec6c44",
-        "seQRets|K/xAcCLJBzM2h04SXHmTNg==|kfFf6UM5w7NfIRJY2MDtxDfk7zSBh8YIPDKuMhtrQ0f9TGsH7OVk+JiJm9IpdITkdtRYl/s4IQA93J/8v3IgY5Ac0KrIKe1NJU80AThOvQAfTzFZWyhsT14ntixlPpSt1RFJGRt9llaJjTy+nVdE+20yAvmBiYH6yGwue+kJC92zqPz3krt92MWQR98wnlaYJByE6ywxjuf/ziNnfJtLGjGXP9UGkUjePs8yhffJM6tILdnIqr7pS1qEFQqwxsqGKehXMJOioc20J0WZ38rKMWwHAG29t1RYh0mrjS8XTmm97im9f5kOMpw=|v=1|t=2|n=3|i=2|sha256:e50c9731ccc95ba2af195560bbdcfc570c99233e113371e24264aa70d5de2f96",
-        "seQRets|K/xAcCLJBzM2h04SXHmTNg==|bZGvHxWqN+mBSiuVrj6CZQVSbUjS3Hr1ZMRwCBurS1Vxl3RTTELgngJAhPzYUv2E8MfSKujZP0/TEQsdwsqjqdvUVZJxln4FfQcrrYK+BKC4reLDPgRNxAfm1Z221h8bIaytxwPBCsiZ5aNGLT+oUfwZvgOwwJ5oQIIu89BVU+dEZq0KnbtKOBzr3cBvFo+SHtQUvu0Ufjpvux1aK0tmrwMqJSv+kOJH/D4ELIYhp0McSEcanMLERxExFgRLRsLxiVr5aqhNf2ttAYmuob6Ccrwet4PCI0CM2LYMtFYptCFMxniXUn3HYOE=|v=1|t=2|n=3|i=3|sha256:322a1f1652a4d5846a901c671cbe34e2b6bf5c4a2912e6089a5689d030f71d25"
+        "seQRets|iQRttdZaO5lxUOWOJs3MvA==|qatVjrtm24N9e1h6lZLpDb0uq4dOvhMUF8si30Z+4pVTndQfcgdzF+ecSKZ0osFC8gVPbQTT2UeJN3/svcWOWQ3Tqdnom9ygG2tLGuOmGjNWLzvAB5CF17AO8Wc0nBe9mVErBs4FUFWQeHW/eJIBZzhyXS0DwFDRfjAs46Gy53TpMGgR/2zlIdnMxPULN975984JZdYPQv5tJFaL7oYpZrwrRaWdAfGH6sYnbFIx4+ns0ftT1dDc8w8CiPiizG1I3mZKHlUr40gfIV2bBiKKmHglJrUI8/pWLKYI1GP3oCbYJ6iQTr6fLyg=|v=1|t=2|n=3|i=1|sha256:512ddcb6605e2b916562c9e87045df67617e17cf5dbf4481ddb3f09c5e1deea5",
+        "seQRets|iQRttdZaO5lxUOWOJs3MvA==|go9Dxl8VbxWYbmxIhhypOK3tMm+sn3Mr8tpmioxP1UIjBx2jIsk+icY0gxmVhPCF8IsOz0PHlsHMLaDdwjwgfmolq2YrIxdgr+rliZ3q+g2scZl7XUjp/6wWVU0fOPwZFUerMOthCg9WJ8QKI5Cgc3+DGchKaio+L/TrJFVzyy604WwX34jeun7C/AzbbyT9DsyIrNs56L8y8p//T8HGsRPYgpF36GVZ77HIJgcJY0pyVqoxE+QjNWeRhK/3MqRnAJwaccM1DSobTeC+x0DfmLwWD6EMIzqMJV4jje/PyBbOmLJVuvLLyW8=|v=1|t=2|n=3|i=2|sha256:7d8769dd0f46cc41d4c0edc24f773e1adf333ce262745abc499a8431d49a91f0",
+        "seQRets|iQRttdZaO5lxUOWOJs3MvA==|73cELRt/WnOU8Xj3suA0ZEGJwWZDFC2R/n7AiNYoGfGRLJ/gU6immU2gkYKi7JfaYHfbvT0QnksiJ2W65ZEfXtcdO/1PWwXcmoPanPI6hf/Z3evbym76Sg2MjGhy4S3AeQCKtFsEnZhBw4J3/AAKpAFYv8Tpbn7UFnO0e/2HRbnA+Ve8HMxf2X8fpaGLaFHGo1zhLt697GrWCR125b8sAmST3YXuqZPUnOAiXQVQQnBilJP/BPAlIk+EyT31fCYxjelruqUEr+QgXusOM47dmDvh8nY3c4Y6G7tOwoOW4DmJA7iaEiKBHRE=|v=1|t=2|n=3|i=3|sha256:51cf43ed81b130f41415a03ec52bc806e392086c233f750741e8d23279d7dd63"
       ],
       "useShares": [
         0,
@@ -42,7 +42,7 @@
       "password": "fixture-password-1of1",
       "keyfile": null,
       "shares": [
-        "seQRets|92rMJJuP/MIcs/pQKobCRg==|Y3ldvaLP0py3zXGFkkEBozXL6vVwr3uE6X69bzJP3Ed0EVtmQQBRcfx+/tu8K+eWPSU8SVPwLWYsOWZougYTL/TTBw2rUtuZz5DVVl5evH+sVcMDCjyMtI68EiXMHrekolqGKXmwJ0g2QyNSF2LO9vgXMqZwCGpBplsrFEOis/DZBjvyCfhQAnWSpXXGNho98DKoK9FP1TTlyWt+la63j+nzV/TSO94i4GFpdJDktXjwbYYl0dBymoKz6dFAMxv5gLwBWP6pujr5rmdy7lH+Lc4ERCOSxdVaNOc6tHIO8UX1siTe+szBrA==|v=1|t=1|n=1|i=1|sha256:8e5dbd747f6cc274af3bd19f43c8577737cd163bfb7440d6b70f6c25c8493814"
+        "seQRets|AM6OLemAEJ4o+iCMlnM6Ew==|q86bj9WQ6Ofb3zThBqR9P8617id1uSSFX2dqP0f3FSCSEsWL3gxlxkZOmLQzjC2KOWrWEcuhM9vOpF2RPUUgwUcIrGWICgXQpPnMZkCcydJHWlPJQV+aWlfH748bcunzmTsYgtI8xGm/kIIV2N2rtxrckuoE+sRmlBBKdpsoDVC9Z9OwxkiscobLErCJMvaB5e1TKakU4cedInUqs1eB7fh/BqhetLZIWDbtQnsmvTqq2wXei3OUiJxM2jB+s2NEfVPbLIHCYExhutv/ujbbp/As+VITGEEloF2Gh6S4kamNRthadextFg==|v=1|t=1|n=1|i=1|sha256:0bc4ad2353dbeab3674e4d42c430e4f251ad8f4b97930d73b33bd05d8a010e5a"
       ],
       "useShares": [
         0
@@ -59,8 +59,8 @@
       "password": "fixture-password-nometa",
       "keyfile": null,
       "shares": [
-        "seQRets|1qsk5P8ihIRXIhCF7f6zPQ==|wjlJsmhlAqvwVdjzpXGnqLhcxdVbqXLqbROw/K2znzj74V9D4agI96uw4JqaiwZdy7nNxuvRwydEVKY7cnwjL134I9Biug/3lBwQ+ygH9Xu1KJkVENz7i9sg88yA1q3dNCo0JMd4+2OA0N1U8zOrAuw4TaMd2h/xejIbaufqMbZ+IAbuzJUB9TCgYKV4DZZITm9uoppscHIZKMbzTuqqRd6JEtC6/sTn8K33CDX89ZFfe6jBhOj/1z4Qqqtudaev0EO9FtY/ZGJq4xvdh9M4HbEepYz4BP+ok3glibcp/2OZ9wPt9ZbGtfY=|v=1|sha256:bde3de38386e6c0adfb3f26fd78e39f3d2c03db4e495c6cbb96a1ccacbd9eae3",
-        "seQRets|1qsk5P8ihIRXIhCF7f6zPQ==|gcKqTBHlo1Gu+lqtxVJ48b4ixf2L8g8RFEWw+NkKa0bEdoMZ5cVftMG2xqzanghVASO0WBsM3ZRE3gcw18gO4v2/FUG17M5AwYhXjTDNplT4ZHechSyFeewKwT3dSDLUBwyU3VDo6G8letTx0SmAQOfofiGQsxDO1BH8N5Z+Qtdgm3we16+/tmjpNS5nHsWtvms8DW47LuiVKpIreeYW+MN0s2QBOz3gPXoIgMkzkLjUTFepngkq+rCzq+ukOM9IUzyTwGig2HQrZ32GQ7E7NjY2QE+90SISXwpjLw/zsK6PfYDzNp6PWoc=|v=1|sha256:a712b1caa654168526310e3964529dfdeadff761287f510a01565e0765f3610f"
+        "seQRets|7u0MBrjLZcEd/6q3jGjWcw==|uEBN5N6/S2drYU8+HMTgx5YESRctf9aBzfOmqnVrW6Liy/nv8i6HFShV813hmAYyj6cTZWZ7mqdHw1OijMIgiT4c4euGdIIP1BQ+l2O96C0a19VslpedQQlF+SHKoZQk4kt3WtJlwMIeN4WFLzgaH4l+J50RA3f9X+Zy8zrwk16xdNrymaqZpjM9WEJUjRFtOxbsD+I5P6HRoeP1OOXE7UbGwRh2Wv8NUUfRRL0ehtpLn/b4SEyLiwwKrNc1oFHcwfDHyQMjglQO/T/7wl+lVjErt/hn4YjCHAwvNvhL5OoQuJPE+CN/JDc=|v=1|sha256:5ae017d2c4949304f21911df6c7675364c69f5bbc09589f8af2eaa51d8069470",
+        "seQRets|7u0MBrjLZcEd/6q3jGjWcw==|dQBRI1BtsxI4C8RT1B18wgbWY1WilVPjLuCq3xX886ws8Tk3Gvt+hUkWB/g/L+/fl9d9mZSc4jfzqZ7WK1Fi9Qghrf++Cp/hBDpKiVuAibXkHersepaB+YWmuHR8gcJKHgwF0jvVxaWsQvWM3TTljEooJcXtEfJ2niWmIHmzvexaWcMxaMpHogHYGtZ6JHKaFMHVlU/SHIAijgJBMof/Qy+5xZAqb3I6cccu23EKVh2orQxrfu307guUIGwXiRcQ5vxbegk5phRR+PI51NF7Cw8fciCKgUY5MU/xa2U3cxnWG6r/LpRyThU=|v=1|sha256:5e611cb42de776bc7f3d3f4a09b3ad273ef822be3af501888fcea94cd6992bc0"
       ],
       "useShares": [
         0,
@@ -78,8 +78,8 @@
       "password": "fixture-password-12w",
       "keyfile": null,
       "shares": [
-        "seQRets|KcnUA56V8i/DrpMXYJeywg==|TEU71S6bwFqq29rDB2eflU5QngcGw4dnXWcBXtiR2bTkE1LFOwEivCuFwpDpnK7EGJq4S+2wrkbrMkbDdS5N56/TJqifPyeWa0O8C8KPcLpN26KrhC0AEnM7dZDd7O1oPXW3uXuLKjaTHKX8VRkkNsvAsNQ5zSo1w8kAuf8+eBxuC8u8sZEjGeOIG3R2s5jh5e5vrnAbNy6a6G7iK6auC8JCYRcZU9GpjGZKHQEeYOZQT9L0z/d7OiwdIiWrjW6k9fXWnCIQMqTBO4U5eRA0ha8KLRqF8NhTCyFGoprwcphiD6EyhG1fa1U=|v=1|t=2|n=2|i=1|sha256:a4fa7cd336c915abccccc2a729dfbb2c0653c4f72d68e221e596b47bfd40be27",
-        "seQRets|KcnUA56V8i/DrpMXYJeywg==|Elpk77LG0Fc9tEGywMSNwhtb2yLEgY+NQyVRw25E6X0DLK0QHgOLf3Tsyy+ZYmKWtEvkFEGWOycQ8V+QQMIeJ2LnNEt5q0JhsiYugFxovtFCPlwFNqdrM7gdgF+SfZTB3xT7mDUuImhBwRxqlxvZNKFCHyOHjdRDWfLjIm1/X4mFyNjpy56CPTf0fS8Vx2SrOAGwOqpNveTe83WT81la6WcpCtGw+fNzB+AWsfhSfgRyWObpUKGhWFikFKfEfmuS7Z3mS9PUHLZfnQLYp9W2FJ27M4yzEV0+turrYJWs5YWOOF9pnMYHXm4=|v=1|t=2|n=2|i=2|sha256:d8bea1d880a086eabf421931579cbcf85f8b03fb9c2efdaf57ab5093a2b5adda"
+        "seQRets|4352EtDiD5fC3rGt0EjzNg==|KZLgZiHCY3K/kgkTfLfa82gWq8Fls3heyZCDGaKcDokkPlNUMO6B2Gqldjp53z/wBseAQnbKPmNEdTKwju1QIKl6MMxdR6wbIWoBER4iYAOmQ4G0aMppnQWipJa4oNpVaE2iR+HqXyHaIMuV0NsF36proegTcQKxGLpbUYuxzUXcCyw7SeHSkZVQz4GXgwzLsS+UEWZa8CkG7znhwl79HwHya3jPtKy+APeNzkUwYv0auMpCFyhdpMGeU55OzR+TQsrdpOucSzSvxQXtv04T2nkZP2FnNaw7MidWnNdvA3akuUPm5vhsigk=|v=1|t=2|n=2|i=1|sha256:3cebb9c1c16a0ed09dfe7e1be6fb1757ec6f544d8bc31af72c6c42881c5b864a",
+        "seQRets|4352EtDiD5fC3rGt0EjzNg==|CW+GLVYexQ3uOTwI6Ea9t6ST0oqziXD41WzPL1JDHxdur+yyxomBOw1CutmkTKSVUw6BRO9sDUY4wIISBX67Uo8rpbNG895Vd+zWD/IYTZvmAOCr4MGqWuAXSdIKcS7RYG/lc08W7n02qRmVJrxRFXS2zXBx9vdbPZDFEaaNO91T76bIS/m1l+aCO1cRqkBCYJmna5eO9zeiwi48WCrLMYfM9GVm4w/+k+8oJcVaEcMQRYlPvsPeIzPTaSCENPOUQm04iUh+wJrFZhIDEyS8whUpTCK3h4ylRK4IcBR/G37kyP1JFQHp18g=|v=1|t=2|n=2|i=2|sha256:ae9f5777ef72c3f61befaa1fba612a6ebb8d8bae1ce609b813536acbcd8ff369"
       ],
       "useShares": [
         0,
@@ -97,9 +97,9 @@
       "password": "fixture-password-24w",
       "keyfile": null,
       "shares": [
-        "seQRets|wCozKooJV770ZZZA+Z5ddA==|WaH+sroVIA05A5nucqx41NZb22EBnRzXpHXEKjNF6DSr2t3NSk5n71OWIok1+wCrjMgFsduKWc/Dst4geFsovTGAd7YxYE671AFdA1tpNzDPCWCwY6cG4FBRLHrAymtQwh+XsWYaM1fPMRc6nt4fGPjHzfEhvccB/WF7e/01FrPyswKZS3etr/K/QAwqOZz3qJzSz5XPy3kt5JhFdz9RnghmOtKNc1UNoK5S3iSutB9r7p/zayFKBBelLS3KEhVlirZM5497t2JpAllOeRVbX2aPkJ+mTW22vQIE93pyL8rxDtYwLzaGnZc=|v=1|t=2|n=3|i=1|sha256:abe6ec7effb3fdc1f0fb170d22149daa56fd4bf9c5cccc906090bd325e2ac409",
-        "seQRets|wCozKooJV770ZZZA+Z5ddA==|HIcmZY+iAVGT/Ev+qray9wHHDucL3HjHdNtRywOxJZ5vCGm0qRQESM+TnhDlYI6VmtKjWoUM7mxt913WYOoiUzEvUjHKhsdqJrMYQ3O27Z2gb7Y46j8hCPQMVLUWwLoZSlgiwi4XpCK0TgfszUcP+Rx56OUB02qnmn1I0kk7zY4mLfHB1E4ZDiH9uf/Y7giPAwuqjEqQgJLsQcCjXv1qvJrmeintREEWrp5V5UsBqb74mdg4BbFz5KW6aKQkmcrxk9dIeN+5LiuXLzzReCoEjh71RH/63Bj+hzR5Ex3R9OZQu8a75GAe8Zs=|v=1|t=2|n=3|i=2|sha256:b665716fc2827d796adb63ca2b2739585188c5cfe64152f02726720e9649f177",
-        "seQRets|wCozKooJV770ZZZA+Z5ddA==|Gnn9pg5ooDiYf4BwcSiwAcK8mgIbdN9J6H7LeIqEeJXTw1LSTYT8DLSb4mN5RCyi7UxB+bvpJIbI8bC0qdky+DEsXXLnajpQ6nEeTTMyYcmxn9NjF+p5WkHDlL9z0ID2EQm/tGdYaa2F0YmJvDSBSqdS58UGZD5FzBowKHKF50gUAZsGXiYis0ykw5UULTRPrsZqc84IODFYUgdPuLhV7F/6dATkkmEuEBcK2loCaAObQYmcsiMb8WcsblmPM07N/Hjm8l/8XcSyZz1b3ructN5idmqT6Je3HkSxqEs73gjtJkgRQBnLEXI=|v=1|t=2|n=3|i=3|sha256:d92802b13bb2f85a7553b707da027ec9dbd1c012583d8048ea240d6b05bc6abc"
+        "seQRets|sZNKgEZ1F3PQARnw87FL3w==|mZxAklFY+bkaTDYsxkZ1E2m/bdrUVEQx6Tr0Xy8b45jU8rQInJi9PSRCey6WQEha0neaSPLZx9jQyiYxANkGPtEFeQ9cLWA2xtDLTBcgHLl3Gb8kf80GULNW+9RRwDpUnbGgdAIrgiDaaRx+N9BKaXgjX/kvNNnHsVmx9HNuEqwDt5OA051NbBH3ktJsqNpLBhMzMooJglPxvOCYCLkpyX0tDvNsHIl942Cn79kIS/z24Gj1smqUhR6JzvmGuzX+6YXjcuM4CGv0NCtYAqK+JNsdGgo/2Wqr8n02Shr5ryB6QvF2UyODJjU=|v=1|t=2|n=3|i=1|sha256:fdd9d2faadddaa72f82e3ac60216b99b05b92bd9ba8d888fcbfb7f933765886a",
+        "seQRets|sZNKgEZ1F3PQARnw87FL3w==|Wjyl+ofCwLCI8CoeuLb+0EBnfZpefGxm4ET5TIAm2Pj6IG0NdCOqwkYLIq70WldwuZajIE98imw8L0LKGo/+v1jRCkpqXTkXRXPExuJHGtjsbKfL9JCdJwjeRkoCl89V//05I1Dg+2X4sV0dtFJ3yp6lK2ZjOMc2ZAG3yKHMBuylO6JigXK6V073KDs/ziNB27zpDHfenPuCpa/j/vHV/QRWupanhuMx2w6NvEeybaGMuThyZUwTIVyDtqKCMowHJ4AqkvOa5lX9gFH2+o3z+WQDbefNMX5cQsbDH8/2gUrm3M4/G5zIVgU=|v=1|t=2|n=3|i=2|sha256:aa8dafda427ea040a14f6c3b54f68d1099ff2b3a37754a2afbe37f01952b5857",
+        "seQRets|sZNKgEZ1F3PQARnw87FL3w==|9RZyPsB1N70UP8+o/ok5f+HfK9m/++uB7QJscHNJYxep//OzNh4OJOVFOihXa9i7F9lU5KboXIjm+DW0K07qH9Pa2bdE5CGdqTMdJ2NazhF9a9p7MxAMbDVzr2V9cE5zXA3kxAlkT5gYCTiYWJgYiiP3Cm+Ti24vST9jgX6qyK9bDn5H2MJ37IL3M19A9REm3U8dCd2/NfpR/jUbFZlZn7CuXscjMWvBCh5Gw2ipFSFSoS0GBDRnk1PkJPYauf01HT7i+6X8cFDwZI8j7vgl/8GqJhu+c7CRPvtCtOIv0sKF8+1xcznK7/8=|v=1|t=2|n=3|i=3|sha256:d7ea70b828f6172609fd818d795b5ee7ce0f4d77566b899766b6ac5e881e3d12"
       ],
       "useShares": [
         1,
@@ -117,8 +117,8 @@
       "password": "fixture-password-multi",
       "keyfile": null,
       "shares": [
-        "seQRets|p8H3Y1cfJlADg2Kl/ASHxg==|mxwmVzx0Yp6bS3XempVZL+yvtZPfKMGkosEG4yN9kgQ1GsrbZSNgWueFUIHkT0jOu7JWj+pP3i2/0VxoMaucXK0+PWd6/6PEiX7+P790B0Zl16l6T+F9wiPYCzv+JunUFVNvD+AHonyLqKIhw7W+exwo4J/NMF6ifzeZ9jy855OGpTSHJKov6AC+QipI5wOG9bM5UAWXPZeSz1tsfi7qVRHCy6ekEPFawwP3L7JbsqWR2Uq71aeYXp3zf7V53rJd4o8KqUH8SKRvBc6h/banBPxBkj+XphL2AVC2FYeKVgUzlo5zu2qnev0=|v=1|t=2|n=2|i=1|sha256:10774f615cd97b7a356bc9faf5169ff05ef9c44523d33af0b9325ee718b14678",
-        "seQRets|p8H3Y1cfJlADg2Kl/ASHxg==|A95/Sgs+y2UqDnMWTUhdm4cT8Jas5xYxBJvCX7RPxblcTa9pbtnbanywDAKM7chPufs9EjEoH+yDxdnq2vvmtDyXCfhZ71yXIupkctRdwfP5mpdrrXkxQPAalGMjVZcrOoqsOi5skslirHzeGeIDDc8XdESLoSd5qofHnrbCGUbl6wqwyVGQ2fQ2U4vvuXjYUfiKZMlRfGn8bi+ozv0lK75tN1g9zazDe48leI7Z48nR1ZX6QZpk/pMSACoY/kDIySRAaA7iDh7ap3S1AGPlP9Th4Lq4/Bv1KB/TLocaKDGiFBxmN5zbeL0=|v=1|t=2|n=2|i=2|sha256:aec4a0e0bce0d55de02478f5cde7fa56e18579109f2191730a4cf5b615e22393"
+        "seQRets|cQ2WTSWoyeh8VUkAeDOIkg==|7ufd+l3UC7r1lLR71CT9SivDvwiWIiXLnJJE/T0Aqc4uNMX6L04PRuaLvGhMPJVYaDRR2wu9V9WJ08rf7xLmb/aP7Mf8ynfvqPqAgsmXKLpK182tTokf5FJEC64dzxWZhB1zxiTfDyEWlBJGps3iGhpPCdb5CgsVtBdmgxBB2eM41LkGC02gTkjW+m7E49MyN6yxH9Qen+7l5QJ0N9LIobCOweFMopi4gMV/rgCfZRK8bgO10WIRTkIHFP1eNyxK9rwkYdYo4X0ajakF83JnKmNBOmvlQ6gftiEqkBdO1Lk4vVE3wl7et6M=|v=1|t=2|n=2|i=1|sha256:04e47a03de2904b2aade8c2b576030c116772d2f40aced5cc9a0edda1b93320a",
+        "seQRets|cQ2WTSWoyeh8VUkAeDOIkg==|a6lyx/nhLY7wVAKl80IbHIK9r7Ii/OEvLYPh52eF84ESMzBcVGEjLQEydU17XAThHohPfrYwVHonqzIJcA2m5S0J416T+MNA6sb3YwYaOd95IIlIcRqL13hSsnaKgM41kIYrSHzZZwLKvpvRckr/2PiKm50wLICQpEHZA6YF7Jt7X1DOmvh9sxRShA3KybbycOitK7U9l2scVYi1rUBqrqzQXrrHRdKA3qr4SOOEzswwyH0smP8OrcEIs9aU2hyzAlgVnn1CEEB923WgsrpqE2t+wD7zp+MNvTzN2EhRDOjOEznEdSCjziQ=|v=1|t=2|n=2|i=2|sha256:883d862279c97b2edc00e8e6bd183a3266406e35e4659eaeba1e9d2172477973"
       ],
       "useShares": [
         0,
@@ -136,9 +136,9 @@
       "password": "fixture-password-keyfile",
       "keyfile": "AwoRGB8mLTQ7QklQV15lbHN6gYiPlp2kq7K5wMfO1dzj6vH4/wYNFBsiKTA3PkVMU1phaG92fYSLkpmgp661vA==",
       "shares": [
-        "seQRets|X31AT2HkcAjO3MyQ1RATMw==|EwviryxzpjmJJX5Cg/SSbvIsdorqSzChbyI9USXQ6BDjThR1dCg4hIXi7Vo4gyjPxNZVW1kUnd1RXhd7wz9nEgeTzfRKsVoIc5gxWodTb0OE40DSoOD3C/0VRh7qR4iHxNKkp96KLaLLteY5okZ4tUG/c0qX07FFBKdD61zev9uga9zAN7w1A7Vv5h6sZhb3REdBuA8YNOYsHCwvFFExKEOvBk+yL2cVLQlt7I8cjzqmFmSF/+3gBpnOvlep+BXA9f5J38k6BZi1iVRmh8bobyE1yLHfLu3jvxlw/KOah1NSWdhQjl2cZ1s=|v=1|t=2|n=3|i=1|sha256:cee345bb9cb960ef3f021e64193eefa0d26eeab99ce6010a3e2f4daf6b7a3a77",
-        "seQRets|X31AT2HkcAjO3MyQ1RATMw==|nfWG657cxb/naM+axreheVbo0gblIJPZ+c88+Zt+F0zUdC+DslsgYxHy9/6JxQ7btbCpM04jQuTgGdsHQejGtmCvi5cjLTFsy1A3asYbGF8PFVrRcKhVVAL6XjB8e1cZ8hZFSvmfghamMMzVa6B9t6SGCLvtyy8/1CiyH4LmgSUSfvla56qU+3efCKf4PUEkS1UPGeWbqTSNMmxdpq1pM56uMpfv0l0av2zmPeRNCET02xLgjGVaIrLpkvLWn7p5BtIjkI78IKNQhCWdgquDMq/OV+04TeTCiyds4lQN7VhF5bY/wTYav34=|v=1|t=2|n=3|i=2|sha256:14855d8002ef1587fe627729c9771073928ef56d6e72449d1081adb1f29de098",
-        "seQRets|X31AT2HkcAjO3MyQ1RATMw==|IAKOuuVGrN/OmjYr6YfbuZPGF0dZlDdOOBtCAt6anmFNrYipYJNclixTdztwaEiZgUSiBY66kr8ZyihzwuWec+ppJv5rzYVkkUAokgp0M8AvP9pTHMeP+4vSIqu9vYcFFTivnsGjGHIN0rR/BSvgS63dHfCGtzNUuOv5ySzDu9JpQj2lixTME0aqXoMIcTPK9wh/QVBmN6TVqd7r3aanzbLQKSa8p4SmnRrGL1AgFswbVkeWRMf8mLTR9UkgFSBdsbXpnl0u5ARZxBH3HwA3YRKkNcDNJEflkB3zgQCyJweFXJ9oz4J6Dro=|v=1|t=2|n=3|i=3|sha256:a915d2854706be36f2003b8d9d717a00ddfec751eaa1965c495a7ade111575fc"
+        "seQRets|1nji1ONbfRigj7csUmP5hQ==|WvN5YdKGyDmfwbWQqSRTDrt5lpl1CTsd3lGsXbgUP+zIYOfAUs2uU4UWkh8JcFGEPzFxY450d8wH7ph4rWb+zs1ipmLFOO5Cb/MfNO/vNlhjWoS1D62Ai3XMKw6GjO2tf+lTlVfEnH1jKb3T1zpUf7+13EuKFec8mb9LVcqcY7W9WX1WJtOzQ6v0aka+cBVBPxWUBupDAkMHDuQiQYM0j9hXDwNlix+4s8p/wVc4MjjisH8MtcEXWFt5kK30bF/q3wLHYUrqZoTm+A1nEtsryXjOIWkQriKyCb+KxtZHl+UEDyOs3j4VWPU=|v=1|t=2|n=3|i=1|sha256:79fe5d1ed6ce7faebd31dee71851d162497fb7494bb32127bb090975970e944b",
+        "seQRets|1nji1ONbfRigj7csUmP5hQ==|wsymB0AzJoAHwt/myOTzEaiWlX3gPaDPbMwvCHCL9dxYxGSPnnmO+kiDJuQEsBZLk5U60G/HuBmFOPXfVqruRCjjj6D6HPNKVGmhwI3Z6CLo+aYbCbyZrsNc6f9rLrvFjjtnEQZn1kkr5jZOVLtXEJVqZN40pAk7i0Z8QQROQBlJzc9jwyFnMYo9sSyGvWzlJzePZea+gF70NKHv7xv6s7BlwUhgWLABOjmJy0kAiIaKLatYzSRJnw6jqd9pnoNCnDwOqROtQbxKlGXKHRpCqbnMcCXv2imWgNwcc6U47fjCELuzOMRfIt8=|v=1|t=2|n=3|i=2|sha256:7599597b78cdd2bd7174bede9c521cc28ce8ccbdaea83375cdc4f9e0d0abb083",
+        "seQRets|1nji1ONbfRigj7csUmP5hQ==|lDD3hD7Rs1JRzmwlV8lFbeQHmcCC7fqqko4VR33B8BwuYl6og58OaFHhwCUwnRFaFTMNKsY9qWC7TVp1l7euWpHRK4UGjIdquDdvPR4BvdHyQy6VEfj9Oi0qzBbykPh+Z163N1nd5ZkQ9ywMbolbtz07srz6Vpwnw4+gERErzJ+0qzG3esQa4g408J9mpJNDR7/j8tZnvioV3K72YU3vQwut1H90OTrTKNh84zHgVkgxb9YTNp0qrkHmTQwre97Ui8QHpGyq3VzMP95IITP9MpDELw4+EQUGkktykXLfHoz3bO3PjQFs0Xc=|v=1|t=2|n=3|i=3|sha256:4ee302fafa0abef2aaad581b12314ff5c1034da538d11087ffc6e8b3d11f4ac9"
       ],
       "useShares": [
         0,
@@ -156,8 +156,8 @@
       "password": "fixture-pässwörd-ünïcode-🔐",
       "keyfile": null,
       "shares": [
-        "seQRets|v2bEPVqOx75KHwfBzDkL7Q==|0mWvZVE+CUllwvHdpf19Wnp3sYKCk9JJLhS0dQf6EO7zGC7i65JcjtPEOe5ZElDPQBIsmFy3fbZCnnSOLtCECn0cvGtvQg5iTSqrJ3JK5Xgv/d8dAPsdTiB6vfDo68hzZgUWfXafuoj9/sGD8khsO57WYLgygeG5GAaZ9/w5h/qyt0qaIYc43n1Vk1Csb52BTLr5LhoHmfLqz6E18rrqfknbCUyEitPses1gKnXw8Po3HZ6STLPXzg3PVVGjeQA/1wyHEpVanOqaeGPZVMAWwOss+MuloOpglvcbW0SXjpcwqVm37v/066M=|v=1|t=2|n=2|i=1|sha256:6e7819b70265ebae8dfb04d40402a5907dd70a8a0f1df59686217410093f2869",
-        "seQRets|v2bEPVqOx75KHwfBzDkL7Q==|NgPfza7nk9ORk9hSUuSSMjrt1GYZf+/rSsbvwvIMXWwVB3ahEOHQdwB/LKGQKpE0gjBc4AKGTVqwqDM1GtCQRbSPOIqRHGVTdNFO1ibGHYafZF0p8UGUSpPdOUYY/AlZPARYlgQFj+TRQKAEfmjFhmeRFPCXil0++vUzhs3xK3FUCYaoACmL+O3eQB+3I+2GFnKoeECfrqAEmjRTr1bg8CZtvAKG7s4LIYx3pjcrwD6SiaKXegwJ25u9Wx464a//L7XX0zofXnncT09PydH+gaMT7zbTfaPgw6c6KVZkMiShMg5undOsooE=|v=1|t=2|n=2|i=2|sha256:18edda574926fa34cb2812a81ea7cf3b5fb903b70b4d69575e17fc0873c21cb2"
+        "seQRets|oQ+f5gEGMOM4cwgtdQPOdA==|9A3AnjEfcLwtAtlMR7H1XrHz+YUJj2hZRdF4VPSzqo6DLnBsWg69svIu0Q2eR+lirJm9gmPGS8ZfCUeAsn0QRoP0qxtEyYKSXCdPnCavTBolOhkUjDjap27nwVAeFR0C0lIpgqcdfaHGlhz7/BrWb4ZcD6E0jDYz85JA1ZTGcNDegYLjXjqL2+RJw11/d2drzjm8acORk1pqhH/dxPeecbjznLw1SEd1cuiQz2Z3AargjxNMrg4yO/CceihE8YngB54xFyKv9WlqZZVvOkYKwlKFSAT9QsN9xnzHFLkx7qHpy2xY6kJzXkI=|v=1|t=2|n=2|i=1|sha256:f5852bb8ed18d846e579654f9405763b17791c435fe634af29624e094074e1a7",
+        "seQRets|oQ+f5gEGMOM4cwgtdQPOdA==|Ea7PHOR6tvYLm/NeAXa+Pha8npTFc68vBUUSS6BpV6SokZsgMHBVlfEdhQUbch0nq5vlEaXhVDhpFZej6u1kSTiX0zGZJauReoy+3OvZKg1wEPC9yCxzdeG7hOTMG2w7QpT2vu1NZzPTTRJyFPmTnZbnfpnCGv63zlenCYd3UPHT7sDNhUNF4fKQP8uRf0nreCBFn0TJp9z07UGlXIveKlyepDAod7aCsU56UaBIi1tHNUtZ/YjnU6pjQ5i+0xvipHeZx24mpRQniIbOZ8kRMco03Vp6qd2a3Poi1zBaI57gHecv29EipQk=|v=1|t=2|n=2|i=2|sha256:a2f60c56a3fa67fec4fedd54e71207d343f3d349cf6156a3dd9d6aad2b0bde63"
       ],
       "useShares": [
         0,
@@ -175,9 +175,9 @@
       "password": "fixture-password-large",
       "keyfile": null,
       "shares": [
-        "seQRets|V9aXfN5oN3UeweAjOyiYsQ==|b3XAa7Cp2yd3rXW7O8nACCDD+ThOpxHVtZfBGwwLRoEclRjqaFjhqin1eNWUm5Ppc2862gouwVv2cGXI7s8VHogDiLjpp6my7EoRFvfws4DCPAyKcwcMIKAl7QkiAGhCE/JY3X9w5eo0c+bpY0XLJZFPAZ9vLX+kxJ/GVa0aFlR0EmhFhbE0Y2Zt3F+K0tkjvB777mfAaCP90sFOfMRrktowvLgCYkOi1DkNvY88DwvAMtLGOMfOvvRscuon+uNshXZad/MsJsCg2rjyvD2fcF3pRT+fnY0kaswKBfFZyhsMSvsIJNiVrDuAUGVj4B0GFluDreGvAPYrsCXDW+E1fo/VlgXL+TGDtG9Z1q/wf676wgJcQrV1qFGjxvQrSqu/Ld67pJZVyHnYRMtxPwAg6eRGsgdhwnVVCEXDTGJSzcCGO5kkMBb3EpjsClqlbpUod9vjFG+v3CRheEH84OEFo9XLHlo4xONzDViT1vW9G2uT8OwO6h24m3T71TK/9jeGleLqQgyIY+eLr5AQ/U0RaJ6M37S1uhxRl9KWQaUZZk1kz9IAx5CsMKsHfOx22A0jNOkBNI4uj5dv2sBYZ0I2zoiK5EDcjIDvRQ8UEMC+63ygD19AUO9wOSjhjHWy/dvOAovDpY6PPFgqt0Byg7hi4Fzcn5m3caQpziZ9OAZMATW1nTOBGAuNfvhfK1OMR/gLoDtBH+AncKvY3l++YZ+W9vpA3gV9G48s9jxbIJhjbbAjqM0UvKCgGrEuNnFQN0TVYGdDbTS6/9mfy47ovFidvGZlMYnezMb1yE93V2bm7xMbBUvitJv5J58h+ODL5ewyaI4I4Tqc1lLTo3NpqReYufXtgFZDjasxiYZiTOqqwSriJEv/RbbCd2o6OY749MbyE/l1mN1TSPMkMxn65GVfALgt1/IbaADsq5mERNXmtZlqiHH80MPOHtHl6TWbJf1Aef/LXfGQ+bufNR4KpBHN0Agk0PSQyvf0ZoPnJZDDZhiyRmvGUESOCaGvvXZbqXzSOxXYBExJoJZoL+7eRfozzlF01ATbfmfi+z3BkrXk8VdU/sXoouLN4ko=|v=1|t=3|n=3|i=1|sha256:10e61942ad807d6400cbe8abf659d21ee17b23c7bb74acf1215269ba00bff337",
-        "seQRets|V9aXfN5oN3UeweAjOyiYsQ==|hNqqs9Fp7K/9uvlIeIO2iGK+e/qzdGbg8exZ/w5SPXdDw6U99qVdFn6boxB20WzuOA9/+YjKfkR2+QoIO3IJKvDDAIIrAgS3HjtzCSYA+3Ag77B+lj9Mb8UJEFsbHdnUXb0jR2GWf4itTJLWIGDjD43k0KZCk4Zv3umzXouNs5MDtqUJkDS4ahk/VYdMnHp3GbcdKWF1E/ZRfQlCkdFSGKMaWIsRIUru3ZbZL0xtS4G3qg9NKA+RV9W20BFYmfD4hkc+IwWC5vgcM44SiJEzQy9WWQfguLiopSZ+6lC67OMTQS15/56iteu0HZXK9DZeT1avHKea35IRHsUgYjDaMOBNZpkSyUTryyR1GXn3fheb2Xo0JrQb1iGT0jN06YKNRQJIGZQxIK/As/DOGpWpJ4fEfCtepHt/0FFqRIsYUhZZ/uEQF4zgj+7AB/RIH6Dk2a/N9VCOshy7Dw4klD+FrCIsNQOdPLpeASjolEv1/KzM6RXDMk6tXlqV6D1A/xi1Nz5LtDgW8Ou/zaiomrUpJNmibfQJWSsNTsFGBvnUPpXARfgMWchDXNLWXJmtnSX6dgHQNJbjxqVssrEYBhs057MiwAj7kvQMTALiZSaef9Y5QJRLsQjoILhioCusrtK7sC9/PSILbhfo35dmLU74OdOG2xl9zVewys5HbAnwxx5AlAIxeO8IWB4hM7kUaN6WE5guhGcqJ4F/dJNHqwaxAYCChm6Egg8xwnH9W1W3UvOBnUQ8/DNrmaAgyrpve3QWZLeYnYyUUZbSphu9HQpoBkSUDfGiQTI9nfwD1xIS/pFbYhC18wKGuBu4s8zzp+I+kD+5N1AfU1+j/1KQ5upTdvmiXTyN7wTrsS0h6pjV1XsQA71amRDpGYavl6dxAiQkc2sYbfcZ4Okuq3mbOjHSEQ1/jqvqF0WpgeR3RJrjqL8/rMqQQz2jWzyd2W7GiapVVL5N2troICITdBvci9OI5Sk5mCdc1lSKDvg14pQkABEHmYXjGnGobMsIkd/A7BYCm1y9+zByv34utj9lzR5Bqc0JZHg6bfu+YwsH7nkBfpgbQl5qY0BJJF4=|v=1|t=3|n=3|i=2|sha256:e574d3c9659eec4fc8238a1e98d4bb72b142959a6eec8ff982c6c03d02638a95",
-        "seQRets|V9aXfN5oN3UeweAjOyiYsQ==|0RMOAU4YeBuHGaafY0lp07PN5n4FUapPEmnHLkYJk8Mx4cnXE8I8fuG6HVEdXV4WA2fCQ6m8D5lFETVHpXDppuU5wfgO5cu9Tw2Ywca7gbtYvGXCIzKSy/c1dx7WP9YMYm1YdJdfCe8Pujr6pql4fWvZcDQuJm9+9/h2A83aFntaMMfOsgzttOIebzBAA2sHvEjRmybAKYu/G5uVez08spskUAEyVtz0+cL5qQUrtIp86NtxDd5UFnwrfV3fib6WpC+fnw8HOZqQnHDLKFDbvaYmY7b62WSWxUk1dcMal8vvrIyGMJwseE4449y54uDj/unVDb68a9v8dChLulPWNbBpDAuwKREOHKZfnVwi6FCaQzF4ESf5Xv7EM39JIOwatn9hrQzIalbnuHI0l+WgKaUjLBLXMZ+xX0Dk8+lk+nzfG6SO6nfBmQNyluAkQlbt4iMChoCkHLmpjTrzH3CXi4Lkmu6v5TGlZSOWM/Y7Flw+hxEY6upiNI+7MnuuA1x5XP9qvu0av+vC5kkvbCLabgza7zQiluIgBqfEm7wCeM2OSqncPfcVfq7/hwgjYpyyi0dcwIkv+vQ2DlJIeAwV/jRvPMrULJRN36CBrSd4CEnmv/pk1pwySTqYUCuxEmpj6SZyxELfxJxEZqfP0ttxZxkwwlFMMNqHFk3KF3WrQznL2VmASUmpubdL/GJ6EcyPwz6aRSfPf+gfPWttkqiIJ/xObQq4NZHw5u+hJfvUnGm7HifeKTongyYO/mfTXoHFx9of+gmwRH/fmgkjqAHClroQ2qtriNI+/Uyl7bUA0bT4MvFH6OoIuUQY8YoXO7qBmg+0zIfcd4Fb8WXs4E4CsQLr66W6vfiDNxv5cKC4tpxxMcmu9aeSBGwjJYUPbShrt9d0EI7LCZz7P9b52vZSkCTjQNsGqcIgQp7BatydJOYiSJVEQCJhsmOZZdrCR2C8d9zfqYFhmkASLKg9JOdZxOr5+iF93wMyDlspeE+oITdFo5mMJLHFkgvzFoDR6eR3aKVd1BqN7PddVRmilZkolu0wTe7q82FOjwl959L0FIGxyv2IpK72XRE=|v=1|t=3|n=3|i=3|sha256:f688007b0a10e9a20a52973e72aaf0c6773b49234391d97d46fb7bccabf97af3"
+        "seQRets|YQqlM/uW5kWE6+seYY7qKQ==|5MY8Cl+oZtNxV17KDmqchPf7TFQHLAuwuYvbXZdoNY09N3BkWhoC67JNbcV/A5nYMRlcnpLFAUYBBwVoC0rNaz14PUsCzhg6VE8R9/T8eyTCVT5lxBvttaKlpYnZMb+yojFTf7QODfALf1Xg9jpcb5mEDuudP4X2txIRZUkrQYh0oFItG2aM4JosUJanq7XktLtOhioQGtl8NFNVESCEc9blGJtJCftHk2xmC7phADLI5PHBB4bUUUE9xcrmHsosyvzHWzVkDN4f8FEM5PV9OeTfpNfA64/PFQ05GgBctFGZy+FHJEO7SyRwKNgVkUX8LdrkrRpA49NEy2uxGCd9hMiMbjvH8/kCQComMjPVbSKmH9q+ACQcSQ1Hdgp7YcmVr8lUUcHqnzn7G/MM6qsnLS8bD6ubZiAUeqAEwDzcHvHUH+FuHpcDpDiH+wXDfObOczrWFPTFHpq3KlqiQfj/prXZux810uEhqWPl8feJhQv2x0+3HKez9ik5ZUZZz0gvslHJFgWwG86zr6wo/9ns45dSy/Pklf6yISFtRTWTfnXoLMBea8GwBj4j6dQjxdMfVLGPjnHkGlht23+1dUFNNIOPV9jENzw4CYbSxm48ZYHAYN+jpA2MClYv7y+2A5dV+3m+itL1k4llbFKSZ/P7bX8Qv3M+IQYZVwqhoQrlUaCJN+ZNP/Ez8Xt+UrmhVu9OINSI43KEIqnwM9zkLR7b7pg60bSaIRMnc1tKSttQGyOlDfB2olFDikoqgUMPoI/KwXgGtuZdOW3oz7SAZC632ihiOJL/+09oc7z2wgmWn+pQp123BmhpJbm1Vk742gsXdxvJtof7uae9ZrmoWSjEiQwhiDA/X1HP3hlag8ogwND/rT1bgKrwhy65jqMoCwBFAbOM/Ji2pzKHoPg1MZ30UPW5SN0u2TmEx+cvDcqoDrBrSxZO1SPBL85sQ+qOiETGvYhXZjzX5qytqW5zfgORWPqOUtV9I5HJZIIIhHctHC9r7a8eqKcgQixk+N6XBodmrYyHqjO/BgPaArJ7jZ9r2L32QgJrOS4y8dyPAINK/cbupcj6TjBsYgc=|v=1|t=3|n=3|i=1|sha256:d0998423345821779b291f6909002ce8d35ef146f39274893cc6056b8cc5779a",
+        "seQRets|YQqlM/uW5kWE6+seYY7qKQ==|SzA1UX/iM+jI2LDmAqZ2uXRVUX/oLMcR03Luf2GcHvq/u+bv+PLuoYS9GGSzrRiMwxR+tIVbLqRkJikzrZ2NYBZn5s6VpigoFjPWzHau98pkeVCkANZ+hrHIkbpPwU/ttQ/cLzgEkqLeu7sX5p89k5Xp8b03zf5lCcxKCUcxBOvrMRGtJe0ODvwRGPLjPbcq3KtrNMZCe39BB7CTble/tG0M97HawpFRAQmx5mFESzv8nYKABGiKrhrnVqzefV2Eqt9LsSWKdJDOT3QfHuc7yeQ8yFcScq6odk/DnD97aVYwU0jHAxV/VsECt+IWtVOunymYdrGI1YKJTzVPjkAngtOy2HZSqrlzdrq0GP4v07CNxxdav7Png4yYg5UYcNxIX6lH+IkhBZSP7f8BPA7V7c7bRu70+HZ1Qh1azgbJdp41ZG6IInY0OuInqW9tVvRcrvHht7OdMc15mgPgUFRBMo+qj1pgXJKYnShd2aXvNL/+JiyWCVzgjC9yPN4gtx66/9Tzk7jhqj3iknRlns6uXWSVE3e0EqS8MFjIDjhC4iAuVmMHdTQt3Tpv9Tf9TOXQ5lGod36tpqYAOPln+SHvjctJmzQWOBCgYqKTMAxokubNB+6AX6jRnZo2UqPsr/Z3w73cpYmeYGDMN3fv8+P+b+vYBjHp2m9KkjZzrKLbjtSd05PofdGX+3hnnVgFrK5KTceT53aQFTVbaeShMalT6SMGXqFYOvQspHrbloqi/0CrdhW8eMY6MUFYMADDIhGP/Sel8fEiiJnT1tR+LJw5cynwShHkorShuPm7yHqtwrb20PZ57/cAmhPkJM4xA3fmTq0fFfBxu13xDXNcK4GHsiVRVqCK4OMevQpQzGavYevO1dfep73IdgmJf25JUgs220VxykQn/xOWjkdxfuZZMAnwsMWiml0/C8QfBbLEVG/CdxH5KSLjtCQuLJ6CW1xO759As64awRErNbGm6xvuOufzovDrZdFMTV6HV/jTgknFzPO5idsg6k11apDLRKLBOhVxbtXD4eXGFZlfX6Zc34xdwta/CxBo+nk99jAuFCWRjX2RBX9Ue4o=|v=1|t=3|n=3|i=2|sha256:389251c3b01227efd1b4c6e4934e151eadbdcaf5217fa0d8ebc99b402c8846ce",
+        "seQRets|YQqlM/uW5kWE6+seYY7qKQ==|ZSbrrWpCYeNGO0t+KX2a+DGurswYHudXYopMeEyHb1OP4JDBNszyu/ibpJK0einHPQw++0Gz+V6Xp21UYX8Hv6qql/qgECY0hhXwxtADMdsjPIxyJDAMYcEluLuVOJ4T0APGK0pqVctDbNyxnXmum7QyYuKvIqss0oO80IR9M6vCMZEMR+1yjE6cNOqcA7ZbBNbUv5xuxkFy2xRiSK8hgSRZ9jFsoMbo7it2OtivoEpV7UnjqeywwKhALR0ITt9lNLRkMmHYQdzk4neBU86WcmF14g5HfEe2S/qa/jKKLyrrWO3418Ig/J9/BYgETcSmmLwViom1rbJzR9b6Lh0o5qwbpRS2lpAkyrsJpweO2RQ/jPwtKENdwUGKzvqvjJc/+SgjSwYDSHOuNcaYMvxLYIAtZ7VXbDXAGCPj7DhN0tzj0WXVGT33e5mh8pAVRk0mCKodF7mxNclWyZJ2wb3LWqc+k8G0mk0+0TjUKSVjp+VhM8d1uBCNgoxodyfbMPy31qEiRZyt2mWb3IgW4YyePdgCI8mXnRBHP6M2tj+HknELNYc/eRbmAXneJ1kU/XSjUJ+4Y/fi7Yrn3YdB38EI9NVkhlLf4MaE+6aWi3osgA6E4afD5qkQ+Et7yxyO5UFuAFmCOjtB2+B+peudfLQ74hkheyBdtAYkudZ14bj3SYb0/Vpxojrz5JQwn9YvnewNfh+1K0PuP2IqdBEyNCeH1qF0Ruhnng5C8IDIW9POE9pD9t2lZmNJ9LLoWZyYlzFBZUin3OTo9/N9xowjfP1qrAo56nGqENlA2HzvPpoblKfj7g+AwEaI9CBC3A6vHuwi2fnRFcYwchv28PEhjvuZFepXvP4dDaud7Fas5Q4eJU6ucALmfLnup1U2e6ZsH1xfMku7m0EtxRV4zNyBRF6NQVzSDFiChCENlqy1wMDDy+NX5/CTuBeybcytQitSC1oCX4f+LysJ8e28STnKQzWqgcsqg7v8wtPOGNkI4wrqbVv4+/3dpvPpLbO5Wiq20e63dJ40wehmwvYkfPsaf4z4BprPk1J79x/4LZUKKN4WfH9tENL+J8Wh5Wo=|v=1|t=3|n=3|i=3|sha256:a2251574e29dbe561df33817f2418a0699299f5e8899ca789bb92b92a7d43274"
       ],
       "useShares": [
         0,
@@ -196,7 +196,7 @@
       "password": "fixture-password-legacy3",
       "keyfile": null,
       "shares": [
-        "seQRets|vf8QbeEc6DKI1joFsuil2A==|1zEuI/ozVqg7HtMWKNtj+VcJ7hoUhVxriEav7lE6AzFjlxBZbDtXUq/I8ZYAZb865mtz1atP8s+YrnKiLqyP1Kc7xy6tz3Qdi5/6ciUZYyjJb6UnymlwFZTTqO6WqxUjx5dHpE44FV7RwwEhMn2bJgoR57MFnAI57juDhNb3VWfNk7elaUti65BOFlMcPTHy8Mhz8jnw6PE="
+        "seQRets|c2CRhfT04pRiS9LdexxAVA==|QRuPsKQOQrnVI5oUBf3Q74NjdtYBpWD5jB6Ymzgsa68i4L2NNVLTaPf1r2taWh3+075DOhDkint4OFH2+eqPSaDLZhJIWk+qPNUwy7AMbHpNP5wruaeIZp4580up0mBCXS2fZrHnyKll2d6uGfdCEj00RoIm7f047OVberM+Cazj+G1hjHrSZPiTPOqQtpDSlFejdrXdu+E="
       ],
       "useShares": [
         0
@@ -213,7 +213,7 @@
       "password": "fixture-password-legacymid",
       "keyfile": null,
       "shares": [
-        "seQRets|NpyBTFpRr2YUR0qKwTeUfw==|Z6DUDtXrldf64Sk57P3RmGt3U1fhdcr2QLLX6XBRWLXjmEbTlQJjpNVmD4Sqm5+5/8if9NvEdEpIK86Dzr+0Jlf5pvkJ71DbxWEe1AIt+QD+n7fjpJ9+nLSos+0UGQb6bdoa1zMgtysvwoRwQYXtoafGwUeFWpma6ennOUyVEBEcTmlnoVDZbUhH+e3gLjHvi3huVuZFDq3glXmN+J8eWrQ=|sha256:a7563e76bcd77b7d8296025bb8f91158fe37786548a0606be92ac5081075a28d|t=1|n=1|i=1"
+        "seQRets|eOc6U+IM08CZUtZlPN4lsA==|+h/XbvSm2MKQMcrhzmR0zUVXwLbPYTB0wZp+W1nmOrPMhqo3wtaHsIJobX1WTHykbAlm3MgtNFxyuUs0LjFO7ftnn/PMa8iGfHH9LZoize7Q1eJfk66y4k9qtnffZq0/jTOfoPVH72lp8dIyY9u2BBimPnz4fSlbjEppts+rDTXq3gY9VK/LL81rCgUHoJvThrTMqnTtLTn59mqhS3ODg+c=|sha256:b98c4d5f81bf62b3978cf500dda7b1d7eaeb72023bf3dee760a675d4cd805b53|t=1|n=1|i=1"
       ],
       "useShares": [
         0
@@ -230,8 +230,8 @@
       "password": "fixture-password-plan",
       "keyfile": null,
       "plan": {
-        "salt": "7LyWfVBahsi/B9WmnAXJMQ==",
-        "data": "rx/mFdIRcvWjUikpTxmFsvQ3AtxV7vDC10iI2b1ysfX9uwn2g7m9riR3SIAwBVhDRFv22XShf4vvXhODzH3/AAlnFszdMSyUBQZZYXOwRL1im4C+2L+X7TiT9VWQ1OrSkIaTkPSNhD1z9kdT1pOPcCWwVAtb1uJxeXr8U9O++tyafCjycaiHZwCIXcT4HhNQKxr2xI8nOc6u0/q27xNIVJJd0ZRxP8Iz8mTHq9RUz/HWIoMPSHHihA8HUTWGgXoF1BciIjC4aMJH9gNZrh/ISDGW9Mm/m2SNtu1aT9574kXDilsPy3Y="
+        "salt": "ZwE54zXBEn+CiNWbdlsOaQ==",
+        "data": "dA+YE/o1aEGizDQTXg07Y6prj6dje/uFjoJ5mpnY/uoEVamIf5/M+QCmZpQFnMW2U1WBuDwZPIcLFpZpRFDAasjVGRKOJTcw9guGc0T4cM9Dn35uG7CVPBGs5UjbxYudeBp9kjlxXnxJOw7WkHSLvJ1fLZyZLa1QJtWiDv2VQqi8d8MEtRFeROsEDpcDlEEG9VCZPR78j+xWaGNuVoPx4zjbjhDBABeC1NT356lh8hvW6Ioj36IkqG8x0cTGrm5ez0+hw51+nJSJxvOSp72QdMARmILXF71R9MKXTFsjFgvMlFcLAOU="
       },
       "expect": {
         "fileName": "inheritance-plan.txt",
@@ -241,36 +241,205 @@
     },
     {
       "id": "locker-2of3",
-      "description": "Locker: 2-of-3 Qards hold the internal key; the Locker file is sealed with it (TypeScript path). Recover restores the key from Qards #2 and #3, then opens the file through its plain encrypted-plan path.",
+      "description": "Locker made by createLocker (the Locker tab's own step): 2-of-3 Qards hold the internal key; the file holds the plan plus the Locker's records. Recover restores the key from Qards #2 and #3, then opens the file through its plain encrypted-plan path.",
       "kind": "locker",
       "password": "fixture-password-locker",
       "keyfile": null,
       "shares": [
-        "seQRets|CzgVmNjRBK6aEBVXDYkr4Q==|eXVwuBZ6wIzBYY5OHldjdpugWHI0IwuG9tayjom8GaqpMtKhV/r+EgmjJtq7zUFgTZkxtwq083gAnJmVbM81+xLqSn4mUKFyFZxmBmpXXqm+lIYF9sKoMAoLU2KE3llrdq8VOdIuPYlx5OnXyRqICLAftRUQvBkiuWQlRCOuppnlbBpMI5mRZ1LNMBgJBLgoMBvNfnmidW9N7IQ8LZn0ugQ1FgT7DF0EMjI60Ch6MeqFbI+j86oZyReXmSxkWUZFl5Q9fmpqXy8Ifz/bef5Wq6KY7bWEa19Nk1iGyTvJjWUcv1SVFAOLPiw=|v=1|t=2|n=3|i=1|sha256:0eae48da61c9cb01542fc42a942aab9f5d10e4bd7dbd1d5680ad61dbb24b0ce5",
-        "seQRets|CzgVmNjRBK6aEBVXDYkr4Q==|1JU60eVKnImHX+4/b56pvxsJ4FkZj8DbUUjbdn+rJ1yP/MFbsu6T29Iw+VBS/JahGGZ3bjFMwixfvMmgaR6o/GOuUM7CrxsCOBREH9ofa/uhaWI8S7gflH/cIuZb1In6CIIGWTfvRlwzbryQ/7e8CuXPh6+6W1aLPxq3CkqD7xbHdtEcZoWlD3a2INrjk2pIKBh8UjHSKvMwTFCRl/hc9PL36q8r8xcWk36ECbh4ee4YPdE5oHUFUO/Abf7yimYckoqthtPaqaQp1ypl0JMYaXCy13/ixxXr5npviPRoCryJsewl39y2d4I=|v=1|t=2|n=3|i=2|sha256:ce14eb06941c211625e8200f397d3c6992b9159b48f8382f48468b52a2816a2d",
-        "seQRets|CzgVmNjRBK6aEBVXDYkr4Q==|2V0yP5obsBpQj0x0JI3LrHG4uNx+rY3YYWU1G5Og97D6InZo6ZTByFntzgfWgsLReMagu3IhvGMCKzpi+qj0MSgnq/W2Dx1mXx2NleFJqVbJlxYhgOHp1YiIaTBs6RB57eWx+2yfMFZYOdxoTLpRVIVWiKl6Xs06t/9FvqTkltIOjZzvwJxIzl3A5tsW8q3qjWloGme2d4CksXWckXXCQB72O0CyUx+OQZQ+3BQmL1JE4aOoIkIcsIL+3zm8YvGjAc0B66ThRdyRSX/fYcGsaLcYux2i5R30EbPrkgW6rWm2MLQekusXDv4=|v=1|t=2|n=3|i=3|sha256:e796c3d16571da79755ed7ba13fd048adb78bb5c188873c949e5e45f234769fb"
+        "seQRets|VXa6UB8LEWSm24k3ENIyWw==|hizkhddVx8CYs7U7kvefarm01JrzsL2DmFq000kHHDQNpg+uVli+EEJCo9PV2Mti+/EAHTgh4XUd10OrPjFHkr/eXqc81U1afu7PhHQClIlbg0JHRtAboVvVEfhERFnQGuYLkQMIu2x4n5R7qDBzmBKOs/VvWAJx6vh0TQFk7GNGIJF5uNlSIJ237AF5+Iv4+iN5NRffwmrNCA+EBLWaZQmXvLnN/8kzr4S9hyt5BjH/CYwKHXw0l+IBrG93TjMLTudEdPkF1gDAiz39YOyhWaBdkm+TViHI/YEWk11o2Ev0muC/wzW3XR8=|v=1|t=2|n=3|i=1|sha256:662460403bf3ce25f35da2808149333a2d85b7d12893e5341d002ad3fe2e226e",
+        "seQRets|VXa6UB8LEWSm24k3ENIyWw==|NvJ6sWU016oF64xeAZ/Jv96Xh5GxOu4VW1wfUUcUUZqzR/93I1hMj8kDrDX79EJle44HI9dD+5ihxqDB+m4ci/0ChHHPWa+Z7p3ulngvE/WH3Tx2cISD25VnzDr+ssVU4AqsFIJgPJpY3icS9MutExyPIOla2Hk71ZoAqdJ/XEqC7kJ+EO8z54jFjoXj2M0jSWrmOtndFixtmFSzlRqVj51wV5r2tW2GH+dfESHFQCOKD7Pyn/wcxELqXe9BN5ZrYDtU3+K1v0BpW4FZngD/bztggwxcYqwzoWI43+jyL26qF0fIhVNitxA=|v=1|t=2|n=3|i=2|sha256:ee1d412bed3e0efca0750162915125aa87f03c763a65deacd53629cfdceb7e95",
+        "seQRets|VXa6UB8LEWSm24k3ENIyWw==|0isEXSKRuMoEmVumRFz/o4U2MFS1dlnR1qJRpwMEzVUTt7yMtFisLVl4NOdhzXFHLgAl1mOZjY+idfOhVT4Rgvl4ABLz6yAU1PTsWp/KZAT9UW4bPxED1CMgamsDDxhcusEFwAujSyeGpbwN2010g1hTZWFqjaqF/EBL2DDVuPItWKBcIaCWN2ZwVI3ABpR70qtEom9+1nXmolkgcwkNuvp+vjuCC7vj++HQ1TjGGe8d8ZoLaal4c8kDwroOR5wS+kE7kUhRoOeExoKPmctzIMTqMAo2jsK1jjGin43RTjEmee783NR+gog=|v=1|t=2|n=3|i=3|sha256:023436da1138341ce933949ba00f209177f142ead716e6baf3d54f302e4c3e22"
       ],
       "useShares": [
         1,
         2
       ],
-      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"CzgVmNjR\",\n  \"seq\": 3,\n  \"savedAt\": \"2026-10-06T09:12:52.878Z\",\n  \"salt\": \"/afm7QhdmbWJgrSg9BDYTQ==\",\n  \"data\": \"bVAPAfnMAHqEm0pomVst50yEQvSKuKGnGCwWRUD8bLwXKUDXr/RlocprFcCPnrWC5ne8Ljm940uyB0+/c5WMvVO1QMVQ4qGUAuz04b/r5d/E4gweHJMVnFWfbq+8TAZ90MTUf/4Vcv3oR2GxsXchRa6yfONvx5FrxUc9IDXKIaDSyce5gdNWXhVGDPCim8Nuneo8jbRjiEka2JXYwFLOD6rqOYLBpKqjSAi3MT7NnvsQFQ4u4LxN3hIPFNDMUDGZvT+SQ2QWQ6nTuBrInth76NUVbNOQYYJXe7A3LYQvobpJX6iSkg9FABFs6Ks1GWJbV001MH2MgTxQs9bKCZY25GJrXOgKYQSlwdFnPPsURLvTcUd2D3Hd/Ndw5ZO/gTTAKGERDROBhbDvrPx5T0wNxeQbl9DXEwphHjqbSxneNoxFTkNLiV4DO1JJqxl/BBjeyvY5d0cNkaCyadN70wbkpDgYwUmKe2CHQ+SQO4nElXIOESDmxCpD2LKvF9hOAfVxUKa3fUTqe2MjiZJpn0B1UleWQy7b6TbdiH9DrNTf1km3zDTcIZYH5Hka5WN+HZUBJk/iyAYScnT+E7Deh6D/pw==\"\n}\n",
+      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"VXa6UB8L\",\n  \"seq\": 1,\n  \"savedAt\": \"2026-10-06T10:19:40.606Z\",\n  \"salt\": \"iXQPE0NKgAJfxPsio/gk3Q==\",\n  \"data\": \"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\"\n}\n",
       "expect": {
-        "key": "seQRets-Locker-Key:1ef0d50c692e11a791e5f10d4014c4c1b5053fd7bb75e6525dcabf2dd466bfca",
+        "key": "seQRets-Locker-Key:f207cd2bf79aa90a741d2da947741113b9187e633d7d18106af7851b688cae46",
         "fileName": "seQRets-Locker.json",
         "fileType": "application/json",
         "content": {
-          "letter": "If you are reading this, the Locker opened. — fixture",
-          "secrets": [
-            {
-              "name": "Fixture wallet",
-              "seed": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+          "contentVersion": 1,
+          "plan": {
+            "version": 7,
+            "planInfo": {
+              "preparedBy": "Sam Fixture",
+              "dateCreated": "2026-10-06",
+              "lastUpdated": "2026-10-06",
+              "lastReviewedAt": "2026-10-06",
+              "reviewSchedule": "Every 12 months",
+              "planVersion": "",
+              "changeLog": ""
             },
-            {
-              "name": "Fixture account",
-              "password": "not-a-real-password-ünïcode-🔐"
-            }
-          ]
+            "beneficiaries": [
+              {
+                "id": "8282e05d-3cc6-4140-992e-4516e61108b3",
+                "name": "",
+                "relationship": "",
+                "contactInfo": "",
+                "assignedAssets": ""
+              }
+            ],
+            "distributionInstructions": "",
+            "secretSets": [
+              {
+                "id": "f09949be-b735-4ffa-ba40-0a468c97e15b",
+                "description": "",
+                "password": "",
+                "passwordIsHint": false,
+                "keyfileUsed": "",
+                "keyfilePrimaryLocation": "",
+                "keyfileBackupLocation": "",
+                "configuration": "2-of-3",
+                "label": "",
+                "qardLocations": [
+                  {
+                    "id": "06eff2f7-34bc-434a-93bd-f302f76f671c",
+                    "qardNumber": 1,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  },
+                  {
+                    "id": "01e654c9-52aa-4069-88a9-e9b084f8ea4b",
+                    "qardNumber": 2,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  },
+                  {
+                    "id": "90d33527-a8f2-4b2a-bf6f-15700b255596",
+                    "qardNumber": 3,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  }
+                ],
+                "vaultFileLocation": "",
+                "smartCardPin": "",
+                "smartCardReaderModel": ""
+              }
+            ],
+            "deviceAccounts": [
+              {
+                "id": "a6c79704-753a-49ce-82f9-6d143f269600",
+                "label": "",
+                "type": "Computer",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              },
+              {
+                "id": "45b3b704-e596-4a30-95eb-45a0b26cda7e",
+                "label": "",
+                "type": "Password Manager",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              },
+              {
+                "id": "00b2c66f-d69a-4182-bdfe-3e07660e5b33",
+                "label": "",
+                "type": "2FA / Authenticator App",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              }
+            ],
+            "digitalAssets": [
+              {
+                "id": "80645ffd-3c98-4cc5-ae85-fe09ea7136ed",
+                "name": "Fixture wallet",
+                "type": "",
+                "platform": "",
+                "loginEmail": "",
+                "approxValue": "",
+                "twoFactorMethod": "",
+                "recoverySeed": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+                "walletKind": "",
+                "usesPassphrase": "",
+                "derivationPath": "",
+                "multisigDescriptorLocation": "",
+                "multisigCosigners": "",
+                "passphrase": "fixture passphrase",
+                "multisigDescriptor": "",
+                "multisigKeys": [],
+                "specialInstructions": ""
+              }
+            ],
+            "otherSecrets": [
+              {
+                "id": "o1",
+                "title": "Safe combination",
+                "secret": "12-34-56",
+                "notes": ""
+              }
+            ],
+            "documents": [],
+            "howToRestore": "1. Download the free seQRets desktop app from seqrets.app.\n   Fallback: if seQRets is unavailable, use the standalone recovery tool — a single offline HTML file that performs the same restore in any browser. Download recover.html from https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html, or use the hosted version at https://seqrets.github.io/seQRets-Recover/\n2. Open the app (or recover.html) and click \"Restore Secret\".\n3. Gather the required Qards from the locations listed in the seQRet Sets section above.\n4. Import the Qards (scan QR, drag & drop, smart card, vault file, or paste text).\n5. Enter the password from the matching seQRet Set in this plan.\n6. If a keyfile was used, toggle \"Was a Keyfile used?\" and load it from the location listed.\n7. Click \"Restore Secret\".\n8. Write down the restored secret on paper immediately. Do not save it digitally.\n9. Use the restored secret to access your assets per the Digital Asset Inventory. For crypto wallets, follow the \"Recreating the Wallets\" appendix — restoring a seed phrase is NOT the last step, and a wallet that shows an empty balance does not mean the funds are gone.\n10. After securing all assets, delete all unencrypted copies of this document.",
+            "professionalContacts": [
+              {
+                "id": "ec54064f-4696-4463-95c6-d66b76a3666f",
+                "role": "Estate Attorney",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "e60255bd-d976-4e52-90a6-3eb4cdf06652",
+                "role": "Financial Advisor",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "d0ac1503-3fd8-45c8-9f27-73725b2ff91d",
+                "role": "Accountant / CPA",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "55d166da-f0b7-4f9b-acea-320f2635d28f",
+                "role": "Technical Contact",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "f19da19d-65e0-4f06-8334-38f9127c77ef",
+                "role": "Trusted Friend / Advisor",
+                "name": "",
+                "phone": "",
+                "email": ""
+              }
+            ],
+            "emergencyAccess": {
+              "emergencyContact": "",
+              "triggerConditions": "",
+              "accessProcedure": "1. Follow the steps in \"How to Restore Your Secret\" above to recover the encrypted secrets needed for this emergency.\n2. If the seQRets app cannot be installed on the available computer, use the standalone recovery tool (recover.html) described in the \"How to Restore — Read This First\" section of this plan — it runs offline in any browser.\n3. [Add any emergency-specific steps: where hardware is kept, who to contact first, which assets to access in what order, etc.]",
+              "immediateActions": "1. Keep my phone line active — do not cancel the phone plan. Text-message (SMS) verification codes and account-recovery calls go to that number, and once it is cancelled the number may be given to a stranger.\n2. Secure my primary email account before anything else. Almost every \"Forgot password\" flow ends at that inbox — whoever controls the email controls most other accounts. Check that its own recovery options don't point at a phone or account you can't reach.\n3. [Add your own time-sensitive obligations: bills, mortgage, insurance, margin calls, subscriptions, etc.]",
+              "scopeLimitations": ""
+            },
+            "personalMessage": "If you are reading this, the Locker opened. — 2-of-3"
+          },
+          "qards": {
+            "setId": "VXa6UB8L",
+            "requiredShares": 2,
+            "totalShares": 3,
+            "shares": [
+              "seQRets|VXa6UB8LEWSm24k3ENIyWw==|hizkhddVx8CYs7U7kvefarm01JrzsL2DmFq000kHHDQNpg+uVli+EEJCo9PV2Mti+/EAHTgh4XUd10OrPjFHkr/eXqc81U1afu7PhHQClIlbg0JHRtAboVvVEfhERFnQGuYLkQMIu2x4n5R7qDBzmBKOs/VvWAJx6vh0TQFk7GNGIJF5uNlSIJ237AF5+Iv4+iN5NRffwmrNCA+EBLWaZQmXvLnN/8kzr4S9hyt5BjH/CYwKHXw0l+IBrG93TjMLTudEdPkF1gDAiz39YOyhWaBdkm+TViHI/YEWk11o2Ev0muC/wzW3XR8=|v=1|t=2|n=3|i=1|sha256:662460403bf3ce25f35da2808149333a2d85b7d12893e5341d002ad3fe2e226e",
+              "seQRets|VXa6UB8LEWSm24k3ENIyWw==|NvJ6sWU016oF64xeAZ/Jv96Xh5GxOu4VW1wfUUcUUZqzR/93I1hMj8kDrDX79EJle44HI9dD+5ihxqDB+m4ci/0ChHHPWa+Z7p3ulngvE/WH3Tx2cISD25VnzDr+ssVU4AqsFIJgPJpY3icS9MutExyPIOla2Hk71ZoAqdJ/XEqC7kJ+EO8z54jFjoXj2M0jSWrmOtndFixtmFSzlRqVj51wV5r2tW2GH+dfESHFQCOKD7Pyn/wcxELqXe9BN5ZrYDtU3+K1v0BpW4FZngD/bztggwxcYqwzoWI43+jyL26qF0fIhVNitxA=|v=1|t=2|n=3|i=2|sha256:ee1d412bed3e0efca0750162915125aa87f03c763a65deacd53629cfdceb7e95",
+              "seQRets|VXa6UB8LEWSm24k3ENIyWw==|0isEXSKRuMoEmVumRFz/o4U2MFS1dlnR1qJRpwMEzVUTt7yMtFisLVl4NOdhzXFHLgAl1mOZjY+idfOhVT4Rgvl4ABLz6yAU1PTsWp/KZAT9UW4bPxED1CMgamsDDxhcusEFwAujSyeGpbwN2010g1hTZWFqjaqF/EBL2DDVuPItWKBcIaCWN2ZwVI3ABpR70qtEom9+1nXmolkgcwkNuvp+vjuCC7vj++HQ1TjGGe8d8ZoLaal4c8kDwroOR5wS+kE7kUhRoOeExoKPmctzIMTqMAo2jsK1jjGin43RTjEmee783NR+gog=|v=1|t=2|n=3|i=3|sha256:023436da1138341ce933949ba00f209177f142ead716e6baf3d54f302e4c3e22"
+            ],
+            "createdAt": "2026-10-06T10:19:40.606Z",
+            "keyfileUsed": false
+          },
+          "previousKeys": []
         }
       }
     },
@@ -281,30 +450,198 @@
       "password": "fixture-password-locker-keyfile",
       "keyfile": "AwoRGB8mLTQ7QklQV15lbHN6gYiPlp2kq7K5wMfO1dzj6vH4/wYNFBsiKTA3PkVMU1phaG92fYSLkpmgp661vA==",
       "shares": [
-        "seQRets|hSpux5xEpVQvoDjX0uJb/w==|+F/A8MzECn2tGu7kHC8YeG8O2pGhHeMOcG/dkUbEPZblrU8iffT1JnbwrRlswW4BKAzP5mgGgwl3KshsTgk5mkIMMLfj3MldpH2ByCnOiitPE6DgeN3KOe5x+E4UKzgJWLrIjBGBEwFsRLpSYhlDxLzANgrT2jEM19Y5YzcW0OQFUbshIYRcBskpZYQOdkFmKE6gft45dsO6/MwEo2+yvlYTLcEQgZhtdzjplCuiIlV95voQUYh2spqlU+28CmA2jHOxLSDPAnIjN5B6m1LWksAgaE7bbvPT+ufvZP8hc1lD/UQswLomgqQ=|v=1|t=2|n=2|i=1|sha256:4ec92bbaa8fecd994bb139860cb8b625ce8923854d910673f7c9170e378d95cd",
-        "seQRets|hSpux5xEpVQvoDjX0uJb/w==|7Z3fhBb50foqRjg3sAuWg0BsHsviGELRha3RSb3L/hNeOxmOciaS6g674hNTLOsNiDSN3WNTaSN1rIsQRekPc6jFAgIviQT5/HQnnrCLaIIlPDc9aT8wIh1JIL2mOrnA1XT0iAeFJJ81nrxif6IeTWiikmCiPjFo3tAZGCTgKlt9+srStZ1yOv4IWlDeOTGDnSbvT62gXrxW7RxflKj2PlkAOlYJm+qnbfSChTGDg+xYo5emEAd/Rg3r8zmy+dyhjVLp5le2M1u3W3Fh+z/yI7+Wlb8V7di1cD7VVEXJccTumdX4CjEp3Os=|v=1|t=2|n=2|i=2|sha256:61cb18d745551a399dbc3b00ffa021eabdc1cab940acbd57636c8c785784a018"
+        "seQRets|7uvveQX4v/wgtLen8/g2tQ==|IBtV0NSG0IYQ8df5EIMZ8VbDUKeHsFoDGvtU0ndF2yKsOzTv4ITKJjeWtCGtPM2yjPzFDkaS00wjQ7OrhPc9WtcbBiLI6iH6Um3jtvMdDOyqMhJf1iKggvXfiIjk/U5a7zGTVvjk+/CIqSuXGiSL3vKoNJ0yN8TsK2iQPHb7RsP1OF1k6gdLjdTeSTm8bzmzkTF64Nsgto1TeuZGHDIHVpF21UFHg2hRJBnuKyobrqYYDCO++Kv89vcBDXXXXHyBI/no95mnPrRg0ApSBmqkQLKAePhdgfn3AER6dXlWdDOky5O0Az0tAbA=|v=1|t=2|n=2|i=1|sha256:ec3ebb509b40949b1dbe6b9321337234ec6fae270f50e4ab22502aec0d2ab6ec",
+        "seQRets|7uvveQX4v/wgtLen8/g2tQ==|ph6Vy9SZ77JuzwJL2+vt9lLvhI94fxZp1LQiFQUhf6rbPHsyBgmKQYYjsH6LFykAv2XYmGMW4XoNfQf3RlDN5hauB2FbcU0toFsuagHhLu/xWs9+e4Z5ggbzQI1FVTGeLYKqvt+yZhrJNUOhg/t/ngXEnTYJMesroJEU2TZghukYlDMWQMMNRunqig72EQg5RGTdSoXrmKmBqCAnuCTZ6wAgBwX60mawCJI4qTx4USebAQmtvUBOfyi7mxMwKvQjWRNXP4tgwenlr+w2Wcvx6r7nwHEqXp46ZyvrkUjTlcDyKMcUBhLFy7E=|v=1|t=2|n=2|i=2|sha256:e5154efd945423fe17e25252d60ef77f671f5f3910d86b491ea5946972aed600"
       ],
       "useShares": [
         0,
         1
       ],
-      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"hSpux5xE\",\n  \"seq\": 1,\n  \"savedAt\": \"2026-10-06T09:12:56.659Z\",\n  \"salt\": \"32jiKX1X2vk+Ug6Vu4C3BQ==\",\n  \"data\": \"nVvJRqqOu0GDOJOGRoAaFyJvh8HNCQ2QU8dUtXz6+m+/Cvt6ZYG83dUyz0wXsbby6unKyOII4lFWqCRnRyTuGfBdbt9fUIXd71oCSOZ1gpwBk3znc+ppyoFq14RSBXgTZt7etaD+oYycViobveXvNdhc0pcHpVOBQcFFpVNgHus5DgjVOI2dga66HOGpVB6ABHtMX4io8WARyqSQaWcKVGGxwU14eQObLJ9b/wf9Z6JXrqGZfBC+C0lCdK2d0Ffe1gF2csGsoX2cxl1DPmIbgBg5Vd0HnkIhY+WtLsJ0Sr02x30DlEZDGBejHNFraJ3Drv8OwMnDIF1aFBbulYO6YsTJdwj6+lmAvdNLTBsowUe9aE5Icw0KVNmwMeQHa3sjr5nQsF/1w+hP52xVz1eG/hkh/IB/A+Gcb6QLCFvEQ5tcCC2PWYxaqjrMu/r5XwjYl6o/WcH0PPuCAQDRj99I6+M1bj+IT0XkbpV2OPzdRJZTIbaVpYnmwgGbMpozK0Q7nLd8U0WBHy7ReKVz8w91d/o8hmX37NAisBtSHIpcowz6CTPnZKoGcC/5iFtDa43HeuaDJOb4UF2Y5x21CkI=\"\n}\n",
+      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"7uvveQX4\",\n  \"seq\": 1,\n  \"savedAt\": \"2026-10-06T10:19:44.389Z\",\n  \"salt\": \"y0jfICr+8GPefHT6chYYSg==\",\n  \"data\": \"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\"\n}\n",
       "expect": {
-        "key": "seQRets-Locker-Key:318d8ef30194d8e5113bea1dad903f4976159680f46403d2eb3fe10582a12a2b",
+        "key": "seQRets-Locker-Key:50bc93405198a66faf00c032b7720ab9901879e0ddf4e66a58ab57b8474ad716",
         "fileName": "seQRets-Locker.json",
         "fileType": "application/json",
         "content": {
-          "letter": "If you are reading this, the Locker opened. — fixture",
-          "secrets": [
-            {
-              "name": "Fixture wallet",
-              "seed": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+          "contentVersion": 1,
+          "plan": {
+            "version": 7,
+            "planInfo": {
+              "preparedBy": "Sam Fixture",
+              "dateCreated": "2026-10-06",
+              "lastUpdated": "2026-10-06",
+              "lastReviewedAt": "2026-10-06",
+              "reviewSchedule": "Every 12 months",
+              "planVersion": "",
+              "changeLog": ""
             },
-            {
-              "name": "Fixture account",
-              "password": "not-a-real-password-ünïcode-🔐"
-            }
-          ]
+            "beneficiaries": [
+              {
+                "id": "65508c4d-a626-4d81-95d2-6e63ba5723f7",
+                "name": "",
+                "relationship": "",
+                "contactInfo": "",
+                "assignedAssets": ""
+              }
+            ],
+            "distributionInstructions": "",
+            "secretSets": [
+              {
+                "id": "7e485114-ddb6-4885-a258-10498f628962",
+                "description": "",
+                "password": "",
+                "passwordIsHint": false,
+                "keyfileUsed": "",
+                "keyfilePrimaryLocation": "",
+                "keyfileBackupLocation": "",
+                "configuration": "2-of-3",
+                "label": "",
+                "qardLocations": [
+                  {
+                    "id": "0a579dee-58c1-482e-80ec-44d9689b53dd",
+                    "qardNumber": 1,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  },
+                  {
+                    "id": "e91389ea-f464-4da2-a40a-8c08d1eebf92",
+                    "qardNumber": 2,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  },
+                  {
+                    "id": "c6d6a204-61f2-4822-aca6-14d4185fa2c0",
+                    "qardNumber": 3,
+                    "location": "",
+                    "heldBy": "",
+                    "accessNotes": ""
+                  }
+                ],
+                "vaultFileLocation": "",
+                "smartCardPin": "",
+                "smartCardReaderModel": ""
+              }
+            ],
+            "deviceAccounts": [
+              {
+                "id": "855a3f26-8458-4085-b974-53d5ba6eb1bb",
+                "label": "",
+                "type": "Computer",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              },
+              {
+                "id": "96108b43-fe74-40f0-911f-35287d5a42f4",
+                "label": "",
+                "type": "Password Manager",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              },
+              {
+                "id": "fd21d551-d8d0-4c65-83d3-c15591931da5",
+                "label": "",
+                "type": "2FA / Authenticator App",
+                "location": "",
+                "username": "",
+                "password": "",
+                "notes": ""
+              }
+            ],
+            "digitalAssets": [
+              {
+                "id": "bec6e905-2e43-4ce5-8aab-1243cc4a50cb",
+                "name": "Fixture wallet",
+                "type": "",
+                "platform": "",
+                "loginEmail": "",
+                "approxValue": "",
+                "twoFactorMethod": "",
+                "recoverySeed": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+                "walletKind": "",
+                "usesPassphrase": "",
+                "derivationPath": "",
+                "multisigDescriptorLocation": "",
+                "multisigCosigners": "",
+                "passphrase": "fixture passphrase",
+                "multisigDescriptor": "",
+                "multisigKeys": [],
+                "specialInstructions": ""
+              }
+            ],
+            "otherSecrets": [
+              {
+                "id": "o1",
+                "title": "Safe combination",
+                "secret": "12-34-56",
+                "notes": ""
+              }
+            ],
+            "documents": [],
+            "howToRestore": "1. Download the free seQRets desktop app from seqrets.app.\n   Fallback: if seQRets is unavailable, use the standalone recovery tool — a single offline HTML file that performs the same restore in any browser. Download recover.html from https://github.com/seQRets/seQRets-Recover/releases/latest/download/recover.html, or use the hosted version at https://seqrets.github.io/seQRets-Recover/\n2. Open the app (or recover.html) and click \"Restore Secret\".\n3. Gather the required Qards from the locations listed in the seQRet Sets section above.\n4. Import the Qards (scan QR, drag & drop, smart card, vault file, or paste text).\n5. Enter the password from the matching seQRet Set in this plan.\n6. If a keyfile was used, toggle \"Was a Keyfile used?\" and load it from the location listed.\n7. Click \"Restore Secret\".\n8. Write down the restored secret on paper immediately. Do not save it digitally.\n9. Use the restored secret to access your assets per the Digital Asset Inventory. For crypto wallets, follow the \"Recreating the Wallets\" appendix — restoring a seed phrase is NOT the last step, and a wallet that shows an empty balance does not mean the funds are gone.\n10. After securing all assets, delete all unencrypted copies of this document.",
+            "professionalContacts": [
+              {
+                "id": "4b014e9e-c5ed-4080-beab-590c25d203da",
+                "role": "Estate Attorney",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "5350d918-1118-4d5e-a7d0-73219e9ce1b3",
+                "role": "Financial Advisor",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "351976a4-a60c-4e35-a012-95282d0768f6",
+                "role": "Accountant / CPA",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "dcad28d1-5c0f-404d-a16c-7808b2b4ca7e",
+                "role": "Technical Contact",
+                "name": "",
+                "phone": "",
+                "email": ""
+              },
+              {
+                "id": "01781bf2-57ac-46ce-8b44-86a058c4a765",
+                "role": "Trusted Friend / Advisor",
+                "name": "",
+                "phone": "",
+                "email": ""
+              }
+            ],
+            "emergencyAccess": {
+              "emergencyContact": "",
+              "triggerConditions": "",
+              "accessProcedure": "1. Follow the steps in \"How to Restore Your Secret\" above to recover the encrypted secrets needed for this emergency.\n2. If the seQRets app cannot be installed on the available computer, use the standalone recovery tool (recover.html) described in the \"How to Restore — Read This First\" section of this plan — it runs offline in any browser.\n3. [Add any emergency-specific steps: where hardware is kept, who to contact first, which assets to access in what order, etc.]",
+              "immediateActions": "1. Keep my phone line active — do not cancel the phone plan. Text-message (SMS) verification codes and account-recovery calls go to that number, and once it is cancelled the number may be given to a stranger.\n2. Secure my primary email account before anything else. Almost every \"Forgot password\" flow ends at that inbox — whoever controls the email controls most other accounts. Check that its own recovery options don't point at a phone or account you can't reach.\n3. [Add your own time-sensitive obligations: bills, mortgage, insurance, margin calls, subscriptions, etc.]",
+              "scopeLimitations": ""
+            },
+            "personalMessage": "If you are reading this, the Locker opened. — keyfile"
+          },
+          "qards": {
+            "setId": "7uvveQX4",
+            "requiredShares": 2,
+            "totalShares": 2,
+            "shares": [
+              "seQRets|7uvveQX4v/wgtLen8/g2tQ==|IBtV0NSG0IYQ8df5EIMZ8VbDUKeHsFoDGvtU0ndF2yKsOzTv4ITKJjeWtCGtPM2yjPzFDkaS00wjQ7OrhPc9WtcbBiLI6iH6Um3jtvMdDOyqMhJf1iKggvXfiIjk/U5a7zGTVvjk+/CIqSuXGiSL3vKoNJ0yN8TsK2iQPHb7RsP1OF1k6gdLjdTeSTm8bzmzkTF64Nsgto1TeuZGHDIHVpF21UFHg2hRJBnuKyobrqYYDCO++Kv89vcBDXXXXHyBI/no95mnPrRg0ApSBmqkQLKAePhdgfn3AER6dXlWdDOky5O0Az0tAbA=|v=1|t=2|n=2|i=1|sha256:ec3ebb509b40949b1dbe6b9321337234ec6fae270f50e4ab22502aec0d2ab6ec",
+              "seQRets|7uvveQX4v/wgtLen8/g2tQ==|ph6Vy9SZ77JuzwJL2+vt9lLvhI94fxZp1LQiFQUhf6rbPHsyBgmKQYYjsH6LFykAv2XYmGMW4XoNfQf3RlDN5hauB2FbcU0toFsuagHhLu/xWs9+e4Z5ggbzQI1FVTGeLYKqvt+yZhrJNUOhg/t/ngXEnTYJMesroJEU2TZghukYlDMWQMMNRunqig72EQg5RGTdSoXrmKmBqCAnuCTZ6wAgBwX60mawCJI4qTx4USebAQmtvUBOfyi7mxMwKvQjWRNXP4tgwenlr+w2Wcvx6r7nwHEqXp46ZyvrkUjTlcDyKMcUBhLFy7E=|v=1|t=2|n=2|i=2|sha256:e5154efd945423fe17e25252d60ef77f671f5f3910d86b491ea5946972aed600"
+            ],
+            "createdAt": "2026-10-06T10:19:44.389Z",
+            "keyfileUsed": true
+          },
+          "previousKeys": []
         }
       }
     },
@@ -315,8 +652,8 @@
       "password": "fixture-password-locker-rust",
       "keyfile": null,
       "shares": [
-        "seQRets|N+BF2mq5TNTM5ihvVo2bzA==|Zm4pMkupQ2XP914miGeyxXBnBM5njpwlS9hUuyqTCMuB00J/DtkECnl2CDfNvob7Ivx4eIPVFliIEvxhw9deo7jNLmaemC5kvQm+o1XatTTjAl5EVrnE5rt7M22PYr/pR8C4BU2tsFivrIxJv40JnjVVaToJJfC+ZN995xmDjlFrHjXi8QZiRpNA9ed3a2fcy5atr5bnD2OCPPyRqgS+EdFi+KvYrw7PAxaY+xq+XMB2Cpuna4JDZ5x6RRRQLQ4wrG4GllDukLJ0BrLZHDObK0gTfoR2teP+giqRHjEwKF6ByEIVpWO+F1M=|v=1|t=2|n=2|i=1|sha256:f4470bf07b3452c4410bed39dff8e37a9aeb0191c56fc3f8a5d11cce573c7aca",
-        "seQRets|N+BF2mq5TNTM5ihvVo2bzA==|ABdSgFTmlWea10T4StHFT299cEnj77RUUiQzvMwwec72Z4KOpmA9fIk40Gm+O8EaT8E6jT9AYXDI39cvKhqjlSf8+OqAN+7bK1rE3JTP0YrJkdqHKBdPc4r88L2d00JmPmw4GM/oCOOgQVD9EC93p8GOVTqe6Gq3gXcsujlNHgfKDaZ1ExZyNGsRe0y7K5s6NIGK930s4eOdzC5hDOA4Wih/w1KBTO5f7mNpzUFCmcO9MXtnqq7o/fzwNPNzSS5ITM1uQD+iKVqH95UDb0QuX4ROFjzTl0nAs9cfFNZ5p32hoRVq6pazRhU=|v=1|t=2|n=2|i=2|sha256:a4833494b7be9ddf4a9ca40aed0fc7f5335edd98cbdbe98674bab2e4e71e38a9"
+        "seQRets|aNHStTJXps95WHWE0OuFrg==|UOBQhtGzA7NYujslCtTuRDWcIWvGObWJjLpoUBlAQvmlzK0rARMP+z6w6T/FMOiR1e1ZctqxZNoc5NOQKQTuVELWgZC+VN5a4fn9pAeC1rJcTl3ktoqC05abKahiR9PYTyjSHwCuR/SGTTy3G76+y2pUTAe9dELTIYrx7EphHQXvYlYED9ZvRdOQB+bFh9BNmKhSVotEWwYGPebEm4LbQrr4NZ+bvnAWn/DizDMPCFbHQq8eR0qYoOFJiwvge+L44mm9Mgn9o6hj7kfWx9aU3qnK4LqsuT1B8jG6fVcHBp7PZ96rSewauIs=|v=1|t=2|n=2|i=1|sha256:0228c215dc7d8857bb0124665d67771cb5a7bc5606af099c5b177aaa8d16c7cd",
+        "seQRets|aNHStTJXps95WHWE0OuFrg==|cpO7ItedM1U34ChV+4rAzoU1JDv4GTibZSGNUla+sZR4kmTgvVcY2AgssHs0HlG5H+IaleyauQczAeU+3H0kLduwfUrVJiDm8yQFZ9Vft2qwa0Z7QoR0oIjPO6y/zcZ6fdPybENUgeKDNQ6Rpg/+XFhjG5UIYnjSERYtI3f5Ks0OsokPTr2ZIgD6VnTJOwPtMk9yEVxEkUDSfIRcC6UYUoB5cOjKu4De6s6Ea60Rc9z3EOJUqFmvQJG+uzvofdgQi4Yt8JNZP1NKC7D6nHdE0U2edtMgmwnnETowq8a7LU70uE867yFR7xQ=|v=1|t=2|n=2|i=2|sha256:f87adf218933c386a3fa9da60c8e0aafadd1089091b42b07bc3e51500c12e5bc"
       ],
       "useShares": [
         0,
@@ -345,16 +682,16 @@
       "password": "fixture-password-locker-mismatch",
       "keyfile": null,
       "shares": [
-        "seQRets|0MZ3c3T7cdttIdzkAN3+Lw==|dLFMQn10so3SiD5d17p1dJhLW2ng8ZwJfJUUzCnIc0y7kbNp2CuL5zA/GKCVWeAHe+9U4n6nTfbbEebSiJtixRyBNYnfniR0L20tU39GKxLylXHskBzi1Xj2B10AEdVL0v3AKbFT/qcALHGM6DQyr7nvJ7jdvslGGHAqNaLVHrX2mh3JDmUIzac6OY8oqzM4z14U54Qx1UqgistQRVfpx6GyOrhfiYq7ne7L8mgxl4XNRXo+Pwtx9O7ewWPgUHOjZCtMuvPzghZ2enSkevgIdB20T1Saw5LGcKMhlEtkXQJDmeb1rOj2Rks=|v=1|t=2|n=2|i=1|sha256:eb1363bb6f1468171317499d1adaf76937f547da39b2a7ff65725f54833a8826",
-        "seQRets|0MZ3c3T7cdttIdzkAN3+Lw==|BX4mS9Ut2xnyUAUi4tXcO+BWj3zoxI9CGNtQojBipgp2fHTvhk2B1aBytvCPTD4mNbAKj0iqYNWGKYn0v1Cv01Yb1Dea4xSFALgnYQyTYLXQbOycmMZ0ZBVxFa8snUBb4Xkn0MJyYXHvYTdM3zFzGto3DRBwbqtOcrYx5kSBuZnlAWFDK7ct17HNQ1lz/LD38e3lSZWu02/euddawz74f+ST0xo2p0xLnB4GOx7yJY0PLiFRAoc/otKyRVj+HFDP+kU16EUdddWagPD0t98GNN71VKadYqlyx/kEGdxPYXxETFUTdHDWxH0=|v=1|t=2|n=2|i=2|sha256:7db8e97545cb3405d5ba6b09cbd3bfb3602969df188f9a2e13f34384a3a1aaf0"
+        "seQRets|Z8l0FQhvsa4o+UP9MXbiww==|/zH4j/YXixmqcSL8loiTahZML62UfAn9b3gY+GX0V3DBJapNg3uPcsGgRAHdEL8QTyBTMSt1iyyv513vyc8J5hmS0EZS3uEJsPtTasEE5AEhv81hUdlx62vtCSOMvsCl71V1oeXacwEZ1JoxVKdsu9klDu8odFAkoul9g2EG6deKXzH/R/xkc9MLitmI4mwQMjqW15R6k4TJnJApQV77SZa40wtiyENher1rJLj+y3UtDS63xjSQa8SEHZgHfO73eCEC0YBLNeRQP4yaOh3J8wgAJKh5UoSoFD0PtNcryUILU4Wd+faRmpc=|v=1|t=2|n=2|i=1|sha256:5d4e51b2ceb55c72d074819221377e83cc782d5de97e7a3e0257ed35010a6bf3",
+        "seQRets|Z8l0FQhvsa4o+UP9MXbiww==|ZDHC1zdfIywnnBPgVOY0puOsa5Q9VixU4+p9v2NuqaXBka7oKheiQYGbFIg0VNpitU3Or+rPYFtQfNyXtQz544yDntUsUA1UfqdGi+EAK8RwxbuIH1PDfuDMKtvw7wASNS27p4aGoYtpvBf0cKyKrQaxxBwx/RyUJHnLixgX+W3sRnK2lsaIJeJ4MXgCt7JztXY34//BCuruCUDAIc1Ds/putCdwLwMLTAsLqm167E9RyGOuYiGd+65TlA1AVr+4r/yIzQo6YJ/fBiVP7I1m6PYNCdFRiRUzg7RlwUqAxGItHnOdIJfK+hw=|v=1|t=2|n=2|i=2|sha256:166c793a0148d1ba8b481d32fbb5a5dfbf3b141ec801ee654c9a5f235aee9f4a"
       ],
       "useShares": [
         0,
         1
       ],
-      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"LockerBB\",\n  \"seq\": 1,\n  \"savedAt\": \"2026-10-06T09:13:02.383Z\",\n  \"salt\": \"Zebv6LziZ14BOJYJQNQSkQ==\",\n  \"data\": \"hmC5XVM47bt7/uzUb98kTDDCdbyDWv0cfySf1P74+m6UWK5JcG8gAYBVhXw3a66uM/qfhsRxP3ocWzlGoXxH2LzgcIURrkBsRbi35dh15rKKCLgzSVQv+8bCfkvsfnapNxvztYWTsG3r3vMZO6PDWza3OfgxsPsPLoU0SGSY+EsYHw31lBSORAi2HFlKhbcTQ95pTBhK45iWFflFWiSKNUloHW9nNfgrKCTD/DS7GzYus5kOeBeZa4znufVu3bPMzDDSV14WniGoH6VvDOqTJbE+n+uvkLhCyWAj2Oi8cPfUto9qhrBWS8IcsPySAXv3CrLMWhENMNYFxHSF6T2VFS2IJUedlg==\"\n}\n",
+      "lockerFile": "{\n  \"format\": \"seqrets-locker\",\n  \"v\": 1,\n  \"setId\": \"LockerBB\",\n  \"seq\": 1,\n  \"savedAt\": \"2026-10-06T10:19:51.960Z\",\n  \"salt\": \"OWEg/9Y3ZD9hkOvmaMeMRQ==\",\n  \"data\": \"nDYvGkrMnSlvQy3v5guKQUPoVRkFbqtQWHaO6QgR0c67BMhsgN5kSLQFXm3GsWNfwNjuuMPbtBYQmmbV7nf8PKmqH2Eu2AUAo4FrMAQSbVegBsWaRu+V3iAKkuarLxZKxtk+/VLUsVyK4ofsuFbHg9FIg61f2jBVU1io+Av4UGi9HYY6PmY3Cyrqssv1kG7PjoL/VZEgj0gxYKEGKMkffuiWAmgmqp4199A03CdJ4f+tD/PgWNhkSMX41+fF5hYLVUH9rkMkFHk42eIhymthggMh2cwGxq49MEaenzUcipXvbzdq7NBKjGzpKJdi1FxYBTk/UbRjAxtLAJiraTYR4VCmPAy+Bg==\"\n}\n",
       "expect": {
-        "key": "seQRets-Locker-Key:8fd18cdb462241f83754330ff76662925c6bbd82bd2af03708401becb9d881f0",
+        "key": "seQRets-Locker-Key:7e504062a004022e165b17e6d527e64a669322fcbfa570749129fdd9ed9649c7",
         "fileName": "seQRets-Locker.json",
         "fileType": "application/json",
         "content": null
@@ -368,8 +705,8 @@
       "password": "fixture-password-tamper",
       "keyfile": null,
       "shares": [
-        "seQRets|YeDJczivfeRXbi1Zz1bmsw==|gzGgFzCI8LL50qBdTHnz6XxWnThD+ppOLIY1UA6iYzt3fD0V2dogLpOFpWgqnwR6h1jV0Z+BjumFr4R6vgSUHZtrkD0/nwSODlwZN1iPUvK45FVTq3VXyWHhFpzgqIj9XOETzPU0KF22/xuFBvKdLFR1ZPWqAjiEC/r7H1ZgqxUANMFDltj5U8A8CctMciKiHzUw8no0uic26GoYO1JLfi1zfKD+/nSm7yyVRU7PVe+qBOHvj7qAw5b+/tIWppfXMhtHWO8hcWOIzEW5eKxhzCWOQzQmXKg1gZcFk1DHVAsWpTF7emRG2xs=|v=1|t=2|n=2|i=1|sha256:bc87c9bb20fad22930a94cba058fe4b7d56ae68e0b07731a489909a68fabbfb6",
-        "seQRets|YeDJczivfeRXbi1Zz1bmsw==|FtBDO/aUrKl9fC3Q930U9l9R6EBEihIExzLctV8BZmG2hkiDEp57/TzDZ0q2VtBu9iGRQVQkJFFY14TGg/sm+nSl88Th4TLF/tVxUHC3EF4OIg7H23Qnxge40C1XQqAviRFnREJG0J6AGDukm/h5jhsT4jhtGi54gHsCq1ATjwplrAp9eNtAipqw7PTxXReCHhZrF9l1Y1tz3KipYfPptXGHnrHxQoPPHjMYbmmglBz41uloZvS1V5E3wuMgB/B4k9bxBj5+vPOHoALy+bi5EbQX4j+SN0GcGFuIwevRQWhZT5HbWa5XbZc=|v=1|t=2|n=2|i=2|sha256:1e2f3007824c907541182d128fb0d949aeda6f9098c80305ad7ad7d763adfa84"
+        "seQRets|s4UgeuTUMBQdmHnCKwVeMg==|btUsXcyfpeEfVZS1szbARwVRZqBp2ReqUlpgvYvhsPexNsoL10X9p+eBzpfeV2Z90ozfhoUCMzBgRxL3tigNS0s2tagsjwkZ+zdnYvdxm2peAM/Gkci4RzrNJh9SlV77L0uNtQRzyT6DuzDUFu49v73aWvFIAz5fys3YvF280ewPTtD7YdfDNE2TFutoV4vV6KaIOiO0B6nmNQ7aYVrz5nV1dvZi0dchFI4cTtt7npdQmJEFEs7X/5FlxTMwVYzK5NbQohUN3bQKWC4CXV31G/GLIgUAwyE3vM+yr60GFJi8TTvSascOjqQ=|v=1|t=2|n=2|i=1|sha256:41428a746a80fd4cc298762daa4f51be8492e23873e1974c1608ef1aa6eb583b",
+        "seQRets|s4UgeuTUMBQdmHnCKwVeMg==|zfKm6XgMHrsvArPJbRZ8fRRwGa9/jhc5KVxAKRoOjV0kfg102txfTV9ukdSbW39aoJp7xjp3yqwcL0cL/sDdM//1MnwcUYPFSxvhE7/l+lxIA81IKlJNeBBfSNqDW3qDuxJwFqPksjbUhKjUCKdyyebvHlTspA7Fk0pC8162XU9ayFtsWi0qyVQ7SF1xbkH3LeIospqXEWDt4IBO6sJwJyBElan1+3zgP0RbCxN5ijgdngDAw6AUcsQwolfDuBnAaPTWJCj78EeqGxsWOtc2SiYMiIZHJUVr8jjXW3afvmKXOv7J+acm6BU=|v=1|t=2|n=2|i=2|sha256:0fe7427cc5ac7684729762b31457cd40a8dbf841b72e43a062a8210df653db50"
       ],
       "useShares": [
         0,
@@ -384,7 +721,7 @@
       "password": "fixture-password-future",
       "keyfile": null,
       "shares": [
-        "seQRets|dhY6ez2c21miYZGQOEDxTA==|1UjpTjxYbR+FmtaeW0QJgFric+Sx+KQFekw+cJt+SJykXRcP/rrIPhtEv6bVphWlqbel8TylVDVa1qwXuxlT0wSc8qqwB/ftonFmpaksLoV02cb/uTPFG+R6mhjQgIXfFqMGEE4jBkF5e7YRIBDDIF+ytwTd9738lJc7p+W3zE9qi6Zt9BuVDKdOAkw2Z1lB9FU7IN9JuwQ99ESRGF+buTnppQggaM0TXWZBxfjuwtnhV4cgtAVePje0CRVTos513lNAUfUIMnAuUDkICLfz5BCW6e9IyDV2HIb9R+UDVanQDAT/1v2qxQ==|v=2|sha256:1301b5893b2505f1345958406a2120d57f1112b481388daff6e818794c412f83"
+        "seQRets|fdtsKYKVgJIME+gSGvm3Jg==|1lDca6UWQE1sgTWDhRdFcfZuN/aUGq34RG0bna+AwbQN3p/IShwYjUomjKPgcam3BrXZdgUbSAS2bJQn5O1m1/Vb8ADimusp5mSOWJ/O7RhqNotkn4wz4+2lezkPFO6jm3txeSKW9UUtZPkVunRV57XGIgnn9b/MCqYZOtnNojx7hISEBO6O4TulPqfCecjKXYsoTAHfR8Nk1qkHQOE+mJwOfXtnfII/QInn7jkYrSYIDaTOF+mRqkM4VDoLI38BFaXBOWPLYZrVuxfgzO0AifCDhLel11eb5rk4D/ZBlJRkDNa9DoP63Q==|v=2|sha256:70d41967e02a04eec5b1f4f6bac913f1789d7a9e162eb0673ca3873f70911d00"
       ],
       "useShares": [
         0
@@ -398,8 +735,8 @@
       "password": "fixture-password-WRONG",
       "keyfile": null,
       "shares": [
-        "seQRets|b4xtZYvp4kDV4UOfUUJwrQ==|Bz3yua/8roBMqjtd+VTJJENHlng9l04dkJuzxw/uWw8dOvcZnG5+T7eAMCAj6PieYlSoD/CvZMI+SBorfcnm5usKHit6rG6ctuPZ1N0MUOxv0GLRlSPdIpu8cDXGuSYBYv0oJcUmqo4vy9VB0kR61DfIC7jhSfNKzUZwnU9dbzqWOJtQNF3qQY62jhtPfZ8FXqnbjAdWQhpOYbXun6kBQBGctJIh39Mtx6wQPZRt3sZshx83OaTzRyqGXWqSpEgP8BDSUYmwRRNYb7nKDyBKXyhRVew9MBIHDd0EGciG/r+2nVJA5A7db70=|v=1|t=2|n=2|i=1|sha256:794aabaf767fd5e5691fb22a81afbb0ec59f89736a8c9465404f9e8990415d78",
-        "seQRets|b4xtZYvp4kDV4UOfUUJwrQ==|Ffack2WAfsKUI/FswCW05UWnsc2Jp6Zn0HrsVt9pXgS2GY80P+/IlgHwY4IW93+VVxTHuCNwSGoMrXLpELAeskT/+8nhvq6aniqx79s07J6XYlLOCid8M36/6resrSdCGvah5vsWbXzVdNNFLfORX9V7LBw4jI1NMowH3i4UQRn5xMb/MFiKKyHGlNL/1NjbvFuazbJGIwyRM+e0rS81vvhcV/YJrTH68GITQaN4RhbEuBkpPd7uNdad2dXHLma4xpzuLCfLVJ1l+R6Ju+SmKb9R1mTgQ883ok1fqEAVtNKOmojgxqtqpik=|v=1|t=2|n=2|i=2|sha256:866039fbb6380787b85c9d15208ea618762be306d2e2e18de35d7ab7b77251ab"
+        "seQRets|XiCysOGUVIeNg58libxVOQ==|aRfhrE6NNQvLr/21kAD2uFjspJg2fMDzfZVt+nE9g9t3i+rhoyfzPtDh7EA5M77JAa0AMj5Lnv5ecKtkJ4zcarLHpr5a/82MOu83rK8kPoTsbvRxPRNkzaMA8eiYUVlKdOs1CGQv+TvHWA8maNA5MJXKa10bMAQlr7m63l603TsS+Z/0f0Ui9aAROID5fhB3HPVroNZNag0VH9c6xRQarg3nWo5Ux9vpapoEFrzmztoH7Z829Ido8dufe8SOA5rcrSlIZqoWpTeegYkj9G2Mpyx+BvkUWJwfRN2GyBDqNFnC45yuph90iJY=|v=1|t=2|n=2|i=1|sha256:55d1ead7933acffba444b4236db44a31f128d5261d380c5687bbd27da61ea9bf",
+        "seQRets|XiCysOGUVIeNg58libxVOQ==|WUuWhaPZgwnWHZaPD+3zExQvtKo4UKFQWJ/9UqTBnBmisEgnxRdn7r27oci+vVUKKD3TfUP17GjDf2qT9hADoaKzflXFeH8LDw+EabmS/fX5vwXMaMSSmXfOr15kYkA32Lce8baHNKXKHKxGuLP5rCWCrgT2E77PowiOsHV01aMsmkany2+baetoh+wOev/ojVJz6wfwvMlZqpfwWRPc6VrqNUEPpLv2/ty2z/rYPYd3KH9ylxRutu3jh1JoVxYN/JkQ6lOnfY5kyhRPdTMNu9qS1GGQxmZ6n3cO47zw/GlYMZkfdOTvKM0=|v=1|t=2|n=2|i=2|sha256:2413cdd99a7ab09e12d8182a13230fad3d504fc991fa956cd9a30a3bed2cb77d"
       ],
       "useShares": [
         0,
@@ -414,8 +751,8 @@
       "password": "fixture-password-mixed",
       "keyfile": null,
       "shares": [
-        "seQRets|QPK1MOz9jQ6q8QdTWnUrqw==|sEHTm0vMuS5TjkXsGfxY1IVMxFlrf75GxBeYnpat5FmsRpr0cyvFE6mYObXbvxhzw4i7bm1ypcYPEfgbfYIaN//lYqxE5Eod90MnJ5BbXAgrbKx77T1yaUKFhaEFBkaadjkJPeN3fSzmEcBMpOH1VNAHKnToLo655n3q+E1+eYMxYi9q/W8ZvKb+JOgL995HdtH+W/OsPPBIMt2lwaLAPrZ0YLgjJMGRXzMsrmJRdfqquSC/DeIlIIaeUwQaAZFLvIsLWtjwFKQ/QAqZvnuxu/y8epbfI+f14WYDMyu9812VIeE5HYpehdc=|v=1|t=2|n=2|i=1|sha256:c2e06860f643d9178a9f44117d2cbb82deea4b053ddcac9500dc63d792731a93",
-        "seQRets|J1ORE8+WrbDXatbAon44pg==|n9CBbILmiSpeLFjqx4I016GTzC0PQNy5U7F/8vPn7R0Qpao6xtXBYJqvIpZt2QLoJVVLKnGTmbRxz5AkxmlcYMuQ+Rclj8fmJxB2x2tsrnM5xMV+En2m96DldaV2OAXrZYscPBatxeFFhHS2bKsolarQlUhuRwwCTBS5geDdYP5W6F9U/F5rpQRmuaTlQDTIbRh5RfOW89oN+KH1WKHAjpnet3RFEYouo2iktp99SbWX7TLxmMolaVyMpZVKf+C5mOVbqaStdWIb3cRVThU73SMiDTv7HPNJywnJ4e/zdf1lgXOCiiRzPBE=|v=1|t=2|n=2|i=1|sha256:9173b1e48e5aaffe9ab3d3b5ef8ba5f0d147876f5f7246e683b92fcef7f96dde"
+        "seQRets|D+OpaNRnY5sPsNTGvcGS0Q==|9kwg7qnB6v17zFJSSp1kT8AkfZzxUD3IZMBcH0mEFtfEGa3XFZKUzMmrL2KgPEWG4I23TYSBpV6xTYWb9go+Y1OZnXPop1ahse8f8hyQS7QwD+EqG5NHNfdhVoB11ILse/afoGrP5ORgMzpubio+g/GueiLmwXmeU8SyIwWSriuaWXl+SNrznJVqCWxP8ev0WSfl407kuUbKbmTBNFqKLEbpaP3BIjUWoz1nBJ3R9n19HwUQ5jGlOUN+XB7UvMzKn98SYy44sncIWgTziF4xZAsGXen09mV4Vh1KpCSWzszaemTM2AT1jt8=|v=1|t=2|n=2|i=1|sha256:3d58313a38994685f2291638dda3aa454c63dc2a0f239487fd6192093e912411",
+        "seQRets|QdiZCDaUIF6BvOxw9obRAA==|07e+vQN0Ml4YfEBDVAlymFPxb8u9t+9BmZfpJrWvfgVM/FAhmqIbRZg0Mo6V/Kw3mbYwSHeDhzIEtc5vOLkD0N4WHfENdtT8jeT9h0FXNcEU+GINBKcKfVLx32Rmfyk74cx0aw/Gsekb61qdhiS0BgG44qweHp+lHPbTLjix+f9vrjwLPjUZssiByTuoWCeUwcZGgP3ehdB1/PFPxaRPqUEGXK+2iwf6faIeuM9HNghiiAb350vnVpfJz6bGUT9hceM6b2iNtpseSPu/EvDfJcAOlknBDCX82ybtXBr8T+BxB7weV5clvRU=|v=1|t=2|n=2|i=1|sha256:4ded09f1866bfa7d5ec59c80dacc5ea229181ad7e5fbb1a8b5fb19a68b000549"
       ],
       "useShares": [
         0,
@@ -430,8 +767,8 @@
       "password": "fixture-password-needskeyfile",
       "keyfile": null,
       "shares": [
-        "seQRets|dNsL267zxkO5uMREU/nPZw==|ifidMcD/E6ugF7z5a6rLMyihilQssACIpeJNKN71qIttERCI3JSlXLfPdODHZE8L2Ao5gLqpwl3WWl8t7brOkoLtdPxd7K1GKds/R59INTkm6ZeiMnk8Vu1x6VwTDh745YPjC+jIvpHIeFC1xZnBUJ6se4iVb/DfdKFEl+T+lshaax5OU6cfFZYm6Bjiy/oDuOQ48zT6NA7GmzjoON4GbY2v6TYy83rzfOPWCXqWe9o4YjZU4zPR1bm9ayXsMX9VQm8j5MwDXJ0b2yVgcZQoJWi6MHFpwn/4RmJ2l6XkrrT/UUVIRpXJP3k=|v=1|t=2|n=2|i=1|sha256:a711d58f76b654bb7cc5b5d3985bbb908fe139ed610b1dba3e6c08a8c2dd808f",
-        "seQRets|dNsL267zxkO5uMREU/nPZw==|7M8VeFlfivBvIlonc5EgkdHqMVo6mduJF2M0e6mug0R07BxLELzPKmhGW0E5WHnbcmNOlOMyzh9KEPnOKR9c0VeZHOXTE1M16CpuPYtCAdo3Yf8qDIln+W5Ux7xPZKBnbRv9qegjf5T7FfY+ZuWqe16+yAhuHEil/l+/6K8X2p0IwPpVv3pohwl1RwQLL9tptrA3pWe75tz2qUicboYnE446sckq9fq5cg7waENAwuA8UWHBej+AGYMyhbxgOMsIg0K8puDiYYqvdZBM/426Z6io7JFqfvMmAVNhd3dAwVXYkYna8ZXCkCQ=|v=1|t=2|n=2|i=2|sha256:b64b003f4186a4b5c639977251eba6ef2360adf3c6663b6a53d7345646af2dcd"
+        "seQRets|9YERQdzum1idMkHkE+mToA==|wCyQEOS7VlSCeveF4bCZEofpMWs2yQw9F8kjnCF+UcxfwyjfwvjokseVLexx5a/y3M3i+OvJo4dNbsHh2bQDotfJOHbPgwGvozZs7jva6fzUCbCDomyc3wyl2dfaoA0Jy/gQanIsci5U0B6iXOJpRuP8Sm0nLpa4kIK3RiR25o2tnJo8Y15V/s/kzvW4FQ0rsUmPXfGaBzSXYroVdDyehGcw8LbEubtz/77fteOw8U1zqlkjBLI+miUuuqN/hSIu6FfmcM3hv5V5skxHY8e61gHYmCIkL51MzJlKf8ovgvTHeJAgUpshUg4=|v=1|t=2|n=2|i=1|sha256:444762f1161b8526ca4c0d5eb88b21a774fa40739e6a90e52beb568d800b06f3",
+        "seQRets|9YERQdzum1idMkHkE+mToA==|mJKuTqwG4N5cOFu53FBrKXYgdZJvm1Fc+YKoMVTyHgcVEBKvDoCM+5MuHffqjTaXLjULtw7rKIlkRCHSDsQgjPYYRzI/IPck089bNsNNQlQ6iMhKUTeSgYGuBxOOiSLfQGvXOFYPVuXFshCfFjIL54kY7wSDvvH3HBeP5LKRhQind/J6XCnLzw851zMiiPSLGhmPiwy1gcMcUc/tGmwY10Z1v5kBkXB6mxWUMncn06PxV2FUriPON3f8XhjE4Ypnx1nChdccr71hO1TqiBeGNbPjyZl5Fmw40pMA8usoNd/HZ3bQQbldoLE=|v=1|t=2|n=2|i=2|sha256:b11839bfb09a490861c293ac1ece34fe5b24cf3107c41698a073e3e9c1177aaa"
       ],
       "useShares": [
         0,
